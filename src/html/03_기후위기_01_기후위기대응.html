@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./include/meta.html', {
+        "page_main": true
+    })
+</head>
+<body>
+    <!-- 전체 -->
+    <section id="wrap">
+    <div class="skip">
+        <a href="#header">주메뉴 바로가기</a>
+        <a href="#mainContainer">본문 바로가기</a>
+        <a href="#">하단 정보 바로가기</a>
+    </div>
+    @@include('./include/header.html', {
+        "page_main": true
+    })
+    @@include('./include/subheader.html', {
+        "page_main": true
+    })
+    
+    <div id="SubContainer" calss="SubContainer">
+        <div class="sub--wrap">
+            <div class="sub--wrap--inner">
+                <div class="sub--ti">
+                    <h3>기후위기대응</h3>
+                    <div class="sub--ti--util">
+                        <button class="share"><span class="sr-only">공유</span></button>
+                        <button class="print"><span class="sr-only">인쇄</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="sub--wrap--inner">
+                <ul class="tabs mb40" data-js="tabNav">
+                    <li class="tab-item active">
+                        <button type="button" data-id="tabnav1">
+                            기후위기특성안내
+                        </button>
+                    </li>
+                    <li class="tab-item">
+                        <button type="button" data-id="tabnav2">
+                            폭염대응
+                        </button>
+                    </li>
+                    <li class="tab-item">
+                        <button type="button" data-id="tabnav3">
+                            폭우대응
+                        </button>
+                    </li>
+                    <li class="tab-item">
+                        <button type="button" data-id="tabnav4">
+                            산사태위험정보
+                        </button>
+                    </li>
+                    <li class="tab-item">
+                        <button type="button" data-id="tabnav5">
+                            취약인구정보
+                        </button>
+                    </li>
+                    <li class="tab-item">
+                        <button type="button" data-id="tabnav6">
+                            우리동네 기상정보
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 기후위기특성안내 start-->
+            <div data-toggle-id="tabnav1">
+                <div class="sub--wrap--inner">
+                    <div class="page-intro">
+                        <div class="page-intro-header">
+                            <strong></strong>
+                        </div>
+                        <div class="page-intro-content">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 기후위기특성안내 end-->
+
+            <!-- 폭염대응  start-->
+            <div data-toggle-id="tabnav2" class="toggle-hidden">
+                <div class="sub--wrap--inner mb80">
+                    <div class="page-intro">
+                        <div class="page-intro-header">
+                            <strong>폭염이란?</strong>
+                        </div>
+                        <div class="page-intro-content">
+                            <b>폭염은 일 최고 체감온도 33℃ 이상, 2일이상 지속으로 정의하고 있습니다.</b>
+                        </div>
+                    </div>
+
+                    <div class="notice-container">
+                        <div class="notice-title">폭염예보</div>
+                        <div class="notice-content">
+                            폭염이 2일 이상 지속될 것으로 예상될 시 발효될시 폭염주의보를, 기온35℃까지 2일이상 지속될 것으로 예상될 시는 폭염특보가 발효됩니다.
+                        </div>
+                    </div>
+                    <div class="notice-container">
+                        <div class="notice-title">폭염경보</div>
+                        <div class="notice-content">
+                            기온 35℃까지 2일 이상 지속될것으로 예상될 시 발효되는 특보입니다.  
+                        </div>
+                    </div>
+                    <div class="notice-container">
+                        <div class="notice-title">누구에게네 동일하지 않은 폭염 피해 격차가 존재 </div>
+                        <div class="notice-content">
+                            2023년 지구 표면 온도가 역대 최고를갱신하였으며, 기후변화로 인한 폭염의 심각성에 대한경고를 세계기상기구에서 발표하였습니다.    
+                        </div>
+                        <div class="alert-container grid-2">
+                            <div class="alert-panel alert-round">
+                                <strong class="alert-title">지역, 계층, 직업에 따라다른 온열질환 발생빈도</strong>
+                                <div class="alert-content">
+                                    2023년 온열질환 사망자의 50%가 80세 이상, 실외 발생환자가 81%이상 나타났으며<br>
+                                    직업별로는 단순노무종사자가21%,무직12.1%,농림어업숙련종사자8.8%순으로<br>
+                                    높게 나타났습니다.
+                                </div>
+                            </div>
+                            <div class="alert-panel alert-round">
+                                <strong class="alert-title">온열질환 발생 시 농촌지역 사망율 도시지역의 2배</strong>
+                                <div class="alert-content">
+                                    노령인구, 실외 작업이 많은 농촌지역의 온열질환 발생시 사망율이 전국 평균보다<br>2배 높은 것으로 나타났습니다.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub--Data--wrap">
+                    <div class="sub--wrap--inner">
+                        <div class="heading-container">
+                            <h3 class="heading-title">경기도 폭염대응</h3>
+                            <p class="heading-desc">
+                                경기도는 폭염취약지역과 취약인구 계층 등을 고려한 폭염대응 정보를 제공합니다.
+                            </p>
+                        </div>
+
+                        <div class="es-tab" data-js="es-tab">
+                            <button aria-selected="true" data-tab="#tabContent1">경기도 체감온도 지도</button>
+                            <button aria-selected="false" data-tab="#tabContent2">경기도 열쾌적성 지도</button>
+                        </div>
+
+                        <div class="es-tab-panel">
+                            <div class="data--box--flex half es-tab-content" id="tabContent1">
+                                <div class="data--box--flex--left data--box">
+                                    <div class="heatwave-about">
+                                        <div class="title-content">
+                                            <div class="text-title">경기도 체감온도 지도</div>
+                                            <div class="desc">경기도는 세계 최고 수준의 고정밀 항공LiDAR데이터와 기상청 테이터를 기반으로<br>UIMEP 프로그램을 활용하여 경기도의일평균 기온을 구축하였습니다. </div>
+                                        </div>
+                                        <div class="heatwave-legend">
+                                            <div class="text-content">
+                                                <strong>체감온도 지도 범례 (단위 : ℃)</strong>
+                                            </div>
+                                            <div class="legend-group">
+                                                <span><i style="background:#4400ff;"></i> &lt;= 32</span>
+                                                <span><i style="background:#6699ff;"></i> 32 - 33</span>
+                                                <span><i style="background:#66ffff;"></i> 34 - 35</span>
+                                                <span><i style="background:#ccff00;"></i> 35 - 36</span>
+                                                <span><i style="background:#ffff00;"></i> 36 - 37</span>
+                                                <span><i style="background:#ff9900;"></i> 37 - 38</span>
+                                                <span><i style="background:#ff6600;"></i> 38 - 39</span>
+                                                <span><i style="background:#ff0000;"></i> 39 - 40</span>
+                                                <span><i style="background:#660000;"></i> &gt; 40</span>
+                                            </div>
+                                        </div>
+                                        <div class="text-content">
+                                            <strong>LiDAR(Light Detection and Ranging)</strong>
+                                            <div class="desc">
+                                                농경지 및 지형을 측정하고, 작물 바이오매스 추정, 깊이, 경사, 수분 및 측면의 변화를 <br>
+                                                매핑하여 토양 특성을 감지하는데 사용
+                                            </div>
+                                        </div>
+        
+                                        <div class="text-content">
+                                            <strong>UMEP(The Urban Multi-Scale Environmental Predictor)</strong>
+                                            <div class="desc">
+                                                도시환경기후변환 분석 도구로써 그린인프라 , 기상, 야외활동, 기후변화 등 다양한 요소를<br>
+                                                고려하여 기후환경 변화에 따라 사람이 느낄수 있는 체감온도를 분석해 주는 도구 입니다.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="data--box--flex--right data--box">
+                                    <div class="data--box--head end">
+                                        
+                                        <div class="data--box--util">
+                                            <select name="" id="" class="form-control md">
+                                                <option value="">과천시</option>
+                                            </select>
+                                            <button class="btn md border-darkgray">경기기후지도 폭염대응 바로가기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data--box--flex half es-tab-content hidden" id="tabContent2">
+                                <div class="data--box--flex--left data--box">
+                                    <div class="heatwave-about">
+                                        <div class="title-content">
+                                            <div class="text-title">경기도 열쾌적성 지도</div>
+                                            <div class="desc">
+                                                경기도는 세계적으로 환경적 열쾌적성 평가를 위해 개발된 지표(UTCI)를 도 전역을 대상으로 구축하였습니다.
+                                                열쾌적성지표는 총 10 등급으로 정밀하게 평가하여 폭염대응 우선 지역 선정에 활용 가능합니다.
+                                            </div>
+                                        </div>
+                                        <div class="heatwave-legend">
+                                            <div class="text-content">
+                                                <strong>열쾌적성 지도 범례</strong>
+                                            </div>
+                                            <div class="legend-group">
+                                                <span><i style="background:#36003d;"></i> 1등급</span>
+                                                <span><i style="background:#3366ff;"></i> 2등급</span>
+                                                <span><i style="background:#00bfff;"></i> 3등급</span>
+                                                <span><i style="background:#99ffee;"></i> 4등급</span>
+                                                <span><i style="background:#ccff00;"></i> 5등급</span>
+                                                <span><i style="background:#ffff33;"></i> 6등급</span>
+                                                <span><i style="background:#ffb300;"></i> 7등급</span>
+                                                <span><i style="background:#ff5c00;"></i> 8등급</span>
+                                                <span><i style="background:#ff0000;"></i> 9등급</span>
+                                                <span><i style="background:#4d0000;"></i> 10등급</span>
+                                            </div>
+                                        </div>
+                                        <div class="text-content">
+                                            <strong>UTCI (Universal Thermal Climate Index)</strong>
+                                            <div class="desc">
+                                                대기온도가 인체의 열감에 미치는 직접적 영향과 풍속의 증가에 따른 피부 냉각효과, 땀의
+                                                증발을고려한 습도, 태양 복사나 주변 복사열 등을 고려한 평가지표
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="data--box--flex--right data--box">
+                                    <div class="data--box--head end">
+                                        
+                                        <div class="data--box--util">
+                                            <select name="" id="" class="form-control md">
+                                                <option value="">과천시</option>
+                                            </select>
+                                            <button class="btn md border-darkgray">경기기후지도 폭염대응 바로가기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 폭염대응  end-->
+
+            <!-- 폭우대응 start-->
+            <div data-toggle-id="tabnav3" class="toggle-hidden">
+                <div class="sub--wrap--inner">
+                    <div class="page-intro">
+                        <div class="page-intro-header">
+                            <strong></strong>
+                        </div>
+                        <div class="page-intro-content">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 폭우대응  end-->
+
+            <!-- 산사태위험정보 start-->
+            <div data-toggle-id="tabnav4" class="toggle-hidden">
+                <div class="sub--wrap--inner">
+                    <div class="page-intro">
+                        <div class="page-intro-header">
+                            <strong></strong>
+                        </div>
+                        <div class="page-intro-content">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 산사태위험정보  end-->
+
+            <!-- 취약인구정보 start-->
+            <div data-toggle-id="tabnav5" class="toggle-hidden">
+                <div class="sub--wrap--inner">
+                    <div class="page-intro">
+                        <div class="page-intro-header">
+                            <strong></strong>
+                        </div>
+                        <div class="page-intro-content">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 취약인구정보  end-->
+
+            <!-- 우리동네 기상정보 start-->
+            <div data-toggle-id="tabnav6"  class="toggle-hidden">
+                <div class="sub--Data--wrap">
+                    <div class="sub--wrap--inner">
+                        <div class="">
+                            <div class="heading-container">
+                                <h3 class="heading-title">우리동네 기상정보</h3>
+                                <p class="heading-desc">
+                                    실시간 우리동네 정확한 기상정보와 기상특보를 제공합니다.
+                                </p>
+                            </div>
+
+                            <h3 class="fz25 mb18"></h3>
+                            <p class="mb30 fz17"></p>
+                            <div class="data--box--flex half">
+                                <div class="data--box--flex--left data--box pn">
+                                    <div class="map-info-txt">
+                                        <p>기상청 500m 고해상도 기상정보를 활용하여 정밀한 기상정보를 제공합니다.</p>
+                                    </div>
+                                </div>
+                                <div class="data--box--flex--right weather-box">
+                                    <div class="data--box boarder">
+                                        <div class="data--box--head mb20">
+                                            <h4>안양시 동안구</h4>
+                                            <div class="data--box--util--txt">
+                                                <span class="data">2025.03.19 (수) 14:28 현재</span>
+                                            </div>
+                                        </div>
+                                        <div class="weather-cast-wrap">
+                                            <div class="weather-cast-row01 mb32">
+                                                <div class="weather-cast-today">
+                                                    <div>
+                                                        <i class=""><img src="./assets/images/ico/ico-sun.png" alt=""></i>
+                                                        <b>7.1<sub>˚</sub></b>
+                                                    </div>
+                                                    <dl>
+                                                        <dt>구름많음</dt>
+                                                        <dd>어제보다 2.3<sub>˚</sub> <i class="icon ico-arrow-up"></i> <i class="icon ico-arrow-down"></i></dd>
+                                                    </dl>
+                                                </div>
+                                                <div class="weather-cast-flex-3">
+                                                    <dl>
+                                                        <dt>체감</dt>
+                                                        <dd>2.3<sub>˚</sub></dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>습도</dt>
+                                                        <dd>31%</dd>
+                                                    </dl>
+                                                    <dl>
+                                                        <dt>서풍</dt>
+                                                        <dd>3.8m/s</dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                            <div class="weather-cast-row02">
+                                                <ul class="weather-cast-week">
+                                                    <li>
+                                                        <dl class="data">
+                                                            <dt>오늘</dt>
+                                                            <dd>3.19</dd>
+                                                        </dl>
+                                                        <div class="apm">
+                                                            <div class="am">
+                                                                <dl>
+                                                                    <dt>오전</dt>
+                                                                    <dd>10%</dd>
+                                                                </dl>
+                                                                <img src="./assets/images/ico/ico-sun-small.png" alt="">
+                                                            </div>
+                                                            <div class="pm">
+                                                                <img src="./assets/images/ico/ico-sun-small.png" alt="">
+                                                                <dl>
+                                                                    <dt>오후</dt>
+                                                                    <dd>0%</dd>
+                                                                </dl>
+                                                            </div>
+                                                        </div>
+                                                        <div class="temp">
+                                                            <span class="low">2˚</span>
+                                                            <span calss="slash">/</span>
+                                                            <span class="high">15˚</span>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <dl class="data">
+                                                            <dt>내일</dt>
+                                                            <dd>3.20</dd>
+                                                        </dl>
+                                                        <div class="apm">
+                                                            <div class="am">
+                                                                <dl>
+                                                                    <dt>오전</dt>
+                                                                    <dd>10%</dd>
+                                                                </dl>
+                                                                <img src="./assets/images/ico/ico-sun-small.png" alt="">
+                                                            </div>
+                                                            <div class="pm">
+                                                                <img src="./assets/images/ico/ico-sun-small.png" alt="">
+                                                                <dl>
+                                                                    <dt>오후</dt>
+                                                                    <dd>0%</dd>
+                                                                </dl>
+                                                            </div>
+                                                        </div>
+                                                        <div class="temp">
+                                                            <span class="low">2˚</span>
+                                                            <span calss="slash">/</span>
+                                                            <span class="high">15˚</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-1">
+                                        <div class="data--box auto-height">
+                                            <div class="data--box--head mb20 flex-keep">
+                                                <h4>발령정보</h4>
+                                                <div class="data--box--util--txt">
+                                                    <button><i class="icon ico-add-more" onclick="ModalHandler.open('modal-Announce-Info')"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="weather-info-news weather-news-item">
+                                                <i class="icon ico-news-info"></i>
+                                                <p>초미세먼지 경보 발령</p>
+                                            </div>
+                                        </div>
+                                        <div class="data--box auto-height">
+                                            <div class="data--box--head mb20 flex-keep">
+                                                <h4>기상특보</h4>
+                                                <div class="data--box--util--txt">
+                                                    <button type="button" onclick="ModalHandler.open('modal-weather-report')"><i class="icon ico-add-more"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="weather-cast-news weather-news-item">
+                                                <i class="icon ico-news"></i>
+                                                <p>발표된 특보가 없습니다.</p>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <div class="data--box auto-height">
+                                        <div class="data--box--head mb20">
+                                            <h4>통합대기환경지수 <span class="head--ti--small">나쁨(120)</span></h4>
+                                        </div>
+                                        <div class="environmental-index">
+                                            <dl>
+                                                <dt>초미세먼지(PM2.5)</dt>
+                                                <dd>
+                                                    <i class="idx-lv02"><span class="sr-only">보통 색상</span></i>
+                                                    보통 30
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>미세먼지 (PM10)</dt>
+                                                <dd>
+                                                    <i class="idx-lv01"><span class="sr-only">좋음 색상</span></i>
+                                                    좋음 10
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>오존 (o3)</dt>
+                                                <dd>
+                                                    <i class="idx-lv03"><span class="sr-only ">나쁨 색상</span></i>
+                                                    나쁨 30
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>이산화질소 (NO2)</dt>
+                                                <dd>
+                                                    <i class="idx-lv04"><span class="sr-only">매우나쁨 색상</span></i>
+                                                    매우나쁨 0.2
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>일산화탄소 (CO)</dt>
+                                                <dd>
+                                                    <i class="idx-lv01"><span class="sr-only">좋음 색상</span></i>
+                                                    좋음 30
+                                                </dd>
+                                            </dl>
+                                            <dl>
+                                                <dt>아황산가스 (SO2)</dt>
+                                                <dd>
+                                                    <i class="idx-lv02"><span class="sr-only">보통 색상</span></i>
+                                                    보통 30
+                                                </dd>
+                                            </dl>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 우리동네 기상정보  end-->
+        </div>
+    </div>
+
+    @@include('./include/modal.html',{
+        'page__name' : '기상특보'
+    })
+    @@include('./include/modal.html',{
+        'page__name' : '발령정보'
+    })
+    
+    @@include('./include/footer.html', {
+        "page_main": true
+    })
+    </section>
+</body>
+
+</html>

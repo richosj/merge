@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./include/meta.html', {
+        "page_main": true
+    })
+</head>
+<body>
+    <!-- 전체 -->
+    <section id="wrap">
+    <div class="skip">
+        <a href="#header">주메뉴 바로가기</a>
+        <a href="#mainContainer">본문 바로가기</a>
+        <a href="#">하단 정보 바로가기</a>
+    </div>
+    @@include('./include/header.html', {
+        "page_main": true
+    })
+    @@include('./include/subheader.html', {
+        "page_main": true
+    })
+    
+    <div id="SubContainer" calss="SubContainer">
+        <div class="sub--wrap">
+            <div class="sub--wrap--inner">
+                <div class="sub--ti">
+                    <h3>환경스코어</h3>
+                    <div class="sub--ti--util">
+                        <button class="share"><span class="sr-only">공유</span></button>
+                        <button class="print"><span class="sr-only">인쇄</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="sub--wrap--inner">
+                <ul class="tabs mb40" data-js="tabNav">
+                    <li class="tab-item active">
+                        <button class="" type="button" data-id="tabnav1">
+                            환경스코어
+                        </button>
+                    </li>
+                    <li class="tab-item">
+                        <button class="" type="button" data-id="tabnav2">
+                            파크스코어(도시공원 평가)
+                        </button>
+                    </li>
+                    <li class="tab-item">
+                        <button class="" type="button" data-id="tabnav3">
+                            생태계 서비스 평가
+                        </button>
+                    </li>
+                    <li class="tab-item">
+                        <button class="" type="button" data-id="tabnav4">
+                            기후 취약성 평가
+                        </button>
+                    </li>
+                </ul> 
+            </div>
+
+            <!-- 환경스코어 start-->
+            <div data-toggle-id="tabnav1">
+                <div class="sub--wrap--inner mb80">
+                    <div class="sub--Info--wrap">
+                        <div class="page-intro">
+                            <div class="page-intro-header">
+                                <strong>환경스코어</strong>
+                            </div>
+                            <div class="page-intro-content">
+                                환경 스코어는 주민들이 집 주변의 환경정보와 기후변화 취약성을 쉽게 확인할 수 있는 서비스를 제공합니다. <br>
+                                주민들은 우리 동네 환경 스코어를 통해 체계 적화된 평가 체계를 바탕으로 구축된 도시공원 및 생태계 서비스 현황을 언제 어디서든 확인할 수 있습니다.
+                            </div>
+                        </div>
+
+                        <div class="notice-container">
+                            <div class="notice-title">도시공원 평가</div>
+                            <div class="notice-content">
+                                도시공원은 도민의 건강과 여가를 증진시키는 공공의 공간일 뿐만 아니라 폭염과 홍수 등 기후 위기에 대응할 수 있는 녹색인프라 기능도 담당하고 있습니다. <br>
+                                경기도는 읍면동별 공원 공급과 관리 지표를 기반으로 평가한 공원 스코어를 산정하였습니다.
+                            </div>
+                        </div>
+
+                        <div class="notice-container">
+                            <div class="notice-title">생태서비스 평가</div>
+                            <div class="notice-content">
+                                기후 변화 완화를 위한 탄소 저장과 온실가스 흡수 외에도 대기 질과 수질 개선, 기후 조절 등의 서비스를 제공합니다. <br>
+                                경기도의 생태계 서비스 평가 지도는 자연으로부터 받는 생태계 서비스의 경제적 가치를 시각화함으로써 경기도민들이 동네에서 받는 생태계 서비스를
+                                화폐단위로 직관적으로 해석할 수 있도록 하였습니다.
+                            </div>
+                        </div>
+
+                        <div class="notice-container">
+                            <div class="notice-title">기후취약성 평가</div>
+                            <div class="notice-content">
+                                기후 위기 취약성 평가는 경기도 31개 시군별 기후 위기에 취약한 지역을 공간분석하여 주민들이 동네에서 어떠한 지역이 기후 위기에 더 노출되어 있는지를 확인할 수 있도록 하였습니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub--Data--wrap">
+                    <div class="sub--wrap--inner">
+                        <div class="mb80">
+                            <div class="heading-container">
+                                <h3 class="heading-title">경기도 환경스코어</h3>
+                            </div>
+
+                            <div class="data--box--flex">
+                                <div class="data--box--flex--left data--box">
+                                    
+                                </div>
+                                <div class="data--box--flex--right data--box">
+                                    <div class="data--box--head mb12">
+                                        <h4>환경스코어 <span class="green">전체</span></h4>
+                                        <div class="data--box--util">
+                                            <a href="#" class="btn md border-darkgray">기후지도 바로가기</a>
+                                            <a href="#" class="btn md border-green">오픈랩 바로 가기</a>
+                                        </div>
+                                    </div>
+                                    <ul class="flex-box mb32">
+                                        <li>차트</li>
+                                        <li>차트</li>
+                                        <li>차트</li>
+                                        <li>차트</li>
+                                    </ul>
+                                    <div data-simplebar class="board-score-scroll">
+                                        <div class="board--wrap ">
+                                            <div class="board--wrap--body">
+                                                <div class="board-thead">
+                                                    <div class="">
+                                                        랭킹
+                                                    </div>
+                                                    <div class="">
+                                                        시·군
+                                                    </div>
+                                                    <div class="">
+                                                        점수
+                                                    </div>
+                                                    <div class="">
+                                                        공원스코어
+                                                    </div>
+                                                    <div class="">
+                                                        생태서비스 스코어
+                                                    </div>
+                                                    <div>
+                                                        기후 취약성 스코어
+                                                    </div>
+                                                </div>
+                                                <div class="board-tbody">
+                                                    <a href="#" class="board-tbody-item">
+                                                        <div class="">
+                                                            <span class="ranking-bg">1</span>
+                                                        </div>
+                                                        <div class="">
+                                                            가평군
+                                                        </div>
+                                                        <div class="">
+                                                            8.7
+                                                        </div>
+                                                        <div class="">
+                                                            75
+                                                        </div>
+                                                        <div class="">
+                                                            75
+                                                        </div>
+                                                        <div class="">
+                                                            75
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" class="board-tbody-item">
+                                                        <div class="">
+                                                            <span class="ranking-bg">10</span>
+                                                        </div>
+                                                        <div class="">
+                                                            가평군
+                                                        </div>
+                                                        <div class="">
+                                                            8.7
+                                                        </div>
+                                                        <div class="">
+                                                            75
+                                                        </div>
+                                                        <div class="">
+                                                            75
+                                                        </div>
+                                                        <div class="">
+                                                            75
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" class="board-tbody-item">
+                                                        <div class="">
+                                                            <span class="ranking-bg">1</span>
+                                                        </div>
+                                                        <div class="">
+                                                            가평군
+                                                        </div>
+                                                        <div class="">
+                                                            8.7
+                                                        </div>
+                                                        <div class="">
+                                                            75
+                                                        </div>
+                                                        <div class="">
+                                                            75
+                                                        </div>
+                                                        <div class="">
+                                                            75
+                                                        </div>
+                                                    </a>
+                                                    <a href="#" class="board-tbody-item">
+                                                        <div class="">
+                                                            <span class="ranking-bg">1</span>
+                                                        </div>
+                                                        <div class="">
+                                                            가평군
+                                                        </div>
+                                                        <div class="">
+                                                            8.7
+                                                        </div>
+                                                        <div class="">
+                                                            75
+                                                        </div>
+                                                        <div class="">
+                                                            75
+                                                        </div>
+                                                        <div class="">
+                                                            75
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 선택화면 -->
+                        <div class="mb80">
+                            <div class="heading-container">
+                                <h3 class="heading-title">경기도 환경스코어</h3>
+                            </div>
+
+                            <div class="data--box--flex">
+                                <div class="data--box--flex--left data--box">
+
+                                </div>
+                                <div class="data--box--flex--right data--box">
+                                    <div class="data--box--head mb12">
+                                        <h4>환경스코어 <span class="green">수원시</span></h4>
+                                        <div class="data--box--util">
+                                            <a href="#" class="btn md border-darkgray">기후지도 바로가기</a>
+                                            <a href="#" class="btn md border-green">오픈랩 바로 가기</a>
+                                        </div>
+                                    </div>
+                                    <ul class="flex-box md mb32">
+                                        <li>
+                                            <dl>
+                                                <dt>면적</dt>
+                                                <dd>10,199 <span>km<sup>2</sup></span></dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>행정구역</dt>
+                                                <dd>31 <span>개</span></dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>인구</dt>
+                                                <dd>112 <span>만명</span></dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl>
+                                                <dt>인구밀도</dt>
+                                                <dd>132 <span>명/km<sup>2</sup></span></dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                    <div class="mb32 flex-chart">
+                                        <div class="left"> 차트</div>
+                                        <div class="right">
+                                            <dl class="rangking-ti">
+                                                <dt class="num">9</dt>
+                                                <dd class="fz15">랭킹</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="chart-box chart-box321">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <div class="heading-container">
+                                <h3 class="heading-title">경기도 환경스코어</h3>
+                            </div>
+                            <div class="data--box--flex">
+                                <div class="data--box--flex--left data--box">
+
+                                </div>
+                                <div class="data--box--flex--right data--box">
+                                    <div class="data--box--head mb30">
+                                        <h4>시·군 점수 및 순위 비교</h4>
+                                    </div>
+                                    <p class="fz17 mb12">
+                                        내가 살고 있는 지역과 비교할 수 있으며, 시군간 환경스코어 점수와 순위를 비교해보세요.
+                                    </p>
+                                    <div class="chart-box chart-box290 mb32">
+                                        차트
+                                    </div>
+                                    <div class="flex-score-ranking">
+                                        <div>
+                                            <ul>
+                                                <li>비교지역</li>
+                                                <li>랭킹</li>
+                                                <li>환경스코어</li>
+                                                <li>공원스코어</li>
+                                                <li>생태서비스 스코어</li>
+                                                <li>기후취약성 스코어</li>
+                                            </ul>
+                                        </div>
+                                        <div class="flex-score-ranking01">
+                                            <ul>
+                                                <li><strong>가평군</strong></li>
+                                                <li><span class="ranking-bg">1</span></li>
+                                                <li>81.7</li>
+                                                <li>75</li>
+                                                <li>86</li>
+                                                <li>86</li>
+                                            </ul>
+                                        </div>
+                                        <div class="flex-score-ranking02">
+                                            <ul>
+                                                <li><strong>가평군</strong></li>
+                                                <li><span class="ranking-bg">111</span></li>
+                                                <li>81.7</li>
+                                                <li>75</li>
+                                                <li>86</li>
+                                                <li>86</li>
+                                            </ul>
+                                        </div>
+                                        <div class="flex-score-ranking03">
+                                            <p class="no-data">
+                                                지도에서<br> 원하는 비교 지역을<br> 선택해주세요.
+                                            </p>
+                                            <!-- <ul>
+                                                <li><strong>수원시</strong></li>
+                                                <li><span class="ranking-bg">111</span></li>
+                                                <li>81.7</li>
+                                                <li>75</li>
+                                                <li>86</li>
+                                                <li>86</li>
+                                            </ul> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 환경스코어 end-->
+
+            <!-- 파크스코어  start-->
+            <div data-toggle-id="tabnav2" class="toggle-hidden">
+                <div class="sub--wrap--inner mb80">
+                    <div class="sub--Info--wrap">
+                        <div class="page-intro">
+                            <div class="page-intro-header">
+                                <strong>파크스코어</strong>
+                                <div class="page-intro-links">
+                                    <a href="">도시공원평가</a>
+                                    <a href="">기후지도 공원스코어 바로가기</a>
+                                </div>
+                            </div>
+                            <div class="page-intro-content">
+                                우리 지역 공원 점수 평가를 확인할 수 있습니다. 경기도는 8가지 지표를 활용하여 도시 공원을 점수화하였습니다.<br>
+                                공원 점수가 높을수록 도시 공원 서비스의 기후 대응력이 우수한 지역으로 나타납니다.
+                            </div>
+                        </div>
+
+                        <div class="card--li mb120">
+                            <div class="card--li--item card--li--item01">
+                                <div>
+                                    <img src="./assets/images/sub/park-bg01.png" alt="">
+                                </div>
+                                <dl>
+                                    <dt>01</dt>
+                                    <dd>1인당 공원면적</dd>
+                                </dl>
+                            </div>
+                            <div class="card--li--item card--li--item02">
+                                <div>
+                                    <img src="./assets/images/sub/park-bg02.png" alt="">
+                                </div>
+                                <dl>
+                                    <dt>02</dt>
+                                    <dd>생활권 내 완충경관연결 녹지 비율</dd>
+                                </dl>
+                            </div>
+                            <div class="card--li--item card--li--item03">
+                                <div>
+                                    <img src="./assets/images/sub/park-bg03.png" alt="">
+                                </div>
+                                <dl>
+                                    <dt>03</dt>
+                                    <dd>1m당 공원관리예산</dd>
+                                </dl>
+                            </div>
+                            <div class="card--li--item card--li--item04">
+                                <div>
+                                    <img src="./assets/images/sub/park-bg04.png" alt="">
+                                </div>
+                                <dl>
+                                    <dt>04</dt>
+                                    <dd>1인당 6m 공급적정성</dd>
+                                </dl>
+                            </div>
+                            <div class="card--li--item card--li--item05">
+                                <div>
+                                    <img src="./assets/images/sub/park-bg05.png" alt="">
+                                </div>
+                                <dl>
+                                    <dt>05</dt>
+                                    <dd>소외인구비율</dd>
+                                </dl>
+                            </div>
+                            <div class="card--li--item card--li--item06">
+                                <div>
+                                    <img src="./assets/images/sub/park-bg06.png" alt="">
+                                </div>
+                                <dl>
+                                    <dt>06</dt>
+                                    <dd>수혜인구 연령구조</dd>
+                                </dl>
+                            </div>
+                            <div class="card--li--item card--li--item07">
+                                <div>
+                                    <img src="./assets/images/sub/park-bg07.png" alt="">
+                                </div>
+                                <dl>
+                                    <dt>07</dt>
+                                    <dd>배치균형성(엔트로피)</dd>
+                                </dl>
+                            </div>
+                            <div class="card--li--item card--li--item08">
+                                <div>
+                                    <img src="./assets/images/sub/park-bg08.png" alt="">
+                                </div>
+                                <dl>
+                                    <dt>08</dt>
+                                    <dd>공원유형다양성</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 파크스코어  end-->
+
+            <!-- 생턔계 서비스 평가 start-->
+            <div data-toggle-id="tabnav3" class="toggle-hidden">
+                <div class="sub--wrap--inner mb80">
+                    <div class="sub--Info--wrap">
+                        <div class="page-intro">
+                            <div class="page-intro-header">
+                                <strong>생태계 서비스란</strong>
+                            </div>
+                            <div class="page-intro-content">
+                                생태계 서비스는 깨끗한 공기, 맑은 물, 식량, 휴양, 기후 조절 등 인간이 자연으로부터 받는 다양한 혜택을 의미합니다. 이러한 서비스를 정책에 반영함으로써,
+                                생태적 건강성을 유지하고 경제적 혜택과 생태적 복지를 균형 있게 보장할 수 있는 지속 가능한 해결책을 마련할 수 있습니다. <br>
+                                이러한 통합적 접근은 다양한 이해관계자의 요구를 충족시키면서도 장기적인 생태계 보전과 인간 복지를 동시에 추구할 수 있습니다. br
+                                이 정보는 경기도 특성에 맞춰 국립생태원과 협력하여 경기도에서 구축한 것입니다.
+                            </div>
+                        </div>
+
+                        <div class="notice-container">
+                            <div class="notice-title">공급서비스 평가</div>
+                            <div class="notice-content">
+                                공급서비스는 자연이 우리에게 제공하는 음식, 물, 목재와 같은 물질적 자원을 말합니다. 공급서비스 평가에서는 연간수량공급,. 계절별수량공급, 탄소저장에 대한 평가를 실시하였습니다.
+                            </div>
+                            <div class="info--li--item--con">
+                                <h4>연간수량공급</h4>
+                                <p>연간단위로 지표수가 얼마나 생산되는지와 토지이용변화가 물공급 및 수력 발전에 미치는 영향분석 </p>
+                            </div>
+                            <div class="info--li--item--con">
+                                <h4>계절별수량공급</h4>
+                                <p>계절별 변동에 따라물의 흐름이 어떻게 변하는지 파악</p>
+                            </div>
+                            <div class="info--li--item--con">
+                                <h4>탄소저장</h4>
+                                <p>토지 내에서  다양한 탄소저장소(지상 및 지하바이오매스, 토양, 고사 유기물 등)에 저장된 탄소량 평가</p>
+                            </div>
+                        </div>
+
+                        <div class="notice-container">
+                            <div class="notice-title">조절서비스 평가</div>
+                            <div class="notice-content">
+                                조절서비스는 자연이 환경을 관리하고 균형을 유지하며 인간에게 유익을 주는 생태계의 역할을말합니다. 조절서비스 평가에서는 수질정화, 탄소흡수, 대기조절, 열섬저감, 침식조절에 대한 평가를 실시하였습니다.
+                            </div>
+                            
+                            <div class="info--li--item--con">
+                                <h4>수질정화</h4>
+                                <p>자연식생에 의한 영양분 보유 평가</p>
+                            </div>
+                            <div class="info--li--item--con">
+                                <h4>탄소흡수</h4>
+                                <p>침엽수,활엽수,혼효림, 도시녹지 등 토지피복유형과 임령데이터를 바탕으로 생태계가 흡수하는 연간탄소량 산출</p>
+                            </div>
+                            <div class="info--li--item--con">
+                                <h4>대기조절</h4>
+                                <p>도시수목이 광합성을 통해CO2, SO2,NO,2 등의 대기오염물질을 흡수정도 산출</p>
+                            </div>
+                            <div class="info--li--item--con">
+                                <h4>열섬저감</h4>
+                                <p>도시녹지의 열섬현상을 완화 및 저감정도 측정</p>
+                            </div>
+                            <div class="info--li--item--con">
+                                <h4>침식조절</h4>
+                                <p>연평균 토양 손실량을 계산하고, 하천으로 유입되는 토양 손실 비율평가</p>
+                            </div>
+                        </div>
+
+                        <div class="notice-container">
+                            <div class="notice-title">지지서비스 평가</div>
+                            <div class="notice-content">
+                                지지서비스는 생태계가 다른 모든 생태계서비스가 제대로 작동할수 있도록 기번적인 토대를 제공하는기능을 말합니다. 지지서비스 평가에서는 조류종다양성에 대해 평가를 실시하였습니다.   
+                            </div>
+                            <div class="info--li--item--con">
+                                <h4>조류종다양성</h4>
+                                <p>산림, 공원 등의 경관에서자연성과 생태적 건강을 나타내는 지표</p>
+                            </div>
+
+                        </div>
+                        <div class="notice-container">
+                            <div class="notice-title">문화서비스 평가</div>
+                            <div class="notice-content">
+                                문화서비스는 자연이 우리에게제공하는 심리적, 정서적, 문화적 가치를 말합니다. 문화서비스평가에서는 생태관광, 경관가치에 대한 평가를 실시하였습니다.
+                            </div>
+                            <div class="info--li--item--con">
+                                <h4>생태관광</h4>
+                                <p>사람들이 특정 지역에서 경험한 문화적 가치 측정</p>
+                            </div>
+                            <div class="info--li--item--con">
+                                <h4>경관가치</h4>
+                                <p>경관 생태계의 현재상태를 평가하고,파편화로 인해 훼손된 공간 식별</p>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- 생턔계 서비스 평가  end-->
+
+
+            <div data-toggle-id="tabnav4" class="toggle-hidden">
+                
+            </div>
+        </div>
+    </div>
+    @@include('./include/modal.html',{
+        'page__name' : '환경스코어'
+    })
+
+    @@include('./include/footer.html', {
+        "page_main": true
+    })
+    </section>
+</body>
+
+</html>

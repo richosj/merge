@@ -1,0 +1,262 @@
+@use '../utils/var';
+@use '../utils/function' as fn;
+
+.login-wrap{
+    min-width: 1920px;
+    width: 100%;
+    height: 100vh;
+    background-image:url("../images/intro/intro-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#modal-login{
+    box-shadow:none;
+    .modal--content{
+        position: relative;
+        border: none;
+        background: transparent;
+        .modal--close{
+            position: absolute;
+            right: 2.5rem;
+            top: 2.5rem;
+            width: 2.1rem;
+            height: 2.1rem;
+            background-image:url("../images/login/btn-close21x21.png");
+        }
+    }
+}
+
+#modal-login-use{
+    box-shadow:none;
+    
+    .modal--content{
+        position: relative;
+        border: none;
+        background: transparent;
+        .modal--close{
+            position: absolute;
+            right: 2.5rem;
+            top: 2.5rem;
+            width: 2.1rem;
+            height: 2.1rem;
+            background-image:url("../images/login/btn-close21x21.png");
+        }
+        .login--panel{
+            background-image:url("../images/modal/manual-bg.png");
+            background-repeat: no-repeat;
+            background-position: -45px -130px;
+            &--head{
+                h3{
+                    font-size: 3.2rem;
+                    padding-bottom: 2rem;
+                    margin-bottom: 2rem;
+                    color:#3d2d27;
+                    font-weight: normal;
+                    border-bottom: 1px solid #774f3f;
+                }
+            }
+            .form-btn{
+                &.mb0{
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+.login{
+    &--panel{
+        background: #fff;
+        width: 51.4rem;
+        
+        border-radius: 4rem;
+        &--bi{
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+    }
+}
+.login--panel{
+    padding: 4rem 3.2rem;
+    border: 1px solid #d6cac5;
+    background: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    &--head{
+        text-align: center;
+        &--top{
+            margin-bottom: 1.8rem;
+        }
+        &--bottom{
+            align-items: center;
+            border-bottom: 1px solid #774f3f;
+            padding-bottom: 3.2rem;
+            p{
+                font-size: 1.7rem;
+                letter-spacing: 0.1rem;
+                line-height: 1;
+                color:#000000;
+            }
+        }
+    }
+    &--body{
+        margin-top: 3.5rem;
+        label{
+            display: block;
+            font-size: 1.7rem;
+            margin-bottom: 2rem;
+        }
+        .form-control{
+            margin-bottom: 2.4rem;
+            height: 5.6rem;
+            border-radius: 0.8rem;
+        }
+    }
+    .form-btn{
+        height: 6.4rem;
+        display: block;
+        width: 100%;
+        background: #774f3f;
+        font-size: 2.1rem;
+        color:#fff;
+        border-radius: 0.8rem;
+        margin-top: 4rem;
+        margin-bottom: 3rem;
+    }
+    .foot-util{
+        button{
+            display: inline-block;
+            color:#723838;
+            &+button{
+                color:#757575;
+                border-bottom: 1px solid #757575;
+            }
+        }
+    }
+}
+
+
+
+
+// 로그인 효과
+.login-wrap{
+    overflow: hidden;
+    position: relative;
+    .bi{
+        z-index: 4;
+        position: absolute;
+        top: 2rem;
+        left: 4rem;
+    }
+    .house{
+        z-index: 2;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        .position-btn{
+            cursor: pointer;
+            position: absolute;
+            bottom: 280px;
+            left: 731px;
+            width: 379px;
+            height: 105px;
+            background-image:url("../images/intro/position.png");
+            transition: all 0.3s;
+            &:hover{
+                background-image:url("../images/intro/position-in.png");
+            }
+        }
+        .left-door{
+            position: absolute;
+            bottom: 160px;
+            left: 819px;
+        }
+        .right-door{
+            position: absolute;
+            bottom: 160px;
+            right: 819px;
+        }
+    }
+    .folding-screen{
+        z-index: 0;
+        position: absolute;
+        left: 50%;
+        top: 15%;
+        transform: translate(-50%, -20%);
+    }
+    .tree{
+        z-index: 4;
+        position: absolute;
+        left: 6rem;
+        bottom: 7rem;
+    }
+    .scholar{
+        z-index: 4;
+        right: 13rem;
+        bottom: 7rem;
+        position: absolute;
+        
+    }
+    &.on{
+        .left-door{
+            animation: Leftdoor .3s linear alternate;
+        }
+        .right-door{
+            animation: Rightdoor .3s linear alternate;
+        }
+    }
+}
+
+#modal-login{
+    position: absolute;
+    top: calc(100% - 650px);
+    left: calc(50% - 257px);
+    &.active{
+        -webkit-animation: scale-up-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        animation: scale-up-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    }
+}
+
+@keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 0;
+        }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+
+@keyframes scholar01{
+	0% {transform: rotate(-3deg);}
+    50% {transform: rotate(3deg);}
+    100% {transform: rotate(-3deg);}
+}
+@keyframes scholar02{
+	0% {transform: rotate(3deg);}
+    50% {transform: rotate(-3deg);}
+    100% {transform: rotate(3deg);}
+}
+
+@keyframes scholar02{
+	0% {transform: rotate(3deg);}
+    50% {transform: rotate(-3deg);}
+    100% {transform: rotate(3deg);}
+}
+
+
+@keyframes Leftdoor {
+	0% {transform: translateX(0px);}
+	100% {transform: translateX(-73px);}
+}
+
+@keyframes Rightdoor {
+	from {transform: translateX(0px);}
+	to {transform: translateX(73px);}
+}

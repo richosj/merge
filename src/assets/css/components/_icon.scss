@@ -1,0 +1,254 @@
+@use "sass:list";
+@use '../utils/var';
+@use '../utils/function' as fn;
+
+$icons: (
+    del: (1.4rem, 1.4rem),
+    close: (1.4rem, 1.4rem),
+    window: (1.4rem, 1.4rem),
+    download: (1.9rem, 1.9rem)
+);
+
+@mixin icon($url, $width, $height) {
+    display: inline-block;
+    vertical-align: middle;
+    background-image: url($url);
+    width: $width;
+    height: $height;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.icon{
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain;
+    @each $name, $dimensions in $icons {
+        $width: list.nth($dimensions, 1);
+        $height: list.nth($dimensions, 2);
+        &-#{$name}{
+            &._white {
+                @include icon("../images/icon/icon-#{$name}-white.png", $width, $height);
+                @include fn.responsive(md){
+                    width: 1.2rem;height: 1.2rem;
+                    background-size: cover;
+                    background-position: 50% 50%;
+                }
+            }
+        }
+    }
+    
+}
+
+.ico-carbon-scope{
+    width: 2.5rem;
+    height: 2.5rem;
+    
+}
+.ico-carbon-scope01-01{
+    background-image:url("../images/ico/ico-carbon-scope01-01.svg");
+    background-size: 2.3rem;
+}
+.ico-carbon-scope01-02{
+    background-image:url("../images/ico/ico-carbon-scope01-02.svg");
+    background-size: 2.3rem;
+}
+.ico-carbon-scope01-03{
+    background-image:url("../images/ico/ico-carbon-scope01-03.svg");
+    background-size: 2.2rem;
+}
+.ico-carbon-scope01-04{
+    background-image:url("../images/ico/ico-carbon-scope01-04.svg");
+    background-size: 2.2rem;
+}
+.ico-carbon-scope01-05{
+    background-image:url("../images/ico/ico-carbon-scope01-05.svg");
+    background-size: 2.2rem;
+}
+.ico-carbon-scope02-01{
+    background-image:url("../images/ico/ico-carbon-scope02-01.svg");
+    background-size: 2.3rem;
+}
+.ico-carbon-scope02-02{
+    background-image:url("../images/ico/ico-carbon-scope02-02.svg");
+    background-size: 2.2rem;
+}
+.active{
+    .ico-carbon-scope01-01{
+        background-image:url("../images/ico/ico-carbon-scope01-01-on.svg");
+    }
+    .ico-carbon-scope01-02{
+        background-image:url("../images/ico/ico-carbon-scope01-02-on.svg");
+    }
+    .ico-carbon-scope01-03{
+        background-image:url("../images/ico/ico-carbon-scope01-03-on.svg");
+    }
+    .ico-carbon-scope01-04{
+        background-image:url("../images/ico/ico-carbon-scope01-04-on.svg");
+    }
+    .ico-carbon-scope01-05{
+        background-image:url("../images/ico/ico-carbon-scope01-05-on.svg");
+    }
+    .ico-carbon-scope02-01{
+        background-image:url("../images/ico/ico-carbon-scope02-01-on.svg");
+    }
+    .ico-carbon-scope02-02{
+        background-image:url("../images/ico/ico-carbon-scope02-02-on.svg");
+    }
+}
+
+.ico-back{
+    width: 3.2rem;
+    height: 3.2rem;
+    background-image:url("../images/ico/ico-back.svg");
+    background-size: contain;
+}
+
+.ico-infor-line{
+    width: 1.3rem;
+    height: 1.3rem;
+    background-image:url("../images/ico/ico-infor-line.png");
+}
+
+.ico-quick{
+    width: 2.2rem;
+    height: 2.2rem;
+    background-image:url("../images/ico/ico-quick.png");
+    vertical-align: text-top;
+    margin-left: 1rem;
+}
+.ico-quick-gray{
+    width: 2.2rem;
+    height: 2.2rem;
+    background-image:url("../images/ico/ico-quick-gray.png");
+    vertical-align: text-bottom;
+    margin-left: .5rem;
+}
+
+.ico-scope01{
+    width: 1.8rem;
+    height: 1.8rem;
+    background-image:url("../images/ico/ico_scope1.svg");
+}
+.ico-scope02{
+    width: 1.8rem;
+    height: 1.8rem;
+    background-image:url("../images/ico/ico_scope2.svg");
+}
+.ico-scope03{
+    width: 1.8rem;
+    height: 1.8rem;
+    background-image:url("../images/ico/ico_scope3.svg");
+}
+
+.ico-file-item{
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image:url("../images/ico/ico-file-up.svg");
+    background-size: contain;
+}
+.ico-file-del{
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image:url("../images/ico/ico-file-del.svg");
+}
+.ico-file-modify{
+    width: 1.8rem;
+    height: 1.8rem;
+    background-image:url("../images/ico/ico-file-modify.svg");
+}
+.ico-down{
+    width: 1.8rem;
+    height: 1.8rem;
+    background-image:url("../images/ico/ico-down.svg");
+    margin-top: -3px;
+}
+.ico-down-disable{
+    width: 1.8rem;
+    height: 1.8rem;
+    background-image:url("../images/ico/ico-down-disable.svg");
+    margin-top: -3px;
+}
+.item_q{
+    font-weight: bold;
+    display: inline-block;
+    font-size: 2rem;
+}
+
+.ico-arrow-up{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image:url("../images/main/ico-vi-arrow.svg");
+    margin-top: -3px;
+}
+
+.ico-notice{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image:url("../images/main/ico-notice.svg");
+    margin-top: -3px;
+}
+
+.ico-sucess{
+    width: 2.6rem;
+    height: 2.7rem;
+    background-image:url("../images/main/ico-drm-succes.svg");
+}
+.ico-danger{
+    width: 2.6rem;
+    height: 2.7rem;
+    background-image:url("../images/main/ico-drm-danger.svg");
+}
+
+.ico-report{
+    width: 1.7rem;
+    height: 1.7rem;
+    background-image:url("../images/ico/ico-report.svg");
+}
+.ico-pdf{
+    width: 1.7rem;
+    height: 1.6rem;
+    background-image:url("../images/ico/ico-pdf-17@16.png");
+}
+
+.ico-link-arrow{
+    width: 1.7rem;
+    height: 1.7rem;
+    background-image:url("../images/sub/link-arrow.png");
+}
+
+.ico-arrow-up{
+    width: 1rem;
+    height: 1.1rem;
+    background-image:url("../images/ico/ico-arrow-up.png");
+}
+.ico-arrow-down{
+    width: 1rem;
+    height: 1.1rem;
+    background-image:url("../images/ico/ico-arrow-down.png");
+}
+.ico-news {
+    background-image: url("../images/ico/ico-breaking.png");
+    width: 2rem;
+    height: 1.6rem;
+}
+.ico-news-info{
+    background-image: url("../images/ico/ico-infonews.png");
+    width: 1.7rem;
+    height: 1.6rem;
+}
+.ico-add-more{
+    background-image: url("../images/ico/add-12@12.png");
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.down{
+    width: 14px;
+    height: 14px;
+    margin-left: 3px;
+    vertical-align: text-top;
+    background-image: url('../images/new_sub/ico-data16@16.png');
+}

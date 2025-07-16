@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('./include/meta.html', {
+	"page_main": true
+	})
+</head>
+
+<body>
+	<!-- 전체 -->
+	<section id="wrap">
+		@@include('./include/header_fixed.html', {
+		"page_main": true
+		})
+		<!-- @@include('./include/subheader.html', {
+		"page_main": true
+		}) -->
+
+		<div id="SubContainer" class="SubContainer">
+			<div class="sub--wrap">
+				<div id="first-video" class="first--video">
+					<video src="./assets/video/AdobeStock_1418318936_Video_HD_Preview.mov" muted autoplay playsinline loop></video>
+					<div class="first--video--info">
+						<div class="first--video--inner">
+							<div class="first--video--txt fade-up">
+								<h2>기후위기 적응 </h2>
+								<h3>
+									시작된 기후위기, 경기도의 특성을 반영한 기후위기 적응 솔루션
+								</h3>
+								<p>
+									시작된 기후위기, 경기도의 특성을 반영한 기후위기 적응 솔루션
+								</p>
+							</div>
+							<div class="first--video--tab risk" data-simplebar>
+								<ul data-js="tabNav">
+									<li>
+										<button data-id="tabnav1">
+											<strong>경기도 기후위기</strong>
+											<span>text</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav2">
+											<strong>폭염</strong>
+											<span>text</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav3">
+											<strong>극한호우</strong>
+											<span>text</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav4">
+											<strong>산사태</strong>
+											<span>text</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav5">
+											<strong>취약인구</strong>
+											<span>text</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav6">
+											<strong>우리동네 기상정보</strong>
+											<span>text</span>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab--stiky risk">
+					<div class="sub--wrap--inner">
+						<ul class="" data-js="tabNav">
+							<li>
+								<button type="button" data-id="tabnav1">경기도 기후위기</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav2">폭염</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav3">극한호우</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav4">산사태</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav5">취약인구</button>
+							</li>
+							<li  class="active">
+								<button type="button" data-id="tabnav6">우리동네 기상정보</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div data-toggle-id="tabnav1" class="toggle-hidden">
+					1111
+				</div>				
+				<div data-toggle-id="tabnav2" class="toggle-hidden">
+					2222
+				</div>
+				<div data-toggle-id="tabnav3" class="toggle-hidden">
+					3333
+				</div>
+				<div data-toggle-id="tabnav4" class="toggle-hidden">
+					4444
+				</div>
+				<div data-toggle-id="tabnav5" class="toggle-hidden">
+					5555 
+				</div>
+				<div data-toggle-id="tabnav6">
+					<div class="data-chart data-chart-gray">
+						<div class="sub--wrap--inner">
+							<div>
+								<div class="data-chart__txt fade-up mb50" style="translate: none; rotate: none; scale: none;">
+									<h3>우리동네 기상정보</h3>
+									<p class="chart-txt01">
+										실시간 우리동네 정확한 기상정보와 기상특보를 제공합니다.
+									</p>
+									
+								</div>
+								<div class="data--box--flex half fade-up">
+									<div class="data--box--flex--left data--box pn">
+										<div class="map-info-txt">
+											<p>기상청 500m 고해상도 기상정보를 활용하여 정밀한 기상정보를 제공합니다.</p>
+										</div>
+									</div>
+									<div class="data--box--flex--right weather-box">
+										<div class="data--box boarder">
+											<div class="data--box--head mb20">
+												<h4>안양시 동안구</h4>
+												<div class="data--box--util--txt">
+													<span class="data">2025.03.19 (수) 14:28 현재</span>
+												</div>
+											</div>
+											<div class="weather-cast-wrap">
+												<div class="weather-cast-row01 mb32">
+													<div class="weather-cast-today">
+														<div>
+															<i class=""><img src="./assets/images/ico/ico-sun.png" alt=""></i>
+															<b>7.1<sub>˚</sub></b>
+														</div>
+														<dl>
+															<dt>구름많음</dt>
+															<dd>어제보다 2.3<sub>˚</sub> <i class="icon ico-arrow-up"></i> <i class="icon ico-arrow-down"></i></dd>
+														</dl>
+													</div>
+													<div class="weather-cast-flex-3">
+														<dl>
+															<dt>체감</dt>
+															<dd>2.3<sub>˚</sub></dd>
+														</dl>
+														<dl>
+															<dt>습도</dt>
+															<dd>31%</dd>
+														</dl>
+														<dl>
+															<dt>서풍</dt>
+															<dd>3.8m/s</dd>
+														</dl>
+													</div>
+												</div>
+												<div class="weather-cast-row02">
+													<ul class="weather-cast-week">
+														<li>
+															<dl class="data">
+																<dt>오늘</dt>
+																<dd>3.19</dd>
+															</dl>
+															<div class="apm">
+																<div class="am">
+																	<dl>
+																		<dt>오전</dt>
+																		<dd>10%</dd>
+																	</dl>
+																	<img src="./assets/images/ico/ico-sun-small.png" alt="">
+																</div>
+																<div class="pm">
+																	<img src="./assets/images/ico/ico-sun-small.png" alt="">
+																	<dl>
+																		<dt>오후</dt>
+																		<dd>0%</dd>
+																	</dl>
+																</div>
+															</div>
+															<div class="temp">
+																<span class="low">2˚</span>
+																<span calss="slash">/</span>
+																<span class="high">15˚</span>
+															</div>
+														</li>
+														<li>
+															<dl class="data">
+																<dt>내일</dt>
+																<dd>3.20</dd>
+															</dl>
+															<div class="apm">
+																<div class="am">
+																	<dl>
+																		<dt>오전</dt>
+																		<dd>10%</dd>
+																	</dl>
+																	<img src="./assets/images/ico/ico-sun-small.png" alt="">
+																</div>
+																<div class="pm">
+																	<img src="./assets/images/ico/ico-sun-small.png" alt="">
+																	<dl>
+																		<dt>오후</dt>
+																		<dd>0%</dd>
+																	</dl>
+																</div>
+															</div>
+															<div class="temp">
+																<span class="low">2˚</span>
+																<span calss="slash">/</span>
+																<span class="high">15˚</span>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="flex flex-1">
+											<div class="data--box auto-height">
+												<div class="data--box--head mb20 flex-keep">
+													<h4>발령정보</h4>
+													<div class="data--box--util--txt">
+														<button><i class="icon ico-add-more" onclick="ModalHandler.open('modal-Announce-Info')"></i></button>
+													</div>
+												</div>
+												<div class="weather-info-news weather-news-item">
+													<i class="icon ico-news-info"></i>
+													<p>초미세먼지 경보 발령</p>
+												</div>
+											</div>
+											<div class="data--box auto-height">
+												<div class="data--box--head mb20 flex-keep">
+													<h4>기상특보</h4>
+													<div class="data--box--util--txt">
+														<button type="button" onclick="ModalHandler.open('modal-weather-report')"><i class="icon ico-add-more"></i></button>
+													</div>
+												</div>
+												<div class="weather-cast-news weather-news-item">
+													<i class="icon ico-news"></i>
+													<p>발표된 특보가 없습니다.</p>
+												</div>
+											</div>
+										</div> 
+										<div class="data--box auto-height">
+											<div class="data--box--head mb20">
+												<h4>통합대기환경지수 <span class="head--ti--small">나쁨(120)</span></h4>
+											</div>
+											<div class="environmental-index">
+												<dl>
+													<dt>초미세먼지(PM2.5)</dt>
+													<dd>
+														<i class="idx-lv02"><span class="sr-only">보통 색상</span></i>
+														보통 30
+													</dd>
+												</dl>
+												<dl>
+													<dt>미세먼지 (PM10)</dt>
+													<dd>
+														<i class="idx-lv01"><span class="sr-only">좋음 색상</span></i>
+														좋음 10
+													</dd>
+												</dl>
+												<dl>
+													<dt>오존 (o3)</dt>
+													<dd>
+														<i class="idx-lv03"><span class="sr-only ">나쁨 색상</span></i>
+														나쁨 30
+													</dd>
+												</dl>
+												<dl>
+													<dt>이산화질소 (NO2)</dt>
+													<dd>
+														<i class="idx-lv04"><span class="sr-only">매우나쁨 색상</span></i>
+														매우나쁨 0.2
+													</dd>
+												</dl>
+												<dl>
+													<dt>일산화탄소 (CO)</dt>
+													<dd>
+														<i class="idx-lv01"><span class="sr-only">좋음 색상</span></i>
+														좋음 30
+													</dd>
+												</dl>
+												<dl>
+													<dt>아황산가스 (SO2)</dt>
+													<dd>
+														<i class="idx-lv02"><span class="sr-only">보통 색상</span></i>
+														보통 30
+													</dd>
+												</dl>
+											</div>
+										</div> 
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		@@include('./include/modal.html',{
+			'page__name' : '기상특보'
+		})
+		@@include('./include/modal.html',{
+			'page__name' : '발령정보'
+		})
+		
+		@@include('./include/footer.html', {
+			"page_main": true
+		})
+	</section>
+</body>
+
+</html>

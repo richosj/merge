@@ -1,0 +1,177 @@
+@use '../utils/var';
+@use '../utils/function' as fn;
+
+.footer{
+    width: 100%;
+    align-items: center;
+    background: #000;
+    &--family{
+        &--container{
+            display: flex;
+            justify-content: flex-end;
+            max-width: 144rem;
+            margin: 0 auto;
+            padding: 1.2rem 0;
+            background: #000;
+            select{
+                height: 4rem;
+                border-radius: 2rem;
+                min-width: 24rem;
+            }
+            @include fn.responsive(md){
+                width: 100%;
+                justify-content: center;
+            }
+        }
+	}
+    &--logo{
+        img{
+            @include fn.responsive(md){
+                width: 50%;
+            }
+        }
+    }
+    .footer-sitemap{
+        background: #111111;
+        padding: 0 2rem;
+        @include fn.responsive(md){
+            display: none;
+        }
+        h3{
+            max-width: 1440px;
+            margin:0 auto;
+            color: #fff;
+            font-size: 40px;
+            padding-top: 8rem;
+        }
+        .footer-sitemap-inner{
+            max-width: 1440px;
+            margin: auto;
+            display: flex;
+            gap:3rem;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            @media (max-width: 1440px) {
+                gap: 1rem;
+            }
+        }
+        ul{
+            flex:1;
+            li{
+                &:first-child{
+                    strong{
+                        display: block;
+                        color:#ffffff;
+                        font-size: 1.9rem;
+                        padding-bottom: 3rem;
+                        @media (max-width: 1440px) {
+                            font-size: 1.5rem;
+                            padding-bottom: 2rem;
+                        }
+                    }
+                    
+                }
+                & + li{
+                    margin-bottom: 3rem;
+                    @media (max-width: 1440px) {
+                        margin-bottom: 2rem;
+                    }
+                }
+                a{
+                    position: relative;
+                    color:#717171;
+                    font-size: 1.7rem;
+                    transition: all .3s;
+                    @media (max-width: 1440px) {
+                        font-size: 1.4rem;
+                    }
+                    &:hover{
+                        color:#fff;
+                    }
+                    &.foot-ico-link{
+                        &:after{
+                            position: absolute;
+                            right: -20px;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            display: block;
+                            content:'';
+                            width: 14px;
+                            height: 15px;
+                            background-image: url('../images/ico/ico-foot-link.png');
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &--container{
+        display: flex;
+        align-items: center;
+        gap:8rem;
+        max-width: 148rem;
+        margin: 0 auto;
+        padding: 4rem 2rem 3rem;
+        color:#717171;
+        background-repeat: no-repeat;
+        background-position: 0 center;
+        @include fn.responsive(md){
+            flex-direction: column;
+            align-items: flex-start;
+            width: auto;
+            gap: 2.5rem;
+        }
+    }
+    &--addr{
+        display: flex;
+        font-size: 1.7rem;
+        margin-bottom: 1.2rem;
+        @media (max-width: 1440px) {
+            flex-direction: column;
+            *{
+                //display: inline !important;
+                //word-break: break-all;
+                //font-size: 1.4rem;
+            }
+        }
+        dl{
+            display: flex;
+            color:#717171;
+            dt,dd{font-size: 1em;}
+            dt{
+                // color:#009FE3;
+                font-weight: bold;
+                margin-right: .5rem;
+                &.last-address{
+                    // color:#8C6E4A;
+                }
+            }
+            @media (max-width: 1440px) {
+                //flex-direction: column;
+                color: #c6c6c6;
+                line-height: 1.34;
+                font-size: 13px;
+            }
+            @media (max-width: 1024px) {
+                font-size: 11px;
+            }
+            
+        }
+        span{
+            display: inline-block;
+            margin: 0 0.5rem;
+            color:#C6C6C6;
+            font-size: 1.5rem;
+            @media (max-width: 1440px) {
+                display: none !important;
+            }
+        }
+    }
+    &--copy{
+        font-size: 1.5rem;
+        @include fn.responsive(md){
+            font-size: 1.2rem;
+        }
+    }
+
+}

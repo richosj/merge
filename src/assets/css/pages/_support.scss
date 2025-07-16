@@ -1,0 +1,355 @@
+@use '../utils/var';
+@use '../utils/function' as fn;
+
+.sub--wrap.end{
+    padding-bottom: 12rem;
+    padding-top: 12rem;
+}
+/* 소개 */
+.about-picture-1{
+    background-image: url(../images/sub/about-bg.png);
+}
+.platform{
+    &-title{
+        text-align: center;
+        strong{
+            font-weight: 600;
+            color: #000;
+            font-size: 3.2rem;
+        }
+        b{
+            font-size: 1em;
+            color: #029b58;
+        }
+        
+        .desc{
+            color: var(--text-sub2);
+            font-size: 2.1rem;
+            padding-top: 1.5rem;
+        }
+        @include fn.responsive(lg){
+            strong{
+                font-size: 2rem;
+            }
+            .desc{
+                font-size: 1.5rem;
+                padding-top: 1rem;
+            }
+        }
+        
+    }
+
+    &-vision{
+        
+        &-content{
+            display: grid;
+            grid-template-columns: repeat(2,minmax(0,1fr));
+            gap: 30px;
+            padding-top: 3.5rem;
+            @include fn.responsive(lg){
+                grid-template-columns: repeat(1,minmax(0,1fr));
+            }
+            > div{
+                background: #f0f0f0;
+                border-radius: 4px;
+                padding: 30px;
+                strong{
+                    font-weight: 600;
+                    color: #000;
+                    font-size: 2.5rem;
+                }
+                p{
+                    color: #000;
+                    font-size: 1.9rem;
+                    padding-top: 2rem;
+                }
+                @include fn.responsive(lg){
+                    padding: 1.5rem;
+                    strong{
+                        font-size: 1.8rem;
+                    }
+                    p{
+                        font-size: 1.2rem;
+                        padding-top: 1rem;
+                    }
+                }
+            }
+        }
+        &-notic{
+            color: #717171;
+            background: url(../images/sub/!.png) no-repeat 0 0;
+            font-size: 1.4rem;
+            margin-top: 2rem;
+            margin-left: 1.5rem;
+            padding-left: 2.5rem;
+            @include fn.responsive(lg){
+                font-size: 1.2rem;
+            }
+        }
+    }
+    
+    &-mission{
+        padding: 12rem 0;
+        @include fn.responsive(lg){
+            padding: 6rem 0;
+        }
+        &-content{
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding-top: 4rem;
+            .box{
+                position: relative;
+                .detail{
+                    position: absolute;
+                    color: #fff;
+                    left: 3.5rem;
+                    top: 3.5rem;
+                    strong{
+                        font-size: 2.5rem;
+                    }
+                    p{
+                        font-size: 1.9rem;
+                        padding-top: 1.5rem;
+                    }
+                }
+                .image{
+                    img{width: 100%;}
+                }
+            }
+            @include fn.responsive(md){
+                flex-direction: column;
+                .box{
+                    width: 100%;
+                    .detail{
+                        strong{font-size: 2rem;}
+                        p{
+                            font-size: 1.4rem;
+                            padding-top: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-task{
+        &-content{
+            display: grid;
+            grid-template-columns: repeat(4,minmax(0,1fr));
+            gap:30px;
+            padding-top: 4rem;
+            @include fn.responsive(lg){
+                grid-template-columns: repeat(2,minmax(0,1fr));
+            }
+            @include fn.responsive(md){
+                grid-template-columns: repeat(1,minmax(0,1fr));
+            }
+            .box{
+                background-color: #fff;
+                border-radius: .4rem;
+                overflow: hidden;
+                text-align: center;
+                border: 1px solid #d8d8d8;
+                .image{
+                    border-bottom: 1px solid #d8d8d8;
+                    img{
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .detail{
+                    padding-top: 3rem;
+                    height: 20rem;
+                    strong{
+                        font-size: 2.5rem;
+                    }
+                    p{
+                        font-size: 1.9rem;
+                        padding-top: 2rem;
+                    }
+                }
+                @include fn.responsive(md){
+                    .detail{
+                        height: auto;
+                        padding: 2rem 1.5rem;
+                        strong{
+                            font-size: 1.7rem;
+                        }
+                        p{
+                            font-size: 1.3rem;
+                            padding-top: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.re100-person{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:0 2%;
+    .image{
+        width: 49.2%;
+        img{max-width: 100%;}
+    }
+    h3{
+        font-weight: 600;
+        color: #000;
+        font-size: 3.2rem;
+        b{
+            color: var(--text-main);
+        }
+    }
+    p{
+        margin-top: 3rem;
+        line-height: 1.5;
+        font-size: 1.9rem;
+    }
+    @media (max-width: 1430px){
+        h3{font-size: 2.8rem;}
+        p{font-size: 1.5rem;}
+    }
+    @include fn.responsive(lg){
+        flex-direction: column-reverse;
+        gap:20px;
+        align-items: flex-start;
+        .image{
+            width: 100%;
+            text-align: center;
+        }
+        .text{
+            text-align: left;
+        }
+        h3{
+            font-size: 1.7rem;
+        }
+        p{
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+        }
+    }
+}
+.re100-strategy{
+    border-top: 1px solid #ddd;
+    padding-top: 5rem;
+    margin-top: 5rem;
+    &-title{
+        font-weight: 600;
+        font-size: 2.5rem;
+        padding-bottom: 6rem;
+        @include fn.responsive(lg){
+            font-size: 2rem;
+            padding-bottom: 3rem;
+        }
+        @include fn.responsive(md){
+            font-size: 1.7rem;
+        }
+    }
+    &-list{
+        padding-bottom: 6rem;
+        strong{
+            display: block;
+            color: var(--text-main);
+            font-size: 1.9rem;
+            padding-bottom: 3rem;
+        }
+        ol{
+            li{
+                +li{margin-top: 2.5rem;}
+                b{
+                    display: block;
+                    font-weight: 400;
+                    font-size: 1.9rem;
+                }
+                p{
+                    color: var(--text-sub2);
+                    font-size: 1.7rem;
+                    line-height: 1.34;
+                    padding-top: 1.2rem;
+                }
+            }
+        }
+        &:last-child{
+            padding-bottom: 0;
+        }
+        @include fn.responsive(lg){
+            padding-bottom: 3rem;
+            strong{
+                font-size: 1.5rem;
+                padding-bottom: 1rem;
+            }
+            ol{
+                li{
+                    +li{margin-top: 1.5rem;}
+                    b{
+                        font-size: 1.4rem;
+                    }
+                    p{
+                        font-size: 1.2rem;
+                        padding-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sitemap-container{
+    > ul{
+        display: grid;
+        grid-template-columns: repeat(4,minmax(0,1fr));
+        gap:30px;
+        @include fn.responsive(lg){
+            grid-template-columns: repeat(2,minmax(0,1fr));
+        }
+        @include fn.responsive(md){
+            grid-template-columns: repeat(1,minmax(0,1fr));
+        }
+    }
+    .lv1{
+        border: 1px solid #d8d8d8;
+        border-radius: 4px;
+        padding-bottom: 3rem;
+        > strong{
+            display: flex;
+            align-items: center;
+            background:#d5d6e1 url(../images/sub/sitemap-icon.png) no-repeat 2rem 2rem;
+            font-weight: 600;
+            color: #000;
+            font-size: 25px;
+            height: 8.7rem;
+            padding-left: 5rem;
+            @include fn.responsive(lg){
+                height: 4.5rem;
+                font-size: 1.8rem;
+                background-size: 1.2rem auto;
+                padding-left: 3rem;
+                background-position:  1rem 1rem;
+            }
+        }
+        ul{
+            border-top: 0;
+            padding: 4rem 3rem 0;
+            @include fn.responsive(lg){
+                padding: 2rem 1.5rem 0;
+            }
+            li{
+                +li{margin-top: 3.5rem;
+                    @include fn.responsive(lg){
+                        margin-top: 1.5rem;
+                    }
+                }
+                a{
+                    color: #1d1d1d;
+                    font-size: 19px;
+                    @include fn.responsive(lg){
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+}
+

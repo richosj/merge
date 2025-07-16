@@ -1,0 +1,128 @@
+@use '../utils/var';
+@use '../utils/function' as fn;
+
+.panel--wrap{
+    position: absolute;
+    top: 0;
+    height: calc(100% - 1.2rem - 1.2rem);
+    margin: 1.2rem 0;
+    left: 1.2rem;
+    width: 37rem;
+    transition: all 0.3s;
+    background: #fff;
+    border-radius: 1.2rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: 1px solid #d6cac5;
+    &.active{
+        left: 0;
+    }
+}
+.panel{
+    height: 100%;
+    &--head{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 6.8rem;        
+        background: rgb(122,82,67);
+        background: linear-gradient(90deg, rgba(122,82,67,1) 0%, rgba(166,133,115,1) 100%);
+        color:#fff;
+        border-radius: 1.2rem 1.2rem 0 0;
+        h3{
+            font-size: 1.7rem;
+            font-weight: normal;
+        }
+    }   
+    &--content{
+        padding: 1.6rem;
+        height: calc(100% - 6.8rem);
+    }
+    &--cont{
+        margin-bottom: 2.2rem;
+    }
+    &--maparea{
+        position: relative;
+        height: 20.6rem;
+        border: 1px solid #d6cac5;
+        border-radius: 0.6rem;
+        
+        .map-option-toggle{
+           right: 13px;
+           top: 13px;
+        }
+        .map-tool{
+            right: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .map-area-ti{
+        button{
+            position: relative;
+            font-size: 1.3rem;
+            border-bottom: 1px solid #723838;
+            margin-right: 2rem;
+            color:#723838;
+            &:after{
+                position: absolute;
+                right: -20px;
+                top: 0;
+                content:'';
+                width: 1.6rem;
+                height: 1.6rem;
+                background:url('../images/ico/ico-map.png') no-repeat;
+            }
+        }
+    }
+}
+
+.cont-ti{
+    margin-bottom: 1rem;
+}
+
+.map-option-toggle{
+    position: absolute;
+    display: flex;
+    border: 1px solid #d8d8d8;
+    border-radius: 0.6rem;
+    background: #Fff;
+    padding: 0.3rem;
+    display: flex;
+    button{
+        padding: 0.7rem  0.8rem;
+        font-size: 1.3rem;
+        border-radius: 0.6rem;
+        color:#555555;
+        &.active{
+            background: #774f3f;
+            color:#fff;
+        }
+    }
+}
+.map-tool{
+    position: absolute;
+    button{
+        display: block;
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid #d8d8d8;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-position: center;
+        &+button{
+            border-top: none;
+        }
+        &:first-child{
+            border-radius: 0.6rem 0.6rem 0 0 ;
+        }
+        &:last-child{
+            border-radius: 0 0 0.6rem 0.6rem;
+        }
+        &.tool--zoomin{
+            background-image:url('../images/ico/ico-zoomin.png');
+        }
+        &.tool--zoomout{
+            background-image:url('../images/ico/ico-zoomout.png');
+        }
+    }
+}

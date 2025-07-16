@@ -1,0 +1,317 @@
+
+@use '../utils/var';
+@use '../utils/function' as fn;
+
+.sc4{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: #000;
+    overflow: hidden;
+    .sc-container{
+        position: relative;
+        z-index: 2;
+    }
+    &.active{
+        .image{
+            transform: scale(1);
+        }
+        h2{
+            opacity: 1;
+            transform: translateY(0px);
+            filter: blur(0px);
+        }
+        .text-group{
+            opacity: 1;
+            transform: translateY(0px);
+            filter: blur(0px);
+        }
+        .sc4-slide{
+            transform: translateY(0);
+            filter: blur(0px);
+            opacity: 1;
+        }
+    }
+    .image{
+        width: 100%;height: 100%;
+        background: url(../images/main/sc4-bg.png) no-repeat 50% 50%;
+        background-size: cover;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        transform: scale(1.2);
+        transition: all 0.8s ease-out;
+    }
+
+    @include fn.responsive(lg){
+        height: auto;
+        padding: 80px 0;
+    }
+    @include fn.responsive(md){
+        padding: 40px 0;
+    }
+    h2{
+        color: #fff;
+        font-size: 60px;
+        opacity: 0;
+        transform: translateY(100px);
+        filter: blur(10px);
+        transition: all 1.2s ease-out;
+        @media (max-width:1450px) {
+            font-size: 40px;
+        }
+        @include fn.responsive(md){
+            font-size: 30px;
+        }
+    }
+    .text-group{
+        opacity: 0;
+        transform: translateY(-100px);
+        filter: blur(10px);
+        transition: all 1.2s 0.2s ease-out;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding-top: 10px;
+        @media (max-width:1440px) {
+            display: block;
+        }
+        .text{
+            color: #c6c6c6;
+            line-height: 1.34;
+            font-size: 32px;
+            @media (max-width:1440px) {
+                font-size: 18px;
+            }
+            @include fn.responsive(md){
+                font-size: 12px;
+            }
+        }
+        .link{
+            display: inline-flex;
+            align-items: center;
+            gap: 0 60px;
+            @media (max-width:1440px) {
+                padding-top: 30px;
+            }
+            @include fn.responsive(md){
+                gap: 0 30px;
+                //grid-template-columns: repeat(3,minmax(0,1fr));
+                padding-top: 40px;
+            }
+            a{
+                color: #fff;
+                font-weight: 600;
+                font-size: 25px;
+                display: inline-flex;
+                align-items: center;
+                transition: all 0.25s;
+                gap:0 13px;
+                @media (max-width:1440px) {
+                    font-size: 16px;
+                }
+                @include fn.responsive(md){
+                    font-size: 12px;
+                    gap: 0 6px;
+                }
+                &::after{
+                    content:"";
+                    display: inline-block;
+                    background: url(../images/main/sc4-arw.png) no-repeat 50% 50%;
+                    width: 17px;
+                    height: 17px;
+                    transition: all 0.25s;
+                    @include fn.responsive(md){
+                        width: 12px;height: 12px;
+                        background-size: cover;
+                    }
+                }
+                &:hover,
+                &:focus{
+                    color: #81d2e5;
+                    &::after{
+                        background-image: url(../images/main/sc4-arw-active.png);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sc4-slide{
+    display: flex;
+    gap: 0 2.1%;
+    padding-top: 80px;
+    opacity: 0;
+    transform: translateY(-100px);
+    filter: blur(10px);
+    transition: all 1.2s 0.4s ease-out;
+    
+    @media (max-width:1024px) {
+        display: block;
+        padding-top: 10px;
+        gap: 0;
+    }
+    .title-item{
+        width: 31.9%;
+        .card > a{
+            background-color: #2a316a;
+            height: 500px;
+            .detail{
+                color: #fff;
+            }
+        }
+        @media (max-width:1024px) {
+            width: 100%;
+            .card > a{
+                height: auto;
+                display: flex;
+                align-items: center;
+                gap:0 12px;
+                .thumb{
+                    width: 40%;
+                }
+                strong,
+                div{
+                    text-align: left;
+                }
+                .detail{
+                    strong{padding-top: 0;}
+                }
+            }
+        }
+    }
+    .card{
+        > a{
+            display: block;
+            padding: 20px;
+            background-color: #fff;
+            overflow: hidden;
+            border-radius: 12px;
+            @include fn.responsive(md){
+                padding: 10px;
+            }
+            .thumb{
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-size: cover;
+                padding-bottom: 52.25%;
+                overflow: hidden;
+                border-radius: 12px;
+                @media (max-width:1024px) {
+                    padding-bottom: 48.25%;
+                }
+            }
+            .detail{
+                text-align: center;
+                color: #000;
+                strong{
+                    display: block;
+                    font-size: 25px;
+                    padding: 40px 0 20px;
+                    @include fn.responsive(md){
+                        font-size: 12px;
+                        padding: 15px 0 10px;
+                    }
+                }
+                div{
+                    line-height: 1.45;
+                    font-size: 15px;
+                    @include fn.responsive(md){
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+    }
+
+    .slide-list{
+        width: 66%;
+        padding-top: 40px;
+        padding-bottom: 60px;
+        height: 500px;
+        background-color: #222222;
+        border-radius: 12px;
+        overflow: hidden;
+        @media (max-width:1024px) {
+            margin-top: 20px;
+            width: 100%;
+            height: auto;
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
+        .custom-controls{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 25px;
+            gap:0 16px;
+            @include fn.responsive(md){
+                padding-top: 20px;
+            }
+            .custom-pagination{
+                display: flex;
+                align-items: center;
+                width: auto;
+                gap: 0 7px;
+                span{
+                    margin: 0;
+                    width: 8px;
+                    height: 8px;
+                    background-color: #fff;
+                }
+                
+            }
+            button{
+                width: 14px;
+                height: 14px;
+                background: url(../images/main/pause.png) no-repeat 50% 50%;
+                transition: all 0.15s;
+                &.play{
+                    background-image: url(../images/main/play.png);
+                }
+            }
+        }
+        .swiper {
+            overflow: inherit;
+        }
+        .swiper-slide{
+            width: 330px;
+            @include fn.responsive(md){
+                width: 55%;
+            }
+            &.swiper-slide-active{
+                a{
+                    
+                    &::after{
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                }
+            }
+            a{
+                position: relative;
+                height: 387px;
+                @include fn.responsive(md){
+                    height: auto;
+                    padding-bottom: 35px;
+                }
+                &::after{
+                    transition: all 0.1s;
+                    content:"";
+                    opacity: 0.5;
+                    background: #000;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<tr class="@@code">
+  <td class="table-col-code" style="text-align:center;">@@code</td>
+  <td class="table-col-title">@@title</td>
+  <td class="table-col-cate" style="text-align:center;">@@cate</td>
+  <td class="table-col-url">
+    <div style="display:inline-block;"></div>
+    <button onclick="textCopy('@@url')">c</button>
+    <!-- <button type="button" onclick="window.open('@@url', '_newwindwaa')">nw</button> -->
+    <!--
+    <a href="@@url" onclick="
+    var input = $(this).parent().find('input[type=checkbox]');
+    var checkValue = input.is(':checked');
+
+    if(siteList.clickCheck()){
+      localStorage.setItem('urlopen@@idx', 'true');
+      $(this).closest('tr').addClass('urlopen');
+    }
+    ">@@url</a>
+    -->
+    <a href="@@url" target="_blank" class="liveView">@@url</a>
+  </td>
+  <td style="text-align:center" class="table-col-createDate">@@dateNew</td>
+  <td style="text-align:center;" class="table-col-modifyDate">@@dateModify</td>
+  <td style="font-size: 11px;" class="table-col-extra">@@extra</td>
+</tr>

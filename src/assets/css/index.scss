@@ -1,0 +1,124 @@
+
+@use 'utils/var';
+@use 'layout/index';
+@use 'components/index' as index2;
+@use 'pages/index' as index3;
+
+.sr-only{
+    position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip-path: inset(50%);
+	border: 0;
+	clip: rect(0 0 0 0);
+}
+.flex{
+    display: flex;
+    &.gap-8{
+        gap:0.8rem;
+    }
+    &.gap-20{
+        gap:2rem;
+    }
+    &.gap-16{
+        gap:1.6rem;
+    }
+    &.flex-1{
+        &>*{
+            flex:1;
+        }
+    }
+}
+.flex-item-cetner{
+    align-items: center;
+}
+.flex-space-between{
+    justify-content: space-between;
+}
+.flex-center{
+    justify-content: center;
+}
+.flex-end{
+    justify-content: flex-end;
+}
+.flex-start{
+    align-items: flex-start;
+}
+.no-data{
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    color:#555555;
+}
+.tac{
+    text-align: center;
+}
+.tar{
+    text-align: right;
+}
+.vct{
+    vertical-align: top !important;
+}
+
+
+$columns: 12;
+$gap: 3rem; // gap 값을 설정합니다.
+
+@for $i from 1 through $columns {
+    .col-#{$i} {
+        @if $i == $columns {
+            width: 100%;
+        } @else {
+        //width: calc(percentage($i / $columns) - #{$gap * (($columns - 1) / $columns)});
+        width: calc($i / $columns * 100%);
+        }
+    }
+}
+
+@for $i from 1 through $columns {
+    .col-lg-#{$i} {
+        @if $i == $columns {
+        width: 100%;
+        } @else {
+        //width: calc(percentage($i / $columns) - #{$gap * (($columns - 1) / $columns)});
+        width: calc($i / $columns * 100%);
+        }
+    }
+}  
+
+@for $i from 1 through $columns {
+    .col-md-#{$i} {
+        @if $i == $columns {
+        width: 100%;
+        } @else {
+        //width: calc(percentage($i / $columns) - #{$gap * (($columns - 1) / $columns)});
+        width: calc($i / $columns * 100%);
+        }
+    }
+}
+
+$max-cols: 12; // 최대 컬럼 수 설정, 필요하면 수정해
+
+@for $i from 1 through $max-cols {
+    .grid-cols-#{$i} {
+        grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+    }
+}
+
+.w-full{width: 100%;}
+@for $i from 0 through 200 {
+  .h-#{$i*5},
+  .w-#{$i*5}{
+    width: #{$i*5}px;
+  }
+}
+.w-auto{width: auto;}

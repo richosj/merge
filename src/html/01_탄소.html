@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('./include/meta.html', {
+	"page_main": true
+	})
+</head>
+
+<body>
+	<!-- 전체 -->
+	<section id="wrap">
+		@@include('./include/header_fixed.html', {
+		"page_main": true
+		})
+		<!-- @@include('./include/subheader.html', {
+		"page_main": true
+		}) -->
+
+		<div id="SubContainer" class="SubContainer">
+			<div class="sub--wrap">
+				<div id="first-video" class="first--video">
+					<video src="./assets/video/AdobeStock_1322617312_Video_HD_Preview.mov" muted autoplay playsinline loop></video>
+					<div class="first--video--info">
+						<div class="first--video--inner">
+							<div class="first--video--txt fade-up">
+								<h2>탄소공간지도</h2>
+								<h3>
+									탄소 흡수원과 배출원을 분석한 지도로,<br>지역별 탄소 균형과 변화를 한눈에 파악할 수 있습니다.
+								</h3>
+								<p>
+									탄소 흡수원과 배출원을 상세히 분석하여 지역별 정보를 직관적으로 시각화합니다.<br>
+									사용자는 지도에서 특정 지역의 탄소 균형을 확인하고, 시간에 따른 변화 추이를 파악할 수 있습니다.<br>
+									이 데이터는 정책 결정자, 연구자, 일반 시민 모두에게 유용한 정보를 제공하며,<br>
+									지속 가능한 미래를 위한 효과적인 탄소 관리 전략 수립에 기여할 것입니다.
+								</p>
+							</div>
+							<div class="first--video--tab carbon" data-simplebar>
+								<ul data-js="tabNav">
+									<li>
+										<button data-id="tabnav1">
+											<strong>탄소흡수지도</strong>
+											<span>기작중심의 BESS모델로 분석된 10m 해상도의 지도</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav2">
+											<strong>탄소저장(수목)</strong>
+											<span>LIDAR 기반의 개별수목을 분석한 10m 해상도 지도</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav3">
+											<strong>탄소저장(토양)</strong>
+											<span>4,000 이상의 토양샘플 분석을 통한 10m 해상도 지도</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav4">
+											<strong>탄소배출(건출물 및 수송)</strong>
+											<span>건축물 에너지사용, 수송에너지 기반의 100m 해상도 지도 </span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav5">
+											<strong>탄소수지</strong>
+											<span>국가 온실가스 인벤토리 기반의 탄소 관련 통계자료 시각화</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav6">
+											<strong>온실가스 인벤토리</strong>
+											<span>국가 온실가스 인벤토리 기반의 탄소 관련 통계자료 시각화</span>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab--stiky carbon">
+					<div class="sub--wrap--inner">
+						<ul class="" data-js="tabNav">
+							<li class="active">
+								<button type="button" data-id="tabnav1">탄소흡수(식물)</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav2">탄소저장(수목)</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav3">탄소저장(토양)</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav4">탄소배출(건출물 및 수송)</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav5">탄소저장(수목)</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav6">온실가스 인벤토리</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div data-toggle-id="tabnav1">
+
+					<!-- stat-section -->
+					<div class="stat-section carbon">
+						<div class="sub--wrap--inner">
+							<h2 class="section-title carbon"><i class="section-title__icon" aria-hidden="true"></i>탄소흡수(식물) <span class="status-dot" aria-hidden="true"></span></h2>
+						</div>
+						<div class="sub--wrap--inner">
+							<div class="stat-box">
+								<!-- <div class="stat-box__header">
+									
+									<strong class="stat-box__title">탄소 흡수량</strong>
+									<span class="stat-box__subtitle">탄소 흡수량 정보</span>
+								</div> -->
+								<div class="stat-grid">
+									<div class="stat-card">
+										<div class="stat-card__inner">
+											<h3 class="stat-card__title">연간 탄소흡수량</h3>
+											<p class="stat-card__desc">경기도 전체</p>
+										</div>
+										<div class="stat-card__value">
+											<p class="count" data-target="1000000000">0</p>
+											<span>tC/y</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<div class="stat-card__inner">
+											<h3 class="stat-card__title">산림 탄소흡수량</h3>
+											<p class="stat-card__desc">산림면적 0.000㎢</p>
+										</div>
+										<div class="stat-card__value">
+											<p class="count" data-target="1000000000">0</p>
+											<span>tC/y</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<div class="stat-card__inner">
+											<h3 class="stat-card__title">조성녹지 탄소흡수량</h3>
+											<p class="stat-card__desc">공원/가로수, 녹지 등</p>
+										</div>
+										<div class="stat-card__value">
+											<p class="count" data-target="1000000000">0</p>
+											<span>tC/y</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<div class="stat-card__inner">
+											<h3 class="stat-card__title">경제자 탄소흡수량</h3>
+											<p class="stat-card__desc">논, 밭, 과수원 등</p>
+										</div>
+										<div class="stat-card__value">
+											<p class="count" data-target="1000000000">0</p>
+											<span>tC/y</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<div class="stat-card__inner">
+											<h3 class="stat-card__title">수역 탄소흡수량</h3>
+											<p class="stat-card__desc">하천, 저수지, 습지 등</p>
+										</div>
+										<div class="stat-card__value">
+											<p class="count" data-target="3.8">0</p>
+											<span>tC/y</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- info-section -->
+					<div class="info-section">
+						<div class="sub--wrap--inner">
+							<div class="info-section-wrap">
+								<div class="txt-info fade-up">
+									<p class="heading-txt">
+										위성영상과 BESS 모형으로 구축한<br>고정밀 탄소흡수원 지도기반의 기후변화 대응 솔루션
+									</p>
+									<p class="line-txt">
+										경기도 탄소흡수원지도는 10m 고해상도로 구축된 정밀한 공간정보 서비스로,<br>
+										지역 생태계의 탄소흡수 능력을 과학적으로 시각화합니다. <br>
+										이 지도는 위성영상 분석, 플럭스타워 실측 데이터, <br>
+										그리고 생물물리학적 추정 시스템(BESS) 모형의 통합 적용을 통해 개발되었습니다.
+									</p>
+									<p class="gray-txt">
+										지도에는 경기도 내 산림, 농경지, 습지, 도시 녹지 등 다양한 생태계의 탄소흡수량이<br>
+										색상으로 구분되어 표시됩니다. <br>
+										BESS 모형을 활용한 기작중심 접근법은 수목의 광합성과 생태계 호흡을 정밀하게 모델링하여, <br>
+										계절적 변화와 환경 조건에 따른 탄소흡수량의 변화까지 반영합니다.
+									</p>
+									<p class="black-txt">
+										위성영상에서 추출한 식생지수, 엽면적지수, 토지피복 정보와 기상 데이터를 기반으로 <br>
+										탄소흡수량을 산정했으며, 플럭스타워 데이터로 검증 과정을 거쳤습니다.
+									</p>
+									<p class="gray-txt">
+										이 지도는 기후변화 대응 정책, 도시계획, 산림 관리 등의 의사결정에 활용될 수 있으며,<br>
+										시민들에게는 지역 탄소흡수 현황을 이해할 수 있는 교육적 도구가 됩니다. <br>
+										기후플랫폼을 통해 사용자는 경기도 전역의 탄소흡수 정보를 interactive하게 탐색하고, <br>
+										시간에 따른 변화 추이도 확인할 수 있습니다.
+									</p>
+								</div>
+								<div class="img-info fade-up">
+									<img src="./assets/images/new_sub/carbon-img.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- data-section -->
+					<!-- <div class="data-section carbon">
+						<div class="sub--wrap--inner">
+							<div class="data-section-title">
+								<h2>데이터</h2>
+							</div>
+							<div class="inner">
+								<div class="data-section_wrap">
+									<div class="motion_blank">
+									</div>
+									<ul>
+										<li class="motion">
+											<div class="box">
+												<div class="data-heading">
+													<div>
+														<span class="data-num carbon">Data 01</span>
+														<strong class="data-title">탄소흡수지도</strong>
+													</div>
+													<a href="">데이터 설명서 <i class="icon"></i></a>
+												</div>
+												<div class="data-con">
+													<div class="data-con-img">
+														<img src="./assets/images/new_sub/temp_img02.png" alt="">
+													</div>
+													<div class="data-con-txt">
+														<p>
+															경기도 탄소흡수원지도는 10m 해상도로
+															구축된 정밀 공간정보로, 위성영상과 
+															실측 데이터를 기반으로 BESS 모형을 
+															적용하여 개발되었습니다. 
+															산림, 농경지 등 다양한 생태계의 
+															탄소흡수량을 시각화하며, 
+															기후변화 대응과 환경 정책 수립에 
+															중요한 과학적 근거를 제공합니다.
+														</p>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="motion">
+											<div class="box">
+												<div class="data-heading">
+													<div>
+														<span class="data-num carbon">Data 01</span>
+														<strong class="data-title">탄소흡수지도</strong>
+													</div>
+													<a href="">데이터 설명서 <i class="icon"></i></a>
+												</div>
+												<div class="data-con">
+													<div class="data-con-img">
+														<img src="./assets/images/new_sub/temp_img02.png" alt="">
+													</div>
+													<div class="data-con-txt">
+														<p>
+															경기도 탄소흡수원지도는 10m 해상도로
+															구축된 정밀 공간정보로, 위성영상과 
+															실측 데이터를 기반으로 BESS 모형을 
+															적용하여 개발되었습니다. 
+															산림, 농경지 등 다양한 생태계의 
+															탄소흡수량을 시각화하며, 
+															기후변화 대응과 환경 정책 수립에 
+															중요한 과학적 근거를 제공합니다.
+														</p>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="motion">
+											<div class="box">
+												<div class="data-heading">
+													<div>
+														<span class="data-num carbon">Data 01</span>
+														<strong class="data-title">탄소흡수지도</strong>
+													</div>
+													<a href="">데이터 설명서 <i class="icon"></i></a>
+												</div>
+												<div class="data-con">
+													<div class="data-con-img">
+														<img src="./assets/images/new_sub/temp_img02.png" alt="">
+													</div>
+													<div class="data-con-txt">
+														<p>
+															경기도 탄소흡수원지도는 10m 해상도로
+															구축된 정밀 공간정보로, 위성영상과 
+															실측 데이터를 기반으로 BESS 모형을 
+															적용하여 개발되었습니다. 
+															산림, 농경지 등 다양한 생태계의 
+															탄소흡수량을 시각화하며, 
+															기후변화 대응과 환경 정책 수립에 
+															중요한 과학적 근거를 제공합니다.
+														</p>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="motion">
+											<div class="box">
+												<div class="data-heading">
+													<div>
+														<span class="data-num carbon">Data 01</span>
+														<strong class="data-title">탄소흡수지도</strong>
+													</div>
+													<a href="">데이터 설명서 <i class="icon"></i></a>
+												</div>
+												<div class="data-con">
+													<div class="data-con-img">
+														<img src="./assets/images/new_sub/temp_img02.png" alt="">
+													</div>
+													<div class="data-con-txt">
+														<p>
+															경기도 탄소흡수원지도는 10m 해상도로
+															구축된 정밀 공간정보로, 위성영상과 
+															실측 데이터를 기반으로 BESS 모형을 
+															적용하여 개발되었습니다. 
+															산림, 농경지 등 다양한 생태계의 
+															탄소흡수량을 시각화하며, 
+															기후변화 대응과 환경 정책 수립에 
+															중요한 과학적 근거를 제공합니다.
+														</p>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="motion">
+											<div class="box">
+												<div class="data-heading">
+													<div>
+														<span class="data-num carbon">Data 01</span>
+														<strong class="data-title">탄소흡수지도</strong>
+													</div>
+													<a href="">데이터 설명서 <i class="icon"></i></a>
+												</div>
+												<div class="data-con">
+													<div class="data-con-img">
+														<img src="./assets/images/new_sub/temp_img02.png" alt="">
+													</div>
+													<div class="data-con-txt">
+														<p>
+															경기도 탄소흡수원지도는 10m 해상도로
+															구축된 정밀 공간정보로, 위성영상과 
+															실측 데이터를 기반으로 BESS 모형을 
+															적용하여 개발되었습니다. 
+															산림, 농경지 등 다양한 생태계의 
+															탄소흡수량을 시각화하며, 
+															기후변화 대응과 환경 정책 수립에 
+															중요한 과학적 근거를 제공합니다.
+														</p>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="motion">
+											<div class="box">
+												<div class="data-heading">
+													<div>
+														<span class="data-num carbon">Data 01</span>
+														<strong class="data-title">탄소흡수지도</strong>
+													</div>
+													<a href="">데이터 설명서 <i class="icon"></i></a>
+												</div>
+												<div class="data-con">
+													<div class="data-con-img">
+														<img src="./assets/images/new_sub/temp_img02.png" alt="">
+													</div>
+													<div class="data-con-txt">
+														<p>
+															경기도 탄소흡수원지도는 10m 해상도로
+															구축된 정밀 공간정보로, 위성영상과 
+															실측 데이터를 기반으로 BESS 모형을 
+															적용하여 개발되었습니다. 
+															산림, 농경지 등 다양한 생태계의 
+															탄소흡수량을 시각화하며, 
+															기후변화 대응과 환경 정책 수립에 
+															중요한 과학적 근거를 제공합니다.
+														</p>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="progress_wrap">
+									<div class="progress"></div>
+								</div>
+							</div>
+						</div>
+					</div> -->
+					<div class="sub--wrap--inner">
+						<div class="swiper dataSwiper carbon">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="swiper-data">
+										<div class="data-heading">
+											<div>
+												<span class="data-num carbon">Data 01</span>
+												<strong class="data-title">탄소흡수지도</strong>
+											</div>
+											<a href="">데이터 설명서 <i class="icon"></i></a>
+										</div>
+										<div class="data-con">
+											<div class="data-con-img">
+												<img src="./assets/images/new_sub/temp_img02.png" alt="">
+											</div>
+											<div class="data-con-txt">
+												<p>
+													경기도 탄소흡수원지도는 10m 해상도로
+													구축된 정밀 공간정보로, 위성영상과 
+													실측 데이터를 기반으로 BESS 모형을 
+													적용하여 개발되었습니다. 
+													산림, 농경지 등 다양한 생태계의 
+													탄소흡수량을 시각화하며, 
+													기후변화 대응과 환경 정책 수립에 
+													중요한 과학적 근거를 제공합니다.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="swiper-data">
+										<div class="data-heading">
+											<div>
+												<span class="data-num carbon">Data 02</span>
+												<strong class="data-title">탄소흡수지도</strong>
+											</div>
+											<a href="">데이터 설명서 <i class="icon"></i></a>
+										</div>
+										<div class="data-con">
+											<div class="data-con-img">
+												<img src="./assets/images/new_sub/temp_img02.png" alt="">
+											</div>
+											<div class="data-con-txt">
+												<p>
+													경기도 탄소흡수원지도는 10m 해상도로
+													구축된 정밀 공간정보로, 위성영상과 
+													실측 데이터를 기반으로 BESS 모형을 
+													적용하여 개발되었습니다. 
+													산림, 농경지 등 다양한 생태계의 
+													탄소흡수량을 시각화하며, 
+													기후변화 대응과 환경 정책 수립에 
+													중요한 과학적 근거를 제공합니다.적용하여 개발되었습니다. 
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="swiper-data">
+										<div class="data-heading">
+											<div>
+												<span class="data-num carbon">Data 03</span>
+												<strong class="data-title">탄소흡수지도</strong>
+											</div>
+											<a href="">데이터 설명서 <i class="icon"></i></a>
+										</div>
+										<div class="data-con">
+											<div class="data-con-img">
+												<img src="./assets/images/new_sub/temp_img02.png" alt="">
+											</div>
+											<div class="data-con-txt">
+												<p>
+													경기도 탄소흡수원지도는 10m 해상도로
+													구축된 정밀 공간정보로, 위성영상과 
+													실측 데이터를 기반으로 BESS 모형을 
+													적용하여 개발되었습니다. 
+													산림, 농경지 등 다양한 생태계의 
+													탄소흡수량을 시각화하며, 
+													기후변화 대응과 환경 정책 수립에 
+													중요한 과학적 근거를 제공합니다.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="swiper-data">
+										<div class="data-heading">
+											<div>
+												<span class="data-num carbon">Data 04</span>
+												<strong class="data-title">탄소흡수지도</strong>
+											</div>
+											<a href="">데이터 설명서 <i class="icon"></i></a>
+										</div>
+										<div class="data-con">
+											<div class="data-con-img">
+												<img src="./assets/images/new_sub/temp_img02.png" alt="">
+											</div>
+											<div class="data-con-txt">
+												<p>
+													경기도 탄소흡수원지도는 10m 해상도로
+													구축된 정밀 공간정보로, 위성영상과 
+													실측 데이터를 기반으로 BESS 모형을 
+													적용하여 개발되었습니다. 
+													산림, 농경지 등 다양한 생태계의 
+													탄소흡수량을 시각화하며, 
+													기후변화 대응과 환경 정책 수립에 
+													중요한 과학적 근거를 제공합니다.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="swiper-data">
+										<div class="data-heading">
+											<div>
+												<span class="data-num carbon">Data 05</span>
+												<strong class="data-title">탄소흡수지도</strong>
+											</div>
+											<a href="">데이터 설명서 <i class="icon"></i></a>
+										</div>
+										<div class="data-con">
+											<div class="data-con-img">
+												<img src="./assets/images/new_sub/temp_img02.png" alt="">
+											</div>
+											<div class="data-con-txt">
+												<p>
+													경기도 탄소흡수원지도는 10m 해상도로
+													구축된 정밀 공간정보로, 위성영상과 
+													실측 데이터를 기반으로 BESS 모형을 
+													적용하여 개발되었습니다. 
+													산림, 농경지 등 다양한 생태계의 
+													탄소흡수량을 시각화하며, 
+													기후변화 대응과 환경 정책 수립에 
+													중요한 과학적 근거를 제공합니다.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="swiper-data">
+										<div class="data-heading">
+											<div>
+												<span class="data-num carbon">Data 06</span>
+												<strong class="data-title">탄소흡수지도</strong>
+											</div>
+											<a href="">데이터 설명서 <i class="icon"></i></a>
+										</div>
+										<div class="data-con">
+											<div class="data-con-img">
+												<img src="./assets/images/new_sub/temp_img02.png" alt="">
+											</div>
+											<div class="data-con-txt">
+												<p>
+													경기도 탄소흡수원지도는 10m 해상도로
+													구축된 정밀 공간정보로, 위성영상과 
+													실측 데이터를 기반으로 BESS 모형을 
+													적용하여 개발되었습니다. 
+													산림, 농경지 등 다양한 생태계의 
+													탄소흡수량을 시각화하며, 
+													기후변화 대응과 환경 정책 수립에 
+													중요한 과학적 근거를 제공합니다.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="swiper-util">
+								<div class="swiper-pagination"></div>
+								<div class="swiper-util-right">
+									<div class="swiper-counter carbon"><span class="current">1</span> / <span class="total">6</span></div>
+									<div class="swiper-arrow">
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+
+
+					<!-- data-chart-gray -->
+					<div class="data-chart data-chart-gray">
+						<div class="sub--wrap--inner">
+							<div class="chart-flex fade-up">
+								<div class="chart-nav">
+									<div class="chart__title tac">
+										<span>카드그래프로 보는</span>
+										<h2>탄소흡수(식물)</h2>
+									</div>
+									<div class="chart-nav__inner">
+										<button class="chart-nav__button chart-nav__button--active">탄소흡수</button>
+										<button class="chart-nav__button">탄소저장 (수목)</button>
+										<button class="chart-nav__button">탄소저장 (토양)</button>
+										<button class="chart-nav__button">탄소배출</button>
+										<button class="chart-nav__button">인구</button>
+									</div>
+								</div>
+								<div class="chart-area">
+									<div class="chart-box">
+										차트영역
+									</div>
+
+									<div class="chart-panel">
+										<div class="chart-stat-inner">
+											<div class="chart-stat-heading">
+												<span>선택지역정보</span>
+												<div class="chart-stat-title">
+													<i class="icon"></i>
+													<h3>수원시</h3>
+												</div>
+											</div>
+											<div class="chart-stat">
+												<h4 class="chart-stat__title"><strong>수원시</strong> 탄소저장 (수목)</h4>
+												<div class="chart-stat__value">1,000,000,000 <span>tC/yr</span></div>
+											</div>
+											<div class="chart-stat">
+												<h4 class="chart-stat__title">경기도내 <strong>수원시</strong> 비율</h4>
+												<div class="chart-stat__value">88 <span>%</span></div>
+											</div>
+											<div class="chart-stat">
+												<h4 class="chart-stat__title">경기도내 <strong>수원시</strong> 순위</h4>
+												<div class="chart-stat__value">9 <span>위</span></div>
+											</div>
+
+											<div class="chart-stat chart-legend" data-simplebar>
+												<h3 class="chart-legend-ti">범례</h3>
+												<div class="chart-legend-inner" >
+													<div class="chart-legend__item">
+														<span class="chart-legend__color" style="background: #0066cc;"></span>범례 예시 01
+													</div>
+													<div class="chart-legend__item">
+														<span class="chart-legend__color" style="background: #0066cc;"></span>범례 예시 02
+													</div>
+													<div class="chart-legend__item">
+														<span class="chart-legend__color" style="background: #0066cc;"></span>범례 예시 03
+													</div>
+													<div class="chart-legend__item">
+														<span class="chart-legend__color" style="background: #0066cc;"></span>범례 예시 04
+													</div>
+													<div class="chart-legend__item">
+														<span class="chart-legend__color" style="background: #0066cc;"></span>범례 예시 05
+													</div>
+													<div class="chart-legend__item">
+														<span class="chart-legend__color" style="background: #0066cc;"></span>범례 예시 06
+													</div>
+													<div class="chart-legend__item">
+														<span class="chart-legend__color" style="background: #0066cc;"></span>범례 예시 07
+													</div>
+													<div class="chart-legend__item">
+														<span class="chart-legend__color" style="background: #0066cc;"></span>범례 예시 08
+													</div>
+													<div class="chart-legend__item">
+														<span class="chart-legend__color" style="background: #0066cc;"></span>범례 예시 09
+													</div>
+													<div class="chart-legend__item">
+														<span class="chart-legend__color" style="background: #0066cc;"></span>범례 예시 10
+													</div>
+													<div class="chart-legend__item">
+														<span class="chart-legend__color" style="background: #0066cc;"></span>범례 예시 08
+													</div>
+													<div class="chart-legend__item">
+														<span class="chart-legend__color" style="background: #0066cc;"></span>범례 예시 09
+													</div>
+													<div class="chart-legend__item">
+														<span class="chart-legend__color" style="background: #0066cc;"></span>범례 예시 10
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- data-chart-cicle -->
+					<div class="data-chart data-chart-cicle">
+						<div class="sub--wrap--inner fade-up">
+							<div class="chart__title tac">
+								<span>카드그래프로 보는</span>
+								<h2>탄소흡수(식물)</h2>
+							</div>
+							<div class="chart-flex">
+								<!-- <div class="chart-map">
+									<div class="chart-map-breadcrumb">
+										<div class="place">
+											<span>경기도</span>
+											<i class="icon arrow"></i>
+											<strong>수원시</strong>
+										</div>
+										<button class="back" ><i class="icon"></i></button>
+									</div>
+									<div class="chart-map-area">
+
+									</div>
+									<div class="chart-map-legend">
+										<h3>탄소흡수량 %</h3>
+										<div class="chart-map-legend-inner">
+											<div class="chart-legend__item">
+												<span class="chart-legend__color" style="background: #0066cc;"></span>0%
+											</div>
+											<div class="chart-legend__item">
+												<span class="chart-legend__color" style="background: #0066cc;"></span>20%
+											</div>
+										</div>
+									</div>
+								</div> -->
+								<div class="city-sel">
+									<div class="city-sel__item">
+										<span class="city-sel__name">경기도</span>
+									</div>
+									<div class="city-sel__item">
+										<span class="city-sel__name">수원시</span>
+									</div>
+									<div class="city-sel__item active">
+										<span class="city-sel__name">조원동</span>
+									</div>
+								</div>
+								
+								<div class="chart-area dark-border">
+									<div class="chart-box">
+										<div class="chart-util">
+											<div class="chart-util__title mb30">
+												<h3>경기도 탄소흡수량 통계</h3>
+											</div>
+											<div class="chart-util__btn">
+												<button class="plural_toggle active square-btn" title="그래프 차트"><i class="icon graph"></i></button>
+												<button class="plural_toggle square-btn" title="원형차트 차트"><i class="icon circle"></i></button>
+												<div class="color-sel">
+													<i class="icon"></i>
+													<div class="color-value">
+														<span style="background: #fc8d59;"></span>
+														<span style="background: #ffffbf;"></span>
+														<span style="background: #91bfdb;"></span>
+													</div>
+													<select name="" id="">
+														<option value="">EdYlBu</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="chart-panel">
+										<div class="chart-checking-inner">
+											<div class="chart-checking-heading">
+												<h3>선택할 수 있는 데이터</h3>
+											</div>
+											<div class="chart-checking-list" data-simplebar>
+												<ul>
+													<li>
+														<label class="form-radio" id="111">
+															<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+														</label>
+														<div class="dep-checking">
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+														</div>
+													</li>
+													<li>
+														<label class="form-radio" id="111">
+															<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+														</label>
+														<div class="dep-checking">
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+														</div>
+													</li>
+													<li>
+														<label class="form-radio" id="111">
+															<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+														</label>
+														<div class="dep-checking">
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+														</div>
+													</li>
+													<li>
+														<label class="form-radio" id="111">
+															<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+														</label>
+														<div class="dep-checking">
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+														</div>
+													</li>
+													<li>
+														<label class="form-radio" id="111">
+															<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+														</label>
+														<div class="dep-checking">
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="data-chart carbon-green">
+						<div class="sub--wrap--inner fade-up">
+							<div class="chart__title tac">
+								<span>그리드로 보는</span>
+								<h2>탄소흡수(식물)</h2>
+							</div>
+							<div class="filter-panel">
+								<div class="filter-panel__inner">
+									<div class="filter-panel__head first">
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>시 · 군 전체 선택</span>
+										</label>
+									</div>
+									<div class="filter-panel__con" data-simplebar>
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>과천시</span>
+										</label>
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>과천시</span>
+										</label>
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>과천시</span>
+										</label>
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>과천시</span>
+										</label>
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>과천시</span>
+										</label>
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>과천시</span>
+										</label>
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>과천시</span>
+										</label>
+									</div>
+								</div>
+								<div class="filter-panel__inner">
+									<div class="filter-panel__head">
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>읍 · 면 · 동 전체 선택</span>
+										</label>
+									</div>
+									<div class="filter-panel__con" data-simplebar>
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>장안구</span>
+										</label>
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>장안구</span>
+										</label>
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>장안구</span>
+										</label>
+									</div>
+								</div>
+								<div class="filter-panel__inner">
+									<div class="filter-panel__head last">
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>데이터 전체 선택</span>
+										</label>
+									</div>
+									<div class="filter-panel__con" data-simplebar>
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>비오톱 대분류 > 중분류 > 소분류 > 세분류</span>
+										</label>
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>비오톱 대분류 > 중분류 > 소분류 > 세분류</span>
+										</label>
+										<label class="form-radio" id="111">
+											<input type="checkbox" name="11" value="11"><i></i><span>비오톱 대분류 > 중분류 > 소분류 > 세분류</span>
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="chatr-block">
+								<div class="chart-util flex flex-space-between flex-item-cetner">
+									<div class="chart-util__title">
+										<h3>경기도 탄소흡수량 통계</h3>
+									</div>
+									<button class="btn border sm">CSV <i class="icon down"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div data-toggle-id="tabnav2" class="toggle-hidden">
+					2222
+				</div>
+				<div data-toggle-id="tabnav3" class="toggle-hidden">
+					3333
+				</div>
+				<div data-toggle-id="tabnav4" class="toggle-hidden">
+					4444
+				</div>
+				<div data-toggle-id="tabnav5" class="toggle-hidden">
+					5555
+				</div>
+				<div data-toggle-id="tabnav6" class="toggle-hidden">
+					6666
+				</div>
+			</div>
+		</div>
+		@@include('./include/footer.html', {
+			"page_main": true
+		})
+	</section>
+</body>
+
+</html>

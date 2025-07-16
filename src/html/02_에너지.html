@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('./include/meta.html', {
+	"page_main": true
+	})
+</head>
+
+<body>
+	<!-- 전체 -->
+	<section id="wrap">
+		@@include('./include/header_fixed.html', {
+		"page_main": true
+		})
+		<!-- @@include('./include/subheader.html', {
+		"page_main": true
+		}) -->
+
+		<div id="SubContainer" class="SubContainer">
+			<div class="sub--wrap">
+				<div id="first-video" class="first--video">
+					<video src="./assets/video/AdobeStock_1146214579_Video_HD_Preview.mov" muted autoplay playsinline loop></video>
+					<div class="first--video--info">
+						<div class="first--video--inner">
+							<div class="first--video--txt fade-up">
+								<h2>에너지 현황</h2>
+								<h3>
+									경기도의 에너지 수요와 공급, 재생에너지,<br>에너지복지 현황을 한눈에 파악할 수 있습니다.
+								</h3>
+								<p>
+									경기도의 에너지 수요와 전력 공급을 다양한 시각자료를 통해 직관적으로 이해할 수 있습니다.<br class="br-none">
+                                    전국 17개 시도 중 경기도의 특성과 더불어, 도내 31개 시군별 세부 특징도 확인할 수 있습니다.<br class="br-none">
+                                    부문별, 에너지원별, 시계열 데이터를 통해 보다 구체적인 소비 패턴을 확인할 수 있습니다.<br class="br-none">
+                                    전력의 공급과 수요를 함께 분석함으로써 전력 자급률도 확인할 수 있습니다.<br class="br-none">
+                                    도내 지역별 에너지 바우처 발급현황을 살펴보고, 에너지 사용이 어려운 가구를 위한 정책을 안내 합니다.<br class="br-none">
+                                    사용자는 이 플랫폼을 통해 경기도의 에너지 현황을 종합적으로 이해하고,<br class="br-none">
+                                    다양한 정책 수립 및 사업 추진에 필요한 기초자료로 활용할 수 있습니다.
+								</p>
+							</div>
+							<div class="first--video--tab energy" data-simplebar>
+								<ul data-js="tabNav">
+									<li>
+										<button data-id="tabnav1">
+											<strong>에너지 소비</strong>
+											<span>지역별, 에너지원별, 부문별, 시계열 에너지 소비 현황</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav2">
+											<strong>전력 공급</strong>
+											<span>지역별, 에너지원별, 시계열 전력발전 현황</span>
+										</button>
+									</li>
+                                    <li>
+										<button data-id="tabnav3">
+											<strong>신재생에너지 공급</strong>
+											<span>지역별 신재생에너지 보급 현황</span>
+										</button>
+									</li>
+                                    <li>
+										<button data-id="tabnav4">
+											<strong>에너지 바우처 발급 현황</strong>
+											<span>지역별, 절기별 발급가구와 비중, 발급액 현황</span>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab--stiky energy">
+					<div class="sub--wrap--inner">
+						<ul class="" data-js="tabNav">
+							<li class="active">
+								<button type="button" data-id="tabnav1">에너지 소비</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav2">전력 공급</button>
+							</li>
+                            <li>
+								<button type="button" data-id="tabnav3">신재생에너지 공급</button>
+							</li>
+                            <li>
+								<button type="button" data-id="tabnav4">에너지 바우처 발급 현황</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div data-toggle-id="tabnav1">
+
+					<!-- stat-section -->
+					<div class="stat-section energy">
+						<div class="sub--wrap--inner">
+							<h2 class="section-title energy"><i class="stat-box__icon" aria-hidden="true"></i>에너지 소비<button class="blank-btn energy" onclick="ModalHandler.open('modal-carbon-plan')"><em>Toe란?</em> <i class="icon ico-blank"></i></button></h2>
+						</div>
+						<div class="sub--wrap--inner">
+							<div class="stat-box">
+								<!-- <div class="stat-box__header">
+									<i class="stat-box__icon" aria-hidden="true"></i>
+									<strong class="stat-box__title">에너지 소비 현황</strong>
+									<span class="stat-box__subtitle">에너지 소비 현황 정보</span>
+								</div> -->
+								<div class="stat-grid">
+									<div class="stat-card">
+										<h3 class="stat-card__title">경기도 최종 에너지 소비량(2022년)</h3>
+										<p class="stat-card__desc">전국 소비량의 13.7%</p>
+										<div class="stat-card__value">
+											<p class="count" data-target="1000000000">0</p>
+											<span>ktoe</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<h3 class="stat-card__title">1인당 에너지 소비량 (2022년)</h3>
+										<p class="stat-card__desc">17개 시도 중 10번째로 높음</p>
+										<div class="stat-card__value">
+											<p class="count" data-target="2.35">0</p>
+											<span>toe/인</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<h3 class="stat-card__title">1인당 에너지 소비 증가율 (2012~2022 연평균)</h3>
+										<p class="stat-card__desc">전국 증가율: 0.98%</p>
+										<div class="stat-card__value">
+											<p class="count" data-target="1000000000">0.73</p>
+											<span>%</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<h3 class="stat-card__title">GRDP당 에너지 소비량 (2022년)</h3>
+										<p class="stat-card__desc">17개 시도 중 13번째로 높음</p>
+										<div class="stat-card__value">
+											<p class="count" data-target="1000000000">0.062</p>
+											<span>toe/백만원</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<h3 class="stat-card__title">GRDP당 에너지 소비 증가율 (2012~2022 연평균)</h3>
+										<p class="stat-card__desc">하천, 저수지, 습지 등 </p>
+										<div class="stat-card__value">
+											<p class="count" data-target="-2.49">0</p>
+											<span>%</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="sub--wrap--inner">
+						<div #swiperRef="" class="swiper dataSwiper energy">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="swiper-data">
+										<div class="data-heading">
+											<div>
+												<span class="data-num energy">Data 01</span>
+												<strong class="data-title">탄소흡수지도</strong>
+											</div>
+											<a href="">데이터 설명서 <i class="icon"></i></a>
+										</div>
+										<div class="data-con">
+											<div class="data-con-img">
+												<img src="./assets/images/new_sub/temp_img02.png" alt="">
+											</div>
+											<div class="data-con-txt">
+												<p>
+													경기도 탄소흡수원지도는 10m 해상도로
+													구축된 정밀 공간정보로, 위성영상과 
+													실측 데이터를 기반으로 BESS 모형을 
+													적용하여 개발되었습니다. 
+													산림, 농경지 등 다양한 생태계의 
+													탄소흡수량을 시각화하며, 
+													기후변화 대응과 환경 정책 수립에 
+													중요한 과학적 근거를 제공합니다.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="swiper-data">
+										<div class="data-heading">
+											<div>
+												<span class="data-num energy">Data 02</span>
+												<strong class="data-title">탄소흡수지도</strong>
+											</div>
+											<a href="">데이터 설명서 <i class="icon"></i></a>
+										</div>
+										<div class="data-con">
+											<div class="data-con-img">
+												<img src="./assets/images/new_sub/temp_img02.png" alt="">
+											</div>
+											<div class="data-con-txt">
+												<p>
+													경기도 탄소흡수원지도는 10m 해상도로
+													구축된 정밀 공간정보로, 위성영상과 
+													실측 데이터를 기반으로 BESS 모형을 
+													적용하여 개발되었습니다. 
+													산림, 농경지 등 다양한 생태계의 
+													탄소흡수량을 시각화하며, 
+													기후변화 대응과 환경 정책 수립에 
+													중요한 과학적 근거를 제공합니다.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="swiper-data">
+										<div class="data-heading">
+											<div>
+												<span class="data-num energy">Data 03</span>
+												<strong class="data-title">탄소흡수지도</strong>
+											</div>
+											<a href="">데이터 설명서 <i class="icon"></i></a>
+										</div>
+										<div class="data-con">
+											<div class="data-con-img">
+												<img src="./assets/images/new_sub/temp_img02.png" alt="">
+											</div>
+											<div class="data-con-txt">
+												<p>
+													경기도 탄소흡수원지도는 10m 해상도로
+													구축된 정밀 공간정보로, 위성영상과 
+													실측 데이터를 기반으로 BESS 모형을 
+													적용하여 개발되었습니다. 
+													산림, 농경지 등 다양한 생태계의 
+													탄소흡수량을 시각화하며, 
+													기후변화 대응과 환경 정책 수립에 
+													중요한 과학적 근거를 제공합니다.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="swiper-data">
+										<div class="data-heading">
+											<div>
+												<span class="data-num energy">Data 04</span>
+												<strong class="data-title">탄소흡수지도</strong>
+											</div>
+											<a href="">데이터 설명서 <i class="icon"></i></a>
+										</div>
+										<div class="data-con">
+											<div class="data-con-img">
+												<img src="./assets/images/new_sub/temp_img02.png" alt="">
+											</div>
+											<div class="data-con-txt">
+												<p>
+													경기도 탄소흡수원지도는 10m 해상도로
+													구축된 정밀 공간정보로, 위성영상과 
+													실측 데이터를 기반으로 BESS 모형을 
+													적용하여 개발되었습니다. 
+													산림, 농경지 등 다양한 생태계의 
+													탄소흡수량을 시각화하며, 
+													기후변화 대응과 환경 정책 수립에 
+													중요한 과학적 근거를 제공합니다.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="swiper-data">
+										<div class="data-heading">
+											<div>
+												<span class="data-num energy">Data 05</span>
+												<strong class="data-title">탄소흡수지도</strong>
+											</div>
+											<a href="">데이터 설명서 <i class="icon"></i></a>
+										</div>
+										<div class="data-con">
+											<div class="data-con-img">
+												<img src="./assets/images/new_sub/temp_img02.png" alt="">
+											</div>
+											<div class="data-con-txt">
+												<p>
+													경기도 탄소흡수원지도는 10m 해상도로
+													구축된 정밀 공간정보로, 위성영상과 
+													실측 데이터를 기반으로 BESS 모형을 
+													적용하여 개발되었습니다. 
+													산림, 농경지 등 다양한 생태계의 
+													탄소흡수량을 시각화하며, 
+													기후변화 대응과 환경 정책 수립에 
+													중요한 과학적 근거를 제공합니다.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide">
+									<div class="swiper-data">
+										<div class="data-heading">
+											<div>
+												<span class="data-num energy">Data 06</span>
+												<strong class="data-title">탄소흡수지도</strong>
+											</div>
+											<a href="">데이터 설명서 <i class="icon"></i></a>
+										</div>
+										<div class="data-con">
+											<div class="data-con-img">
+												<img src="./assets/images/new_sub/temp_img02.png" alt="">
+											</div>
+											<div class="data-con-txt">
+												<p>
+													경기도 탄소흡수원지도는 10m 해상도로
+													구축된 정밀 공간정보로, 위성영상과 
+													실측 데이터를 기반으로 BESS 모형을 
+													적용하여 개발되었습니다. 
+													산림, 농경지 등 다양한 생태계의 
+													탄소흡수량을 시각화하며, 
+													기후변화 대응과 환경 정책 수립에 
+													중요한 과학적 근거를 제공합니다.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-util">
+								<div class="swiper-pagination"></div>
+								<div class="swiper-util-right">
+									<div class="swiper-counter energy"><span class="current">1</span> / <span class="total">5</span></div>
+									<div class="swiper-arrow">
+										<div class="swiper-button-prev"></div>
+										<div class="swiper-button-next"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- data-chart-gray -->
+					<div class="data-chart data-chart-gray">
+						<div class="sub--wrap--inner">
+							<div class="data-chart__txt fade-up">
+                                <h3>경기도의 에너지 소비 현황을 국가 전체 맥락에서 살펴봅니다.</h3>
+                                <p class="chart-txt01">
+                                    2022년 기준, 경기도는 국가 최종에너지 소비의 13.7%를 차지하며, 전국 17개 시도 중 세 번째로 많은 에너지를 소비하는 지역입니다.<br>
+                                    인구 규모를 고려하면, 경기도의 1인당 최종에너지 소비량은 2.35 toe로, 전국 시도 중 10위에 해당합니다.<br>
+                                    경제 규모를 반영한 GRDP당 최종에너지 소비량은 0.062 toe/백만원으로, 전국 13위를 기록하고 있습니다.
+                                </p>
+                            </div>
+                            <div class="chatr-block lg fade-up">
+								<div class="chart-util flex-util">
+									<dl class="dl-felx">
+                                        <dt>기간 선택</dt>
+                                        <dd>
+                                            <select name="" id="" class="form-control md">
+                                                <option value="">2024</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+									<div class="chatr-block__btngroup">
+                                        <button type="button" class="plural_toggle active">최종에너지</button>
+                                        <button type="button" class="plural_toggle">부문별</button>
+                                        <button type="button" class="plural_toggle">에너지원별</button>
+                                    </div>
+								</div>
+							</div>
+                            <div class="data-chart__txt fade-up">
+                                <h4>1인당 에너지 소비</h4>
+                                <p class="chart-txt02">
+                                    경기도는 2022년 1인당 최종에너지를 2.35 (toe/인)을 소비하여 전국 17개 시군 중 10번째로 많은 에너지를 사용하고 있습니다.
+                                </p>
+                            </div>
+                            <div class="chatr-block lg fade-up">
+							</div>
+                            <div class="data-chart__txt fade-up">
+                                <h4>GRDP<sup>4</sup> 최종에너지소비</h4>
+                                <p class="chart-txt02">
+                                    경기도는 2022년 GRDP<sup>⁴</sup> 최종에너지를 0.062 (toe/백만원)을 소비하여 전국 17개 시군 중 13번째로 많은 에너지를 사용하고 있습니다.<br>
+                                    * GRDP 란? 지역내 총 생산으로 일정기간동안 정해진 경제구역 내에서 생산된 모든 최종재화와 서비스의 시장가격 합으로 경제구조나 규모 파악에 활용
+                                </p>
+                            </div>
+                            <div class="chatr-block lg fade-up">
+							
+							</div>
+						</div>
+					</div>
+
+                    <!-- energy-blue -->
+					<div class="data-chart energy-blue">
+						<div class="sub--wrap--inner">
+                            <div class="data-chart__txt fade-up">
+                                <h3>앞서 살펴본 경기도를 포함한 전국 시도의 최종에너지 소비,<br>1인당 소비, GRDP당 소비를 지난 12년간 시계열로 살펴 봅니다.</h3>
+                            </div>
+                            <div class="chatr-block lg fade-up">
+								<div class="chart-util flex-util">
+									<dl class="dl-felx">
+                                        <dt>기간 선택</dt>
+                                        <dd>
+                                            <select name="" id="" class="form-control md">
+                                                <option value="">2024</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+									<div class="chatr-block__btngroup">
+                                        <button type="button" class="plural_toggle active">최종에너지</button>
+                                        <button type="button" class="plural_toggle">1인당 에너지 소비</button>
+                                        <button type="button" class="plural_toggle">GRDP당 에너지 소비</button>
+                                    </div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+
+                    <!-- data-chart-gray -->
+					<div class="data-chart data-chart-gray">
+						<div class="sub--wrap--inner">
+							<div class="data-chart__txt fade-up">
+                                <h3>경기도의 에너지 소비가 주로 어떤 부문과 에너지원에서 발생하는지 살펴봅니다.</h3>
+                                <p class="chart-txt01">
+                                    경기도는 인구가 많은 지역인 만큼, 에너지 소비의 38%가 건물 부문에서 발생하며, 산업과 수송 부문은 각각 31%를 차지합니다.<br>에너지원별로는 전력이 38%로 가장 많고, 석유 36%, 가스 17%, 나머지 9%는 열, 신재생, 석탄 등이 차지하고 있습니다.
+                                </p>
+                            </div>
+                            <div class="chatr-block lg fade-up">
+								<div class="chart-util flex-util">
+									<dl class="dl-felx">
+                                        <dt>기간 선택</dt>
+                                        <dd>
+                                            <select name="" id="" class="form-control md">
+                                                <option value="">2024</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+									<div class="chatr-block__btngroup">
+                                        <button type="button" class="plural_toggle active">부문별</button>
+                                        <button type="button" class="plural_toggle">원별</button>
+                                        <button type="button" class="plural_toggle">부문/에너지원별</button>
+                                    </div>
+								</div>
+							</div>
+                            
+						</div>
+					</div>
+
+                    <!-- data-chart-cicle -->
+					<div class="data-chart data-chart-cicle">
+                        <div class="sub--wrap--inner">
+                            <div class="data-chart__txt fade-up">
+                                <h3>경기도 전체 시군의 에너지 소비 현황을 종합적으로 살펴봅니다.</h3>
+                                <p class="chart-txt01">
+                                    부문별 및 에너지원별 모든 측면에서, 남부 지역의 에너지 소비량이 상대적으로 높게 나타납니다. 이는 남부지역에 인구가 집중되어 있고,<br>
+                                    경제규모 또한 북부 지역에 비해 크기 때문으로 해석할 수 있습니다
+                                </p>
+                            </div>
+                            <div class="chart-flex fade-up">
+								<div class="chart-map">
+									<div class="chart-map-breadcrumb">
+										<div class="place">
+											<strong>경기도</strong>
+										</div>
+										<button class="back" ><i class="icon"></i></button>
+									</div>
+									<div class="chart-map-area">
+
+									</div>
+								</div>
+								
+								<div class="chart-area">
+									<div class="chart-box">
+										<div class="chart-util flex-util">
+                                            <dl class="dl-felx">
+                                                <dt>기간 선택</dt>
+                                                <dd>
+                                                    <select name="" id="" class="form-control md">
+                                                        <option value="">2024</option>
+                                                    </select>
+                                                </dd>
+                                            </dl>
+                                            <div class="chatr-block__btngroup">
+                                                <button type="button" class="plural_toggle active">에너지소비</button>
+                                                <button type="button" class="plural_toggle">1인당 에너집소비</button>
+                                                <button type="button" class="plural_toggle">GRDP당 에너지 소비</button>
+                                            </div>
+                                        </div>
+									</div>
+									<div class="chart-panel">
+										<div class="chart-checking-inner">
+											<div class="chart-checking-heading">
+												<h3>선택할 수 있는 데이터</h3>
+											</div>
+											<div class="chart-checking-list" data-simplebar>
+												<ul>
+													<li>
+														<label class="form-radio" id="111">
+															<input type="checkbox" name="11" value="11"><i></i><span>부문</span>
+														</label>
+														<div class="dep-checking">
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>산업</span>
+															</label>
+														</div>
+													</li>
+													<li>
+														<label class="form-radio" id="111">
+															<input type="checkbox" name="11" value="11"><i></i><span>부문</span>
+														</label>
+														<div class="dep-checking">
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>산업</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>산업</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>산업</span>
+															</label>
+														</div>
+													</li>
+													<li>
+														<label class="form-radio" id="111">
+															<input type="checkbox" name="11" value="11"><i></i><span>부문</span>
+														</label>
+														<div class="dep-checking">
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>산업</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>산업</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>산업</span>
+															</label>
+														</div>
+													</li>
+                                                    <li>
+														<label class="form-radio" id="111">
+															<input type="checkbox" name="11" value="11"><i></i><span>부문</span>
+														</label>
+														<div class="dep-checking">
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>산업</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>산업</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>산업</span>
+															</label>
+														</div>
+													</li>
+                                                    <li>
+														<label class="form-radio" id="111">
+															<input type="checkbox" name="11" value="11"><i></i><span>부문</span>
+														</label>
+														<div class="dep-checking">
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>산업</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>산업</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>산업</span>
+															</label>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+
+                    <!-- energy-blue -->
+					<div class="data-chart energy-blue">
+						<div class="sub--wrap--inner">
+                            <div class="data-chart__txt fade-up">
+                                <h3>경기도 전체 시군의 최종에너지 소비,<br>1인당 소비, GRDP당 소비를 지난 4년간의 시계열로 살펴봅니다.</h3>
+                            </div>
+                            <div class="chatr-block lg fade-up">
+								<div class="chart-util flex-util">
+									<dl class="dl-felx">
+                                        <dt>기간 선택</dt>
+                                        <dd>
+                                            <select name="" id="" class="form-control md">
+                                                <option value="">2024</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+									<div class="chatr-block__btngroup">
+                                        <button type="button" class="plural_toggle active">최종에너지</button>
+                                        <button type="button" class="plural_toggle">1인당 에너지 소비</button>
+                                        <button type="button" class="plural_toggle">GRDP당 에너지 소비</button>
+                                    </div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+					
+                    <!-- data-chart-cicle -->
+					<div class="data-chart data-chart-cicle">
+                        <div class="sub--wrap--inner">
+                            <div class="data-chart__txt fade-up">
+                                <h3>경기도 전체 시군의 에너지 소비 현황을 종합적으로 살펴봅니다.</h3>
+                                <p class="chart-txt01">
+                                    부문별 및 에너지원별 모든 측면에서, 남부 지역의 에너지 소비량이 상대적으로 높게 나타납니다.<br>이는 남부지역에 인구가 집중되어 있고, 경제규모 또한 북부 지역에 비해 크기 때문으로 해석할 수 있습니다.
+                                </p>
+                            </div>
+                            <div class="chart-flex fade-up">
+								<div class="chart-map">
+									<div class="chart-map-breadcrumb">
+										<div class="place">
+											<span>경기도</span>
+											<i class="icon arrow"></i>
+											<strong>수원시</strong>
+										</div>
+										<button class="back" ><i class="icon"></i></button>
+									</div>
+									<div class="chart-map-area">
+
+									</div>
+								</div>
+								
+								<div class="chart-area fade-up">
+									<div class="stat-box-3">
+                                        <div class="stat-box-item">
+                                            <h4>기본현황</h4>
+                                            <ul class="flex-box md">
+                                                <li>
+                                                    <dl>
+                                                        <dt>
+                                                            면적
+                                                            <span class="year">(2022)</span>
+                                                        </dt>
+                                                        <dd>10,199<span>km<sup>2</sup></span></dd>
+                                                    </dl>
+                                                </li> 
+                                                <li>
+                                                    <dl>
+                                                        <dt>
+                                                            행정구역
+                                                            <span class="year">(2022)</span>
+                                                        </dt>
+                                                        <dd>31<span>개</span></dd>
+                                                    </dl>
+                                                </li>
+                                                <li>
+                                                    <dl>
+                                                        <dt>
+                                                            면적
+                                                            <span class="year">(2022)</span>
+                                                        </dt>
+                                                        <dd>1410<span>만명</span></dd>
+                                                    </dl>
+                                                </li>
+                                                <li>
+                                                    <dl>
+                                                        <dt>
+                                                            면적
+                                                            <span class="year">(2022)</span>
+                                                        </dt>
+                                                        <dd>1,299.4<span>명/k/m2</span></dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="stat-box-item">
+                                            <h4>부문별 에너지 사용량</h4>
+                                            <div class="btn-tab-wrap mb12">
+                                                <button type="button" class="plural_on active">산업</button>
+                                                <button type="button" class="plural_on">수송</button>
+                                                <button type="button" class="plural_on">가정</button>
+                                                <button type="button" class="plural_on">상업</button>
+                                                <button type="button" class="plural_on">공공</button>
+                                            </div>
+                                            <div class="chart-box none-board chart-box209">
+
+                                            </div>
+                                        </div>
+                                        <div class="stat-box-item">
+                                            <h4>에너지원별 에너지 사용량</h4>
+                                            <div class="btn-tab-wrap mb12">
+                                                <button type="button" class="plural_on active">석유</button>
+                                                <button type="button" class="plural_on">가스</button>
+                                                <button type="button" class="plural_on">전력</button>
+                                                <button type="button" class="plural_on">열</button>
+                                                <button type="button" class="plural_on">신재생 및 기타</button>
+                                            </div>
+                                            <div class="chart-box none-board chart-box209">
+
+                                            </div>
+                                        </div>
+                                    </div>
+								</div>
+							</div>
+                        </div>
+                    </div>
+
+				</div>
+
+				<div data-toggle-id="tabnav2" class="toggle-hidden">
+					2222
+				</div>
+				<div data-toggle-id="tabnav3" class="toggle-hidden">
+					3333
+				</div>
+				<div data-toggle-id="tabnav4" class="toggle-hidden">
+					4444
+				</div>
+				<div data-toggle-id="tabnav5" class="toggle-hidden">
+					5555
+				</div>
+				<div data-toggle-id="tabnav6" class="toggle-hidden">
+					6666
+				</div>
+			</div>
+		</div>
+		@@include('./include/modal.html',{
+			'page__name' : '전력수급'
+		})
+		@@include('./include/footer.html', {
+			"page_main": true
+		})
+	</section>
+</body>
+
+</html>

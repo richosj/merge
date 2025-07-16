@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./include/meta.html', {
+        "page_main": true
+    })
+</head>
+<body>
+    <!-- 전체 -->
+    <section id="wrap">
+    <div class="skip">
+        <a href="#header">주메뉴 바로가기</a>
+        <a href="#mainContainer">본문 바로가기</a>
+        <a href="#">하단 정보 바로가기</a>
+    </div>
+    @@include('./include/header.html', {
+        "page_main": true
+    })
+    @@include('./include/subheader.html', {
+        "page_main": true
+    })
+    
+    <div id="SubContainer" calss="SubContainer">
+        <div class="sub--wrap">
+            <div class="sub--wrap--inner">
+                <div class="sub--ti">
+                    <h3>에너지절감</h3>
+                    <div class="sub--ti--util">
+                        <button class="share"><span class="sr-only">공유</span></button>
+                        <button class="print"><span class="sr-only">인쇄</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="sub--wrap--inner">
+                <ul class="tabs mb40" data-js="tabNav">
+                    <li class="tab-item active">
+                        <button type="button" data-id="tabnav1">
+                            그린리모델링
+                        </button>
+                    </li>
+                    <li class="tab-item">
+                        <button type="button" data-id="tabnav2">
+                            공동주택에너지절감 가이드
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- start-->
+            <div data-toggle-id="tabnav1">
+                <div class="sub--wrap--inner mb80">
+                    <div class="sub--Info--wrap">
+                        <div class="page-intro">
+                            <div class="page-intro-header">
+                                <strong>그린리모델링</strong>
+                                <div class="page-intro-links">
+                                    <a href="#">경기 그린리모델링 시뮬레이션 바로가기</a>
+                                </div>
+                            </div>
+                            <div class="page-intro-content">
+                                그린리모델링이란 에너지  성능향상이 필요한 노후 건출물을 개선하여 에너지 효율을 높이고, 온실가스<br>
+                                배출을 줄일 수 있도록 리모델링 하는 것을 의미합니다.
+                            </div>
+                        </div>
+
+                        <div class="notice-container">
+                            <div class="notice-title">고정밀 데이터 기반 그린리모델링 예측분석</div>
+                            <div class="notice-content">
+                                경기도는 도 전역에 대하여 고정밀 지형정보와 3차원 건물 모델을 구축하였습니다. <br>
+                                또한, 국토부 건축물대장, 부동산원의 건물에너지보시 정보, 한국건설기술연구원의 에너지 소비량 산정 분석기술 등을 통해 정확한 데이터 기반의 그린 리모델링 예측분석 환경을 구현하였습니다.
+                            </div>
+                        </div>
+                        <div class="notice-container">
+                            <div class="notice-title">쉽고 간편한 그린리모델링 시뮬레이션</div>
+                            <div class="notice-content">
+                                경기도는 도민 누구나 쉽게 그린리모델링 시뮬레이션을 통해 리모델링 비용산정, 에너지 절감 예측 등 상세정보를 확인할 수 있습니다. 지금 경기 그린리모델링 시뮬레이션을 이용해 보세요.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end-->
+
+            <!-- start-->
+            <div data-toggle-id="tabnav2" class="toggle-hidden">
+                <div class="sub--wrap--inner mb80">
+                    <div class="sub--Info--wrap">
+                        <div class="page-intro">
+                            <div class="page-intro-header">
+                                <strong>공동주택 에너지절감</strong>
+                                <div class="page-intro-links">
+                                    <a href="#">공동주택 에너지절감 서비스 바로가기</a>
+                                </div>
+                            </div>
+                            <div class="page-intro-content">
+                                경기도는 도 전체에 대한 국토교통부 부동산원의 에너지 소비량을 한국건설기술연구원의 연구성과를<br>
+                                활용하여 정확한 에너지 소비량 정보를 제공하는 환경을 마련하였습니다.
+                            </div>
+                        </div>
+                        <div class="notice-container">
+                            <div class="notice-title">우리 동네 주변 공동주택 에너지 소비 순위를 한눈에</div>
+                            <div class="notice-content">
+                                우리동네 단지별 에너지 소비현황을 비교하고 우리 단지의 에너지 절감방안을 확인할 수 있도록 정보를 제공합니다. 또한, 우리 단지의 주변 단지의 에너지 소비현황을 한눈에 비교할 수 있으며, 정부 지원을 통해 에너지 절감에 성공한 단지 하례도 제공합니다.
+                            </div>
+                        </div>
+                        <div class="notice-container">
+                            <div class="notice-title">우리 동네 공동주택 에너지소비현황 및 절감방안</div>
+                            <div class="notice-content">
+                                우리 단지 에너지 소비 수준부터 태양광 설치 시뮬레이션을 통한 절감방안까지 공동주택 에너지절감 서비스를 통해 확인해 보세요.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                
+            </div>
+            <!-- end-->
+
+
+        </div>
+    </div>
+    
+    @@include('./include/footer.html', {
+        "page_main": true
+    })
+    </section>
+
+    <div id="tooltip-root"></div>
+
+</body></html>

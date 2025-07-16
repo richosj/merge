@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./include/meta.html', {
+        "page_main": true
+    })
+</head>
+<body>
+    <!-- 전체 -->
+    <section id="wrap">
+    <div class="skip">
+        <a href="#header">주메뉴 바로가기</a>
+        <a href="#mainContainer">본문 바로가기</a>
+        <a href="#">하단 정보 바로가기</a>
+    </div>
+    @@include('./include/header.html', {
+        "page_main": true
+    })
+    @@include('./include/subheader.html', {
+        "page_main": true
+    })
+    
+    <div id="mainContainer" calss="mainContainer">
+        
+
+        </div>
+        <!-- <div class="small-nav" style="position: fixed;">
+            <div class="small-nav-inner">
+                <div class="samll-nav-bx">
+                    <ul>
+                        <li>
+                            <span class="nav-name">아이콘</span>
+                            <a href="#" title="새창열림">
+                                <i>아이콘</i>
+                            </a>
+                        </li>
+                        <li>
+                            <span class="nav-name">아이콘</span>
+                            <a href="#" target="_blank" title="새창열림">
+                                <i>아이콘</i>
+                            </a>
+                        </li>
+                        <li>
+                            <span class="nav-name">아이콘</span>
+                            <a href="#">
+                                <i>아이콘</i>
+                            </a>
+                        </li>
+                        <li>
+                            <span class="nav-name">TOP</span>
+                            <a href="#skip_navi" class="common-samll--top-btn">
+                                <i>TOP</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    
+    @@include('./include/footer.html', {
+        "page_main": true
+    })
+    </section>
+    <script>
+        AOS.init({
+            easing: 'ease-in-out',
+        });
+    </script>
+</body>
+
+</html>

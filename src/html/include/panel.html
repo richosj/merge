@@ -1,0 +1,737 @@
+@@if(page__name == '메인패널'){
+    <!-- //메인패널 -->
+    <div class="panel--main">
+        <p class="main-srrvice-line"><strong>Service</strong> Link</p>
+        <div class="panel--main--inner">
+            <div class="panel--main--item">
+                <div class="panel--main--item--head">
+                    <h2>도유지</h2>
+                    <p>National Property</p>
+                </div>                                
+                <ul class="panel--main--item--li">
+                    <li><a href="#" onclick="ModalHandler.open('modal-national-dash')">대시보드</a></li>
+                    <li><a href="">불법점유 분석</a></li>
+                    <li><a href="">실태조사</a></li>
+                    <li><a href="">제외지 관리</a></li>
+                </ul>
+            </div>
+            <div class="panel--main--item">
+                <div class="panel--main--item--head">
+                    <h2>학습관리</h2>
+                    <p>Learning</p>
+                </div>                                
+                <ul class="panel--main--item--li">
+                    <li><a href="">영상관리</a></li>
+                    <li><a href="">라벨관리</a></li>
+                    <li><a href="">작업관리</a></li>
+                    <li><a href="#" onclick="ModalHandler.open('modal-learning-dash')">대시보드</a></li>
+                </ul>
+            </div>
+            <div class="panel--main--item">
+                <div class="panel--main--item--head">
+                    <h2>서비스관리</h2>
+                    <p>Service</p>
+                </div>                                
+                <ul class="panel--main--item--li">
+                    <li><a href="">사용자 관리</a></li>
+                    <li><a href="">사용신청</a></li>
+                    <li><a href="">접속통계</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+
+@@if(page__name == '메인패널-검색결과'){
+    <!-- //메인패널-검색결과 -->
+    <div class="panel--main--list">
+        <div class="panel--main--list--result">
+            <div class="panel--main--list--result--inner">
+                <p class="count">검색결과 <span>35</span> 개</p>
+                <button type="button" class="close-btn"><span class="sr-only">닫기</span></button>
+            </div>
+        </div>
+        <div class="panel--main--list--inner custorm-scroll">
+            <ul>
+                <li class="panel--main--list--item">
+                    <div class="panel--main--list--item--name">
+                        <span>1.</span><p>경상 북도청</p>
+                    </div>
+                    <div class="panel--main--list--item--juso01">경북 안동시 풍청면 도청대로 455</div>
+                    <div class="panel--main--list--item--juso02">(지번) 풍천면 갈전리 1155</div>
+                </li>
+                <li class="panel--main--list--item active">
+                    <div class="panel--main--list--item--name">
+                        <span>1.</span><p>경상 북도청</p>
+                    </div>
+                    <div class="panel--main--list--item--juso01">경북 안동시 풍청면 도청대로 455</div>
+                    <div class="panel--main--list--item--juso02">(지번) 풍천면 갈전리 1155</div>
+                </li>
+                <li class="panel--main--list--item">
+                    <div class="panel--main--list--item--name">
+                        <span>1.</span><p>경상 북도청</p>
+                    </div>
+                    <div class="panel--main--list--item--juso01">경북 안동시 풍청면 도청대로 455</div>
+                    <div class="panel--main--list--item--juso02">(지번) 풍천면 갈전리 1155</div>
+                </li>
+                <li class="panel--main--list--item">
+                    <div class="panel--main--list--item--name">
+                        <span>1.</span><p>경상 북도청</p>
+                    </div>
+                    <div class="panel--main--list--item--juso01">경북 안동시 풍청면 도청대로 455</div>
+                    <div class="panel--main--list--item--juso02">(지번) 풍천면 갈전리 1155</div>
+                </li>
+                <li class="panel--main--list--item">
+                    <div class="panel--main--list--item--name">
+                        <span>1.</span><p>경상 북도청</p>
+                    </div>
+                    <div class="panel--main--list--item--juso01">경북 안동시 풍청면 도청대로 455</div>
+                    <div class="panel--main--list--item--juso02">(지번) 풍천면 갈전리 1155</div>
+                </li>
+                <li class="panel--main--list--item">
+                    <div class="panel--main--list--item--name">
+                        <span>1.</span><p>경상 북도청</p>
+                    </div>
+                    <div class="panel--main--list--item--juso01">경북 안동시 풍청면 도청대로 455</div>
+                    <div class="panel--main--list--item--juso02">(지번) 풍천면 갈전리 1155</div>
+                </li>
+            </ul>
+        </div>
+        <div class="panel--pagination">
+            @@include('./paging.html')
+        </div>
+    </div>
+}
+
+@@if(page__name == '메인패널-노데이터'){
+    <!-- //메인패널-노데이터 -->
+    <div class="panel--main--list">
+        <div class="panel--main--list--result">
+            <div class="panel--main--list--result--inner">
+                <p class="count">검색결과 <span>0</span> 개</p>
+                <button type="button" class="close-btn"><span class="sr-only">닫기</span></button>
+            </div>
+        </div>
+        
+        <div class="no-data">
+            <img src="./assets/images/ico/ico-nodata.png" alt="데이터 없음">
+            <p>데이터가 없습니다.</p>
+        </div>
+        
+    </div>
+}
+
+@@if(page__name == '영상관리-노데이터'){
+    <!-- //영상관리 -->
+    <div class="panel--video">
+        <div class="panel--video--result">
+            <div class="panel--video--result--inner">
+                <p class="count">검색결과 <span>35</span> 개</p>
+                <button type="button" class="close-btn"><span class="sr-only">닫기</span></button>
+            </div>
+        </div>
+        <div class="no-data">
+            <img src="./assets/images/ico/ico-nodata.png" alt="데이터 없음">
+            <p>데이터가 없습니다.</p>
+        </div>
+    </div>
+}
+
+@@if(page__name == '영상관리'){
+    <!-- //영상관리 -->
+    <div class="panel--video">
+        <div class="panel--video--result">
+            <div class="panel--video--result--inner">
+                <p class="count">검색결과 <span>35</span> 개</p>
+                <button type="button" class="close-btn"><span class="sr-only">닫기</span></button>
+            </div>
+        </div>
+        <div class="panel--video--list custorm-scroll">
+            <ul class="">
+                <li class="panel--video--list--item" onclick="ModalHandler.open('modal-air-regist')">
+                    <dl>
+                        <dt>경북도권역 4지역</dt>
+                        <dd>135개</dd>
+                    </dl>
+                    <div class="util">
+                        <span class="badge badge-gray">완료</span>
+                        <button type="button" class="del-btn"><span class="sr-only">지우기</span></button>
+                    </div>
+                </li>
+                <li class="panel--video--list--item active" onclick="ModalHandler.open('modal-air-regist')">
+                    <dl>
+                        <dt>경북도권역 4지역</dt>
+                        <dd>135개</dd>
+                    </dl>
+                    <div class="util">
+                        <span class="badge">업로드 중</span>
+                        <button type="button" class="del-btn"><span class="sr-only">지우기</span></button>
+                    </div>
+                </li>
+                <li class="panel--video--list--item" onclick="ModalHandler.open('modal-air-regist')">
+                    <dl>
+                        <dt>경북도권역 4지역</dt>
+                        <dd>135개</dd>
+                    </dl>
+                    <div class="util">
+                        <span class="badge badge-gray">완료</span>
+                        <button type="button" class="del-btn"><span class="sr-only">지우기</span></button>
+                    </div>
+                </li>
+                <li class="panel--video--list--item" onclick="ModalHandler.open('modal-air-regist')">
+                    <dl>
+                        <dt>경북도권역 4지역</dt>
+                        <dd>135개</dd>
+                    </dl>
+                    <div class="util">
+                        <span class="badge">타일링 중</span>
+                        <button type="button" class="del-btn"><span class="sr-only">지우기</span></button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="panel--pagination">
+            @@include('./paging.html')
+        </div>
+    </div>
+}
+
+@@if(page__name == '라벨관리'){
+    <!-- //라벨관리 -->
+    <div class="panel--video">
+        <div class="panel--video--result">
+            <div class="panel--video--result--inner">
+                <p class="count">검색결과 <span>35</span> 개</p>
+                <button type="button" class="close-btn"><span class="sr-only">닫기</span></button>
+            </div>
+        </div>
+        <div class="panel--video--list custorm-scroll panel--label--list">
+            <ul class="">
+                <li class="panel--video--list--item" onclick="ModalHandler.open('modal-label-regist')">
+                    <dl>
+                        <dt>불법 점유 라벨</dt>
+                        <dd>사유지 내 불법 점유 분석</dd>
+                    </dl>
+                    <div class="util">
+                        <button type="button" class="del-btn"><span class="sr-only">지우기</span></button>
+                    </div>
+                </li>
+                <li class="panel--video--list--item active" onclick="ModalHandler.open('modal-label-regist')">
+                    <dl>
+                        <dt>불법 점유 라벨</dt>
+                        <dd>사유지 내 불법 점유 분석</dd>
+                    </dl>
+                    <div class="util">
+                        <button type="button" class="del-btn"><span class="sr-only">지우기</span></button>
+                    </div>
+                </li>
+                <li class="panel--video--list--item" onclick="ModalHandler.open('modal-label-regist')">
+                    <dl>
+                        <dt>불법 점유 라벨</dt>
+                        <dd>사유지 내 불법 점유 분석</dd>
+                    </dl>
+                    <div class="util">
+                        <button type="button" class="del-btn"><span class="sr-only">지우기</span></button>
+                    </div>
+                </li>
+                <li class="panel--video--list--item" onclick="ModalHandler.open('modal-label-regist')">
+                    <dl>
+                        <dt>불법 점유 라벨</dt>
+                        <dd>사유지 내 불법 점유 분석</dd>
+                    </dl>
+                    <div class="util">
+                        <button type="button" class="del-btn"><span class="sr-only">지우기</span></button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="panel--pagination">
+            @@include('./paging.html')
+        </div>
+    </div>
+}
+
+@@if(page__name == '작업관리'){
+    <!-- //작업관리 -->
+    <div class="panel--video">
+        <div class="panel--video--result">
+            <div class="panel--video--result--inner">
+                <p class="count">검색결과 <span>35</span> 개</p>
+                <button type="button" class="close-btn"><span class="sr-only">닫기</span></button>
+            </div>
+        </div>
+        <div class="panel--video--list custorm-scroll">
+            <ul class="">
+                <li class="panel--video--list--item" onclick="ModalHandler.open('modal-learning-regist')">
+                    <dl>
+                        <dt>불법점유물 학습</dt>
+                        <dd>불법점유물</dd>
+                    </dl>
+                    <div class="util">
+                        <span class="badge badge-gray">완료</span>
+                        <button type="button" class="del-btn"><span class="sr-only">지우기</span></button>
+                    </div>
+                </li>
+                <li class="panel--video--list--item active" onclick="ModalHandler.open('modal-learning-regist')">
+                    <dl>
+                        <dt>불법점유물 학습</dt>
+                        <dd>불법점유물</dd>
+                    </dl>
+                    <div class="util">
+                        <span class="badge">업로드 중</span>
+                        <button type="button" class="del-btn"><span class="sr-only">지우기</span></button>
+                    </div>
+                </li>
+                <li class="panel--video--list--item" onclick="ModalHandler.open('modal-learning-regist')">
+                    <dl>
+                        <dt>불법점유물 학습</dt>
+                        <dd>불법점유물</dd>
+                    </dl>
+                    <div class="util">
+                        <span class="badge badge-gray">완료</span>
+                        <button type="button" class="del-btn"><span class="sr-only">지우기</span></button>
+                    </div>
+                </li>
+                <li class="panel--video--list--item" onclick="ModalHandler.open('modal-learning-regist')">
+                    <dl>
+                        <dt>불법점유물 학습</dt>
+                        <dd>불법점유물</dd>
+                    </dl>
+                    <div class="util">
+                        <span class="badge">타일링 중</span>
+                        <button type="button" class="del-btn"><span class="sr-only">지우기</span></button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="panel--pagination">
+            @@include('./paging.html')
+        </div>
+    </div>
+}
+
+@@if(page__name == '도유지-노데이터'){
+    <!-- //도유지-제외지관리 -->
+    <div class="panel--national">
+        <div class="panel--national--result">
+            <div class="panel--national--result--inner">
+                <p class="count">검색결과 <span>0</span> 개</p>
+                <div class="util">
+                    <button type="button" class="btn sm dark">엑셀 다운로드</button>
+                    <button type="button" class="close-btn"><span class="sr-only">닫기</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="no-data">
+            <img src="./assets/images/ico/ico-nodata.png" alt="데이터 없음">
+            <p>데이터가 없습니다.</p>
+        </div>
+    </div>
+}
+
+@@if(page__name == '도유지-제외지관리'){
+    <!-- //도유지-제외지관리 -->
+    <div class="panel--national">
+        <div class="panel--national--result">
+            <div class="panel--national--result--inner">
+                <p class="count">검색결과 <span>35,053</span> 개</p>
+                <div class="util">
+                    <button type="button" class="btn sm dark">엑셀 다운로드</button>
+                    <button type="button" class="close-btn"><span class="sr-only">닫기</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="panel--national--list">
+            <div class="panel--national--list--top">
+                <span>재산번호</span>
+                <span>소재지</span>
+                <span>지목</span>
+            </div>
+            <ul class="panel--national--list--inner custorm-scroll">
+                <li onclick="ModalHandler.open('modal-national-manage')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-manage')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-manage')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-manage')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-manage')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-manage')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-manage')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-manage')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-manage')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-manage')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-manage')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li>
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+            </ul>
+        </div>
+        <div class="panel--pagination">
+            @@include('./paging.html')
+        </div>
+    </div>
+}
+
+@@if(page__name == '도유지-실태조사'){
+    <!-- //도유지-실태조사 -->
+    <div class="panel--national">
+        <div class="panel--national--result">
+            <div class="panel--national--result--inner">
+                <p class="count">검색결과 <span>35,053</span> 개</p>
+                <div class="util">
+                    <button type="button" class="btn sm dark">엑셀 다운로드</button>
+                    <button type="button" class="close-btn"><span class="sr-only">닫기</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="panel--national--list">
+            <div class="panel--national--list--top">
+                <span>재산번호</span>
+                <span>소재지</span>
+                <span>지목</span>
+            </div>
+            <ul class="panel--national--list--inner custorm-scroll">
+                <li onclick="ModalHandler.open('modal-national-survey')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-survey')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-survey')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-survey')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-survey')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-survey')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-survey')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-survey')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-survey')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-survey')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-survey')">
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+                <li>
+                    <span>143349</span>
+                    <span>경상북도청</span>
+                    <span>도로</span>
+                </li>
+            </ul>
+        </div>
+        <div class="panel--pagination">
+            @@include('./paging.html')
+        </div>
+    </div>
+}
+
+@@if(page__name == '도유지-불법점유분석'){
+    <!-- //도유지-불법점유분석 -->
+    <div class="panel--national">
+        <div class="panel--national--result">
+            <div class="panel--national--result--inner">
+                <p class="count">검색결과 <span>35,053</span> 개</p>
+                <button type="button" class="close-btn"><span class="sr-only">닫기</span></button>
+            </div>
+        </div>
+        <div class="panel--national--list">
+            <div class="panel--national--list--top">
+                <span>번호</span>
+                <span>분석일자</span>
+                <span>진행여부</span>
+            </div>
+            <ul class="panel--national--list--inner map custorm-scroll">
+                <li onclick="ModalHandler.open('modal-national-illegality')">
+                    <span>11</span>
+                    <span>2024.8.20 오전 10:07:07</span>
+                    <span><button type="button" class="btn md border-blue">진행중</button></span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-illegality')">
+                    <span>10</span>
+                    <span>경상북도청</span>
+                    <span><button type="button" class="btn md border-disable disable">완료</button></span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-illegality')">
+                    <span>9</span>
+                    <span>2024.8.20 오전 10:07:07</span>
+                    <span><button type="button" class="btn md border-disable disable">완료</button></span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-illegality')">
+                    <span>8</span>
+                    <span>경상북도청</span>
+                    <span><button type="button" class="btn md border-disable disable">완료</button></span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-illegality')">
+                    <span>7</span>
+                    <span>2024.8.20 오전 10:07:07</span>
+                    <span><button type="button" class="btn md border-disable disable">완료</button></span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-illegality')">
+                    <span>6</span>
+                    <span>경상북도청</span>
+                    <span><button type="button" class="btn md border-disable disable">완료</button></span>
+                </li>
+            </ul>
+        </div>
+        <div class="panel--pagination">
+            @@include('./paging.html')
+        </div>
+    </div>
+}
+
+@@if(page__name == '도유지-불일치'){
+    <!-- //도유지-불법점유분석 -->
+    <div class="panel--national">
+        <div class="panel--national--result">
+            <div class="panel--national--result--inner">
+                <p class="count">검색결과 <span>35,053</span> 개</p>
+                <button type="button" class="close-btn"><span class="sr-only">닫기</span></button>
+            </div>
+        </div>
+        <div class="panel--national--list">
+            <div class="panel--national--list--top">
+                <span>항목</span>
+                <span>주소</span>
+                <span>분석 일시</span>
+            </div>
+            <ul class="panel--national--list--inner map custorm-scroll disagreement">
+                <li onclick="ModalHandler.open('modal-national-disagreement')">
+                    <span>11</span>
+                    <span class="tac">경상북도청</span>
+                    <span class="tac">2024.8.20<br>오전 10:07:07</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-disagreement')">
+                    <span>11</span>
+                    <span class="tac">경상북도청</span>
+                    <span class="tac">2024.8.20<br>오전 10:07:07</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-disagreement')">
+                    <span>11</span>
+                    <span class="tac">경상북도청</span>
+                    <span class="tac">2024.8.20<br>오전 10:07:07</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-national-disagreement')">
+                    <span>11</span>
+                    <span class="tac">경상북도청</span>
+                    <span class="tac">2024.8.20<br>오전 10:07:07</span>
+                </li>
+            </ul>
+        </div>
+        <div class="panel--pagination">
+            @@include('./paging.html')
+        </div>
+    </div>
+}
+
+@@if(page__name == '서비스관리-사용자관리'){
+    <!-- //서비스관리-사용자관리 -->
+    <div class="panel--national">
+        <div class="panel--national--result">
+            <div class="panel--national--result--inner">
+                <p class="count">검색결과 <span>35,053</span> 개</p>
+                <div class="util">
+                    <button type="button" class="close-btn"><span class="sr-only">닫기</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="panel--national--list">
+            <div class="panel--national--list--top manage-use">
+                <span>기관</span>
+                <span>부서</span>
+                <span>이름</span>
+                <span></span>
+            </div>
+            <ul class="panel--national--list--inner custorm-scroll manage-use">
+                <li onclick="ModalHandler.open('modal-use-regist')">
+                    <span>안동시</span>
+                    <span>토지정보과</span>
+                    <span>홍길동</span>
+                    <span>
+                        <button type="button" class="del-btn"><span class="sr-only">지우기</span></button>
+                    </span>
+                </li>
+                <li onclick="ModalHandler.open('modal-use-regist')">
+                    <span>안동시</span>
+                    <span>토지정보과</span>
+                    <span>홍길동</span>
+                    <span>
+                        <button type="button" class="del-btn"><span class="sr-only">지우기</span></button>
+                    </span>
+                </li>
+                <li onclick="ModalHandler.open('modal-use-regist')">
+                    <span>안동시</span>
+                    <span>토지정보과</span>
+                    <span>홍길동</span>
+                    <span>
+                        <button type="button" class="del-btn"><span class="sr-only">지우기</span></button>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="panel--pagination">
+            @@include('./paging.html')
+        </div>
+    </div>
+}
+
+@@if(page__name == '서비스관리-사용신청'){
+    <!-- //서비스관리-사용신청 -->
+    <div class="panel--national">
+        <div class="panel--national--result">
+            <div class="panel--national--result--inner">
+                <p class="count">검색결과 <span>35,053</span> 개</p>
+                <div class="util">
+                    <button type="button" class="close-btn"><span class="sr-only">닫기</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="panel--national--list">
+            <div class="panel--national--list--top">
+                <span>이름</span>
+                <span>메뉴</span>
+                <span>상태</span>
+            </div>
+            <ul class="panel--national--list--inner custorm-scroll app-use">
+                <li onclick="ModalHandler.open('modal-use-info')">
+                    <span>홍길동</span>
+                    <span>국유재산</span>
+                    <span>
+                        <button type="button" class="btn md border-blue">승인완료</button>
+                    </span>
+                </li>
+                <li onclick="ModalHandler.open('modal-use-info')">
+                    <span>홍길동</span>
+                    <span>국유재산</span>
+                    <span>
+                        <button type="button" class="btn md border-disable">승인대기</button>
+                    </span>
+                </li>
+                <li onclick="ModalHandler.open('modal-use-info')">
+                    <span>홍길동</span>
+                    <span>국유재산</span>
+                    <span>
+                        <button type="button" class="btn md border-disable disable">완료</button>
+                    </span>
+                </li>
+            </ul>
+        </div>
+        <div class="panel--pagination">
+            @@include('./paging.html')
+        </div>
+    </div>
+}
+
+@@if(page__name == '서비스관리-접속통계'){
+    <!-- //서비스관리-접속통계 -->
+    <div class="panel--national">
+        <div class="panel--national--result">
+            <div class="panel--national--result--inner">
+                <p class="count">검색결과 <span>35,053</span> 개</p>
+                <div class="util">
+                    <button type="button" class="close-btn"><span class="sr-only">닫기</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="panel--national--list">
+            <div class="panel--national--list--top stats-use">
+                <span>일</span>
+                <span>통계</span>
+            </div>
+            <ul class="panel--national--list--inner custorm-scroll stats-use">
+                <li onclick="ModalHandler.open('modal-use-ststs')">
+                    <span>1</span>
+                    <span>11,111</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-use-ststs')">
+                    <span>1</span>
+                    <span>11,111</span>
+                </li>
+                <li onclick="ModalHandler.open('modal-use-ststs')">
+                    <span>1</span>
+                    <span>11,111</span>
+                </li>
+            </ul>
+        </div>
+        <div class="panel--pagination">
+            @@include('./paging.html')
+        </div>
+    </div>
+}

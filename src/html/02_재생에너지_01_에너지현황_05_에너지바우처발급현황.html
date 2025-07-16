@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./include/meta.html', {
+        "page_main": true
+    })
+</head>
+<body>
+    <!-- 전체 -->
+    <section id="wrap">
+    <div class="skip">
+        <a href="#header">주메뉴 바로가기</a>
+        <a href="#mainContainer">본문 바로가기</a>
+        <a href="#">하단 정보 바로가기</a>
+    </div>
+    @@include('./include/header.html', {
+        "page_main": true
+    })
+    @@include('./include/subheader.html', {
+        "page_main": true
+    })
+    
+    <div id="SubContainer" calss="SubContainer">
+        <div class="sub--wrap">
+            <div class="sub--wrap--inner">
+                <div class="sub--ti">
+                    <h3>환경스코어</h3>
+                    <div class="sub--ti--util">
+                        <button class="share"><span class="sr-only">공유</span></button>
+                        <button class="print"><span class="sr-only">인쇄</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="sub--wrap--inner">
+                <ul class="tabs mb40" data-js="tabNav">
+                    <li class="tab-item">
+                        <button class="" type="button" data-id="tabnav1">
+                            전력공급현황
+                        </button>
+                    </li>
+                    <li class="tab-item">
+                        <button class="" type="button" data-id="tabnav2">
+                            에너지 소비 현황
+                        </button>
+                    </li>
+                    <li class="tab-item">
+                        <button class="" type="button" data-id="tabnav3">
+                            태양광 잠재량
+                        </button>
+                    </li>
+                    <li class="tab-item">
+                        <button class="" type="button" data-id="tabnav4">
+                            태양광 설비현황
+                        </button>
+                    </li>
+                    <li class="tab-item active">
+                        <button class="" type="button" data-id="tabnav5">
+                            에너지 바우처 발급 현황
+                        </button>
+                    </li>
+                </ul> 
+            </div>
+
+            <!-- 전력공급현황 start-->
+            <div data-toggle-id="tabnav1">
+                
+            </div>
+            <!-- 전력공급현황 end-->
+
+            <!-- 에너지 소비 현황  start-->
+            <div data-toggle-id="tabnav2" class="toggle-hidden">
+                
+            </div>
+            <!-- 에너지 소비 현황  end-->
+
+            <!-- 태양광 잠재량 start-->
+            <div data-toggle-id="tabnav3" class="toggle-hidden">
+                
+            </div>
+            <!-- 태양광 잠재량  end-->
+
+            <!-- 태양광 설비현황 start-->
+            <div data-toggle-id="tabnav4" class="toggle-hidden">
+            
+            </div>
+            <!-- 태양광 설비현황  end-->
+
+            <!-- 에너지 바우처 발급 현황 start-->
+            <div data-toggle-id="tabnav5" class="toggle-hidden">
+                <div class="sub--wrap--inner">
+                    
+                    <div class="page-intro">
+                        <div class="page-intro-header">
+                            <strong>에너지 바우처란?</strong>
+                            <div class="page-intro-links">
+                                <a href="#">에너지 바우처 바로가기</a>
+                            </div>
+                        </div>
+                        <div class="page-intro-content">
+                            에너지 사용이 어려운 가구를 위해 전기, 가스 난방비 등을 지원하는 국가 정책입니다.<br>
+                                신청은 가까운 주민센터나 공식 웹사이트에서 가능하며, 동·하절기 에너지 지원을 받을 수 있습니다. 
+                        </div>
+                    </div>
+
+                </div>
+                <div class="sub--Data--wrap">
+                    <div class="sub--wrap--inner">
+                        <h3 class="fz25 mb35">경기도 환경스코어</h3>
+                        <div class="data--box--flex">
+                            <div class="data--box--flex--left">
+                                <div class="data--box data--box--row row">
+                                    <dl class="dl-felx">
+                                        <dt>기간 선택</dt>
+                                        <dd>
+                                            <select name="" id="" class="form-control lg">
+                                                <option value="">2024</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="data--box data--box--row">
+                                    <div class="data--box--head mb12">
+                                        <h4>경기도<span class="green">수원시 팔달구</span></h4>
+                                    </div>
+                                    <div class="chart-box chart-box465">
+                                        데이터 영역
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data--box--flex--right data--box">
+                                <div class="data--box--head mb12">
+                                    <h4>발급현황</h4>
+                                    <div class="data--box--util--txt">
+                                        <span class="active">발급가구 수</span>
+                                        <span>발급액 (백만원)</span>
+                                    </div>
+                                </div>
+                                <div class="chart-box chart-box623">
+                                    데이터 영역
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 에너지 바우처 발급 현황  end-->
+        </div>
+    </div>
+    
+    @@include('./include/footer.html', {
+        "page_main": true
+    })
+    </section>
+</body>
+
+</html>

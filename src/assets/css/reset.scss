@@ -1,0 +1,93 @@
+@charset "UTF-8";
+@use 'utils/var';
+
+
+:root {
+    --font-name: "Pretendard";
+    --font-size: 1.5rem;
+    --font-sub-size: 1.7rem;
+    --font-weight: 400;
+    --font-color: #000000;
+    --line-height: 24px;
+    --text-main : #029b58;
+    --text-sub : #2b316a;
+    --text-sub2 : #717171;
+    --border-color: #d8d8d8;
+    --border-color-hover : #029c58;
+    --border-radius: 6px;
+    --content-space: 120px;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+html,body{
+    
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset,img {
+    border: 0 none
+}
+
+dl,ul,ol,menu,li {
+    list-style: none
+}
+
+blockquote,q {
+    quotes: none
+}
+
+blockquote:before,blockquote:after,q:before,q:after {
+    content: "";
+    content: none
+}
+
+input,select,textarea,button {
+    vertical-align: middle
+}
+
+input::-ms-clear {
+    display: none
+}
+
+button {
+    border: 0 none;
+    background-color: transparent;
+    cursor: pointer
+}
+body,th,td,input,select,textarea,button {
+    color: #333;
+    font-family: 'Pretendard';
+}
+a {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer
+}
+a:active,a:hover {
+    text-decoration: none
+}
+a:active {
+    background-color: transparent
+}
+
+address,caption,cite,code,dfn,em,var {
+    font-style: normal;
+    font-weight: 400
+}
+html {
+    font-size: 10px
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{
+    font-size: var(--font-size);
+}
+
+img{
+    vertical-align: top;
+}
+

@@ -1,0 +1,58 @@
+@use '../utils/var';
+@use '../utils/function' as fn;
+
+.badge{
+    display: inline-block;
+    height: 3.2rem;
+    line-height: 3.2rem;
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    border-radius: 1.6rem;
+    &.small{
+        height: 2.4rem;
+        padding: 0 1rem;
+        line-height: 2.4rem;
+        border-radius: 1.2rem;
+        font-size: 1.3rem;
+
+    }
+    &.primary{
+        background: #d0d9ea;
+        color:#164194;
+    }
+    &.danger{
+        background: #f6cccc;
+        color:#d93333;
+    }
+    &.green{
+        background: #d5ead7;
+        color:#419c48;
+    }
+    &.sky{
+        background: #ccecf9;
+        color:#009fe3;
+    }
+    &.yellow{
+        background: #fdedcc;
+        color:#ff9600;
+    }
+    &.grey{
+        background: #dddddd;
+        color:#575756;
+    }
+    &.border-primary{
+        border: 1px solid #d0d9ea;
+        color:#164194;
+        background: #fff;
+    }
+    &.border-green{
+        border: 1px solid #d5ead7;
+        color:#164194;
+        background: #fff;
+    }
+    &.border-danger{
+        border: 1px solid #f6cccc;
+        color:#d40000;
+        background: #fff;
+    }
+}

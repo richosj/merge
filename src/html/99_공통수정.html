@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('./include/meta.html', {
+	"page_main": true
+	})
+</head>
+
+<body>
+    <!-- <div id="loader-overlay" class="loader-overlay">
+        <div class="spinner"></div>
+    </div> -->
+	<!-- 전체 -->
+	<section id="wrap">
+		@@include('./include/header_fixed.html', {
+		"page_main": true
+		})
+		<!-- @@include('./include/subheader.html', {
+		"page_main": true
+		}) -->
+
+		<div id="SubContainer" class="SubContainer">
+			<div class="sub--wrap">
+				<div id="first-video" class="first--video">
+					<video src="./assets/video/AdobeStock_1322617312_Video_HD_Preview.mov" muted autoplay playsinline loop></video>
+					<div class="first--video--info">
+						<div class="first--video--inner">
+							<div class="first--video--txt fade-up">
+								<h2>탄소공간지도</h2>
+								<h3>
+									탄소 흡수원과 배출원을 분석한 지도로,<br>지역별 탄소 균형과 변화를 한눈에 파악할 수 있습니다.
+								</h3>
+								<p>
+									탄소 흡수원과 배출원을 상세히 분석하여 지역별 정보를 직관적으로 시각화합니다.<br>
+									사용자는 지도에서 특정 지역의 탄소 균형을 확인하고, 시간에 따른 변화 추이를 파악할 수 있습니다.<br>
+									이 데이터는 정책 결정자, 연구자, 일반 시민 모두에게 유용한 정보를 제공하며,<br>
+									지속 가능한 미래를 위한 효과적인 탄소 관리 전략 수립에 기여할 것입니다.
+								</p>
+							</div>
+							<div class="first--video--tab carbon" data-simplebar>
+								<ul data-js="tabNav">
+									<li>
+										<button data-id="tabnav1">
+											<strong>탄소중립 기본계획</strong>
+											<span>TEXT</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav2">
+											<strong>탄소중립기본계획 이행평가</strong>
+											<span>TEXT</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav3">
+											<strong>기후위기 적응계획</strong>
+											<span>TEXT</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav4">
+											<strong>기후위기적응계획 이행평가</strong>
+											<span>TEXT</span>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab--stiky carbon">
+					<div class="sub--wrap--inner">
+						<ul class="" data-js="tabNav">
+							<li class="active">
+								<button type="button" data-id="tabnav1">탄소중립 기본계획</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav2">탄소중립기본계획 이행평가</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav3">기후위기 적응계획</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav4">기후위기적응계획 이행평가</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div data-toggle-id="tabnav1">
+					<!-- data-chart-cicle -->
+					<div class="data-chart data-chart-cicle">
+						<div class="sub--wrap--inner fade-up">
+							<div class="chart__title tac">
+								<span>PPT 250626_플랫폼수정사항_UX_UI팀검토_250626</span>
+								<h2>2, 9, 37 Page 공통 - html 변경 없이 js, css로만 수정했습니다. 
+									<button class="blank-btn carbon" onclick="ModalHandler.open('modal-carbon-plan')"><em>주소/출처</em><i class="icon ico-blank"></i></button>
+									<button class="blank-btn energy" onclick="ModalHandler.open('modal-carbon-plan')"><em>주소/출처</em> <i class="icon ico-blank"></i></button>
+									<button class="blank-btn risk" onclick="ModalHandler.open('modal-carbon-plan')"><em>주소/출처</em> <i class="icon ico-blank"></i></button>
+								</h2>
+							</div>
+							<div class="chart-flex row">
+								<div class="chart-map">
+									<div class="chart-map-breadcrumb">
+										<div class="place">
+											<span>경기도</span>
+											<i class="icon arrow"></i>
+											<strong>수원시</strong>
+										</div>
+										<button class="back"><i class="icon"></i></button>
+									</div>
+									<div class="chart-map-area">
+
+									</div>
+								</div>
+								
+								<div class="chart-area">
+									<div class="chart-box">
+										<div class="chart-util">
+											<div class="chart-util__title">
+                                                <dl class="dl-felx">
+                                                    <dt><label for="sggElpwrGenqyYearSelect">기간 선택</label></dt>
+                                                    <dd>
+                                                        <select name="sggElpwrGenqyYearSelect" id="sggElpwrGenqyYearSelect" class="form-control md">
+                                                            <option value="2023">2023</option>
+                                                            <option value="2022">2022</option>
+                                                            <option value="2021">2021</option>
+                                                            <option value="2020">2020</option>
+                                                            <option value="2019">2019</option>
+                                                            <option value="2018">2018</option>
+                                                            <option value="2017">2017</option>
+                                                        </select>
+                                                    </dd>
+                                                </dl>
+											</div>
+											<div class="toggle-ti-wrap">
+												<div class="toggle-ti">
+													<div class="toggle-ti-info">
+														<span style="width:20px;height:8px;background-color:red;"></span>
+														<p>건물</p>
+													</div>
+													<label class="toggle-label" for="toggleCheck03">
+														<input class="toggle-check" type="checkbox" id="toggleCheck03">
+														<span class="toggle-custom"></span>
+													</label>
+												</div>
+												<div class="toggle-ti">
+													<div class="toggle-ti-info">
+														<span style="width:20px;height:8px;background-color:red;"></span>
+														<p>농축산</p>
+													</div>
+													<label class="toggle-label" for="toggleCheck03">
+														<input class="toggle-check" type="checkbox" id="toggleCheck03">
+														<span class="toggle-custom"></span>
+													</label>
+												</div>
+												<div class="toggle-ti">
+													<div class="toggle-ti-info">
+														<span style="width:20px;height:8px;background-color:red;"></span>
+														<p>수송</p>
+													</div>
+													<label class="toggle-label" for="toggleCheck03">
+														<input class="toggle-check" type="checkbox" id="toggleCheck03">
+														<span class="toggle-custom"></span>
+													</label>
+												</div>
+												<div class="toggle-ti">
+													<div class="toggle-ti-info">
+														<span style="width:20px;height:8px;background-color:red;"></span>
+														<p>폐기물</p>
+													</div>
+													<label class="toggle-label" for="toggleCheck03">
+														<input class="toggle-check" type="checkbox" id="toggleCheck03">
+														<span class="toggle-custom"></span>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="chart-panel">
+										<div class="chart-checking-inner">
+											<div class="chart-checking-heading">
+												<h3>선택할 수 있는 데이터</h3>
+											</div>
+											<div class="chart-checking-list" data-simplebar>
+												<ul>
+													<li>
+														<label class="form-radio" id="111">
+															<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량경기도 연간 흡수량 총량경기도 연간 흡수량 총량</span><em class="arrow"></em>
+														</label>
+														<div class="dep-checking">
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+														</div>
+													</li>
+													<li>
+														<label class="form-radio" id="111">
+															<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span><em class="arrow"></em>
+														</label>
+														<div class="dep-checking">
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+														</div>
+													</li>
+													<li>
+														<label class="form-radio" id="111">
+															<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span><em class="arrow"></em>
+														</label>
+														<div class="dep-checking">
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+														</div>
+													</li>
+													<li>
+														<label class="form-radio" id="111">
+															<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span><em class="arrow"></em>
+														</label>
+														<div class="dep-checking">
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+														</div>
+													</li>
+													<li>
+														<label class="form-radio" id="111">
+															<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span><em class="arrow"></em>
+														</label>
+														<div class="dep-checking">
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+															<label class="form-radio" id="111">
+																<input type="checkbox" name="11" value="11"><i></i><span>경기도 연간 흡수량 총량</span>
+															</label>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+                    <style>
+                        .tableTemp {
+                            width: 100%;
+                            border-collapse: collapse;
+                            font-family: 'Noto Sans KR', sans-serif;
+                            font-size: 14px;
+                        }
+                    
+                        .tableTemp th {
+                            border: 1px solid #ccc;
+                            padding: 8px 10px;
+                            text-align: center;
+                            color: white;
+                        }
+                    
+                        .tableTemp td {
+                            border: 1px solid #ccc;
+                            padding: 8px 10px;
+                            text-align: center;
+                        }
+                    
+                        .tableTemp thead {
+                            background-color: #238443;
+                            color: white;
+                        }
+                    
+                        .baseTable tbody tr:nth-child(1) {
+                            font-weight: bold;
+                            background-color: #f2f2f2;
+                        }
+                    
+                        .baseTable tbody tr:nth-child(2) {
+                            background-color: #eaf0fa;
+                        }
+                    
+                        .baseTable tbody tr:nth-child(3) {
+                            background-color: #fdf5e6;
+                        }
+						.baseTable thead th button {
+							color:#fff;
+							display: block;
+							width: 100%;
+							padding: 5px;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							gap:5px;
+							transition: all .3s
+						}
+						.baseTable thead th button:hover{
+							font-size: 15px;
+							background: rgba(255,255,255,.1);
+							border-radius: 5px;
+						}
+                    </style>
+                    <div class="data-chart carbon-green">
+                        <div class="sub--wrap--inner">
+                            <div class="data-chart__txt fade-up" style="translate: none; rotate: none; scale: none;">
+                                <h3>온실가스 감축대책 
+									<button class="blank-btn carbon" onclick="ModalHandler.open('modal-carbon-plan')"><em>주소/출처</em><i class="icon ico-blank"></i></button>
+									<button class="blank-btn energy" onclick="ModalHandler.open('modal-carbon-plan')"><em>주소/출처</em> <i class="icon ico-blank"></i></button>
+									<button class="blank-btn risk" onclick="ModalHandler.open('modal-carbon-plan')"><em>주소/출처</em> <i class="icon ico-blank"></i></button>
+								</h3>
+                                <p class="chart-txt01" id="baseCntTxt">5개 부문 189개 세부과제(기존 159개 + 신규 30개)</p>
+                            </div>
+                            <div class="chatr-block md fade-up" >
+                                <div>
+                                    <table id="baseTable" class="tableTemp baseTable">
+                                        <thead>
+                                            <tr>
+                                                <th>부문</th>
+                                                <th>계</th>
+                                                <th style="cursor: pointer;"><button class="tab-move">건물 <i class="icon ico-tab"></i></button></th>
+                                                <th style="cursor: pointer;"><button class="tab-move">농축산 <i class="icon ico-tab"></i></button></th>
+                                                <th style="cursor: pointer;"><button class="tab-move">수송 <i class="icon ico-tab"></i></button></th>
+                                                <th style="cursor: pointer;"><button class="tab-move">폐기물 <i class="icon ico-tab"></i></button></th>
+                                                <th style="cursor: pointer;"><button class="tab-move">흡수원 <i class="icon ico-tab"></i></button></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>계</td>
+                                                <td>189</td>
+                                                <td>55</td>
+                                                <td>25</td>
+                                                <td>68</td>
+                                                <td>16</td>
+                                                <td>25</td>
+                                            </tr>
+                                            <tr>
+                                                <td>기존대책(변경)</td>
+                                                <td>159(9)</td>
+                                                <td>47(3)</td>
+                                                <td>14(0)</td>
+                                                <td>63(3)</td>
+                                                <td>13(0)</td>
+                                                <td>22(3)</td>
+                                            </tr>
+                                            <tr>
+                                                <td>신규대책</td>
+                                                <td>30</td>
+                                                <td>8</td>
+                                                <td>11</td>
+                                                <td>5</td>
+                                                <td>3</td>
+                                                <td>3</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+					<div class="data-chart data-chart-gray">
+						<div class="sub--wrap--inner">
+							<div class="chart-flex fade-up" style="translate: none; rotate: none; scale: none;">
+								<div class="chart-nav">
+									<div class="chart__title tac">
+										<span>카드그래프로 보는</span>
+										<h2>탄소흡수(식물) 
+											<button class="blank-btn carbon" onclick="ModalHandler.open('modal-carbon-plan')"><em>주소/출처</em><i class="icon ico-blank"></i></button>
+									<button class="blank-btn energy" onclick="ModalHandler.open('modal-carbon-plan')"><em>주소/출처</em> <i class="icon ico-blank"></i></button>
+									<button class="blank-btn risk" onclick="ModalHandler.open('modal-carbon-plan')"><em>주소/출처</em> <i class="icon ico-blank"></i></button>
+										</h2>
+									</div>
+									<div class="chart-nav__inner">
+										<button class="chart-nav__button chart-nav__button--active">탄소흡수</button>
+										<button class="chart-nav__button">탄소저장 (수목)</button>
+										<button class="chart-nav__button">탄소저장 (토양)</button>
+										<button class="chart-nav__button">탄소배출</button>
+										<button class="chart-nav__button">인구</button>
+										<button class="chart-nav__button">DRDP (지역내총생산)</button>
+									</div>
+								</div>
+								<div class="chart-area">
+									<div class="chart-box">
+										차트영역
+									</div>
+									<div class="chart-panel">
+										<div class="chart-stat-inner">
+											<div class="chart-stat-heading">
+												<span>선택지역정보</span>
+												<div class="chart-stat-title">
+													<i class="icon"></i>
+													<h3>수원시</h3>
+												</div>
+											</div>
+											<div class="chart-stat">
+												<h4 class="chart-stat__title"><strong>수원시</strong> 탄소저장 (수목)</h4>
+												<div class="chart-stat__value">1,000,000,000 <span>tC/yr</span></div>
+											</div>
+											<div class="chart-stat">
+												<h4 class="chart-stat__title">경기도내 <strong>수원시</strong> 비율</h4>
+												<div class="chart-stat__value">88 <span>%</span></div>
+											</div>
+											<div class="chart-stat">
+												<h4 class="chart-stat__title">경기도내 <strong>수원시</strong> 순위</h4>
+												<div class="chart-stat__value">9 <span>위</span></div>
+											</div>
+
+											<div class="chart-stat chart-legend simplebar-scrollable-y" data-simplebar="init">
+												<div class="simplebar-wrapper" style="margin: -15px;">
+													<div class="simplebar-height-auto-observer-wrapper">
+														<div class="simplebar-height-auto-observer"></div>
+													</div>
+													<div class="simplebar-mask">
+														<div class="simplebar-offset" style="right: 0px; bottom: 0px;">
+															<div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content"
+																style="height: 100%; overflow: hidden scroll;">
+																<div class="simplebar-content" style="padding: 15px;">
+																	<h3 class="chart-legend-ti">범례</h3>
+																	<div class="chart-legend-inner">
+																		<div class="chart-legend__item">
+																			<span class="chart-legend__color" style="background: rgb(179, 211, 210);"></span>
+																			<div class="chart-legend__data">
+																				<div>13,196,037</div>
+																				<span>~</span>
+																				<div>140,449,490</div>
+																			</div>
+																		</div>
+																		<div class="chart-legend__item">
+																			<span class="chart-legend__color" style="background: rgb(246, 250, 193);"></span>
+																			<div class="chart-legend__data">
+																				<div>140,449,490</div>
+																				<span>~</span>
+																				<div>267,702,943</div>
+																			</div>
+																		</div>
+																		<div class="chart-legend__item">
+																			<span class="chart-legend__color" style="background: rgb(254, 225, 165);"></span>
+																			<div class="chart-legend__data">
+																				<div>267,702,943</div>
+																				<span>~</span>
+																				<div>394,956,396</div>
+																			</div>
+																		</div>
+																		<div class="chart-legend__item">
+																			<span class="chart-legend__color" style="background: rgb(253, 192, 134);"></span>
+																			<div class="chart-legend__data">
+																				<div>394,956,396</div>
+																				<span>~</span>
+																				<div>522,209,848</div>
+																			</div>
+																		</div>
+																		<div class="chart-legend__item">
+																			<span class="chart-legend__color" style="background: rgb(252, 158, 104);"></span>
+																			<div class="chart-legend__data">
+																				<div>522,209,848</div>
+																				<span>~</span>
+																				<div>649,463,301</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div data-toggle-id="tabnav2" class="toggle-hidden">
+					2222
+				</div>
+				<div data-toggle-id="tabnav3" class="toggle-hidden">
+                    3333
+				</div>
+				<div data-toggle-id="tabnav4" class="toggle-hidden">
+					4444
+				</div>
+			</div>
+		</div>
+        @@include('./include/modal.html',{
+			'page__name' : '전력수급'
+		})
+		@@include('./include/footer.html', {
+			"page_main": true
+		})
+	</section>
+</body>
+
+</html>

@@ -1,0 +1,649 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./include/meta.html', {
+        "page_main": true
+    })
+    <link rel="stylesheet" href="https://www.gitauto.com/resources/git/kor/css/slick.css">
+</head>
+<body>
+<!-- 전체 -->
+<section id="wrap" class="main--container">
+    <div class="skip">
+        <a href="#header">주메뉴 바로가기</a>
+        <a href="#mainContainer">본문 바로가기</a>
+        <a href="#">하단 정보 바로가기</a>
+    </div>
+    <div id="header" class="main-header header">
+        <div class="header-container">
+            <div class="header-top">
+                <div class="header-inner">
+                    <a href="#" class="header-bi"><span class=" sr-only">로고</span></a>
+                    <div class="head--util">
+                        <a href="" class="head--eng">
+                            <i class="icon en-ico"></i>
+                            <span>language</span>
+                        </a>
+                        <button type="button" class="ham-btn mobile-button" id="btnMobile" title="메뉴 열림">
+                            <span class="line line1"></span>
+                            <span class="line line2"></span>
+                            <span class="line line3"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="gnb--wrap">
+                <nav id="gnb" class="total-menu">
+                    <ul class="gnb--inner">
+                        <li class="gnb--dep01">
+                            <a href="">탄소</a>
+                            <div class="gnb--dep02">
+                                <ul>
+                                    <li><a href="#">경기도 기후정책</a></li>
+                                    <li><a href="#">경기 탄소공간지도</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb--dep01">
+                            <a href="">재생에너지</a>
+                            <div class="gnb--dep02">
+                                <ul>
+                                    <li><a href="#">태양관 도입</a></li>
+                                    <li><a href="#">에너지 절감</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb--dep01">
+                            <a href="">기후위기</a>
+                            <div class="gnb--dep02">
+                                <ul>
+                                    <li><a href="#">기후위기대응</a></li>
+                                    <li><a href="#">환경스코어</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb--dep01">
+                            <a href="">기후경영</a>
+                            <div class="gnb--dep02">
+                                <ul>
+                                    <li><a href="#">탄소경영</a></li>
+                                    <li><a href="#">에너지경영</a></li>
+                                    <li><a href="#" class="ico-link">중소기업기후경영</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb--dep01">
+                            <a href="">기후지도</a>
+                            <div class="gnb--dep02">
+                                <ul>
+                                    <li><a href="#" class="ico-link">탄소</a></li>
+                                    <li><a href="#" class="ico-link">재생에너지</a></li>
+                                    <li><a href="#" class="ico-link">기후위기</a></li>
+                                    <li><a href="#" class="ico-link">환경스코어</a></li>
+                                    <li><a href="#" class="ico-link">도시생태현황지도</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb--dep01">
+                            <a href="">LAB</a>
+                            <div class="gnb--dep02">
+                                <ul>
+                                    <li><a href="#" class="ico-link">Open & Share</a></li>
+                                    <li><a href="#" class="ico-link">정책분석 지원</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="gnb--dep01">
+                            <a href="">이용안내</a>
+                            <div class="gnb--dep02">
+                                <ul>
+                                    <li><a href="#">경기기후플랫폼 소개</a></li>
+                                    <li><a href="#">사이트맵</a></li>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">자주하는질문</a></li>
+                                    <li><a href="#">Q&A</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="gnbBg"><div class="gnbBg-inner"><img src="./assets/images/common/gnb-logo.png" alt=""></div></div>
+    </div>
+    
+    <aside id="nav" class="nav">
+        <ul class="nav-gnb">
+            <li class="lv1-li">
+                <a href="#"><span>탄소</span></a>
+                <div class="depth">
+                    <ul>
+                        <li><a href="#">경기도 기후정책</a></li>
+                        <li><a href="#">경기 탄소공간지도</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="lv1-li">
+                <a href="#"><span>재생에너지</span></a>
+                <div class="depth">
+                    <ul>
+                        <li><a href="#">태양관 도입</a></li>
+                        <li><a href="#">에너지 절감</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="lv1-li">
+                <a href="#"><span>기후위기</span></a>
+                <div class="depth">
+                    <ul>
+                        <li><a href="#">기후위기대응</a></li>
+                        <li><a href="#">환경스코어</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="lv1-li">
+                <a href="#"><span>이용안내</span></a>
+                <div class="depth">
+                    <ul>
+                        <li><a href="#">경기 기후 플랫폼 소개</a></li>
+                        <li><a href="#">뉴스포털</a></li>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Q&A</a></li>
+                        <li><a href="#">지원사업</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </aside>
+
+    <main class="main">
+        <div class="section-wrap">
+            <section class="section sc1 section-1">
+                <div class="image"></div>
+                <div class="text">
+                    <span>오래된 미래, <b>기후위기</b></span>
+                </div>
+            </section>
+            <section class="section sc1 section-2">
+                <div class="image"></div>
+                <div class="text">
+                    <span>경기기후플랫폼 <em>선명한 데이터기반의 <br class="mobile-block">기후위기 대응 </em></span>
+                </div>
+            </section>
+
+            <section class="section sc1 section-3">
+                <div class="section-3-wrap">
+                    <div class="image"></div>
+                <div class="section-3-grid">
+                    <div class="item">
+                        <div class="text-1">
+                            <h3>탄소</h3>
+                            <p>보이지 않는 탄소를<br>
+                                선명하게 인식하고<br>
+                                적량적으로 다룰수 있습니다. </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="text-2">
+                            <h3>재생에너지</h3>
+                            <p>
+                                경기 RE100 실현을 위해<br>
+                                태양광발전량과 에너지 절감을<br>
+                                시뮬레이션 할 수 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="text-3">
+                            <h3>기후위기</h3>
+                            <p>기후위기 공간정보를 통해<br>
+                                경기도민의 기후격차 이슈에<br>
+                                대응할 수 있습니다.  </p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="text-4">
+                            <h3>기후경영</h3>
+                            <p>
+                                기업의 글로벌 규제 대응과<br>
+                                에너지 절감을 통한 경쟁력 강화를<br>
+                                지원합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </div>
+        <!-- e: sc1 -->
+
+        
+
+
+        <section class="section sc2 main-busi">
+            <div class="busi-motion">
+                <div class="main-inner">
+                    <div class="busi-con">
+                        <nav class="tab-nav busi-menu-wrap">
+                            <button type="button" aria-selected="true"><span>탄소</span></button>
+                            <button type="button" aria-selected="false"><span>재생에너지</span></button>
+                            <button type="button" aria-selected="false"><span>기후위기</span></button>
+                            <button type="button" aria-selected="false"><span>기후경영</span></button>
+                        </nav>
+
+                        <div class="busi-contents-wrap">
+                            <div class="busi-content busi01">
+                                <div class="busi-info">
+                                    <div class="details">
+                                        <div class="box">
+                                            <div class="hgroup">
+                                                <h3>탄소</h3>
+                                                <p>
+                                                    보이지 않는 탄소를 선명하게 인식하고 <br>
+                                                    적량적으로 다룰수 있습니다.
+                                                </p>
+                                            </div>
+                                            <div class="link-container">
+                                                <a href="#">
+                                                    <strong>기후정책</strong>
+                                                    <div>
+                                                        경기도와 31개 시군의 탄소중립 계획과<br>
+                                                        현황을 시작적으로이해하고<br>
+                                                        이행현황을평가할 수 있습니다.
+                                                    </div>
+                                                </a>
+                                                <a href="#">
+                                                    <strong>탄소공간지도</strong>
+                                                    <div>
+                                                        경기도 전역의 탄소흡수량과 배출량을<br>
+                                                        공간적으로 이해하고<br>
+                                                        전략과 기회를 만들 수 있습니다.
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="busi-thumb" style="background-image: url(./assets/images/main/s2-img-01.png);"></div>
+                            </div>
+                            
+                            <div class="busi-content busi02">
+                                <div class="busi-info">
+                                    <div class="details">
+                                        <div class="box">
+                                            <div class="hgroup">
+                                                <h3>재생에너지</h3>
+                                                <p>
+                                                    경기 RE100 실현을 위해 태양광발전량과<br>
+                                                    에너지 절감을 시뮬레이션 할 수 있습니다.
+                                                </p>
+                                            </div>
+                                            <div class="link-container">
+                                                <a href="#">
+                                                    <strong>태양광 시뮬레이션</strong>
+                                                    <div>
+                                                        태양광 잠재량과 발전량을<br>
+                                                        고도화된 공간정보 기반으로<br>
+                                                        정확하게 시뮬레이션 할 수 있습니다.
+                                                    </div>
+                                                </a>
+                                                <a href="#">
+                                                    <strong>에너지 절감 솔루션</strong>
+                                                    <div>
+                                                        개별건축물의 그린리모델렝<br>
+                                                        시뮬레이션과 에너지 절감 방안을<br>
+                                                        찾을 수 있습니다.
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="busi-thumb" style="background-image: url(./assets/images/main/s2-img-02.png);"></div>
+                            </div>
+                            
+                            <div class="busi-content busi03">
+                                <div class="busi-info">
+                                    <div class="details">
+                                        <div class="box">
+                                            <div class="hgroup">
+                                                <h3>기후위기</h3>
+                                                <p>
+                                                    기후위기 공간정보를 통해<br>
+                                                    경기도민의 기후격차 이슈에 대응할 수 있습니다.
+                                                </p>
+                                            </div>
+                                            <div class="link-container">
+                                                <a href="#">
+                                                    <strong>기후위기 대응</strong>
+                                                    <div>
+                                                        고도화된 폭염, 폭우,<br>
+                                                        취약지역/인구 정보를 기반으로<br>
+                                                        실행력 있는 정책 수립이 가능합니다.
+                                                    </div>
+                                                </a>
+                                                <a href="#">
+                                                    <strong>환경스코어</strong>
+                                                    <div>
+                                                        경기전역의 환경가치와 위험요소를<br>
+                                                        정량화 하여 도민과 공공의 기후위기<br>
+                                                        대응 노력을 가속화 할 수 있습니다.
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="busi-thumb" style="background-image: url(./assets/images/main/s2-img-03.png);"></div>
+                            </div>
+                            
+                            <div class="busi-content busi04">
+                                <div class="busi-info">
+                                    <div class="details">
+                                        <div class="box">
+                                            <div class="hgroup">
+                                                <h3>기후경영</h3>
+                                                <p>
+                                                    기업의 글로벌 규제 대응과<br>
+                                                    에너지 절감을 통한 경쟁력 강화를 지원합니다.
+                                                </p>
+                                            </div>
+                                            <div class="link-container">
+                                                <a href="#">
+                                                    <strong>탄소경영</strong>
+                                                    <div>
+                                                        국제표준 온실가스 프로토콜<br>
+                                                        준수하는 자동화된 탄소배출<br>
+                                                        리포트를 제공합니다.
+                                                    </div>
+                                                </a>
+                                                <a href="#">
+                                                    <strong>에너지경영 </strong>
+                                                    <div>
+                                                        국제표준 온실가스 프로토콜<br>
+                                                        준수하는 자동화된 탄소배출<br>
+                                                        리포트를 제공합니다.
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="busi-thumb" style="background-image: url(./assets/images/main/s2-img-01.png);"></div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="slide-dot-wrap"></div>
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </section>
+        <!-- e: sc2 -->
+        <section class="section sc3">
+            <div class="image"></div>
+            <div class="sc-container" style="z-index:2">
+                <h2>경기기후지도</h2>
+                <h3>기후위기 대응을 위한 <br class="mobile-block">모든것</h3>
+                <div class="link-list">
+                    <a href="#">
+                        <strong>탄소지도</strong>
+                        <div>보이지 않는 탄소를<br>선명하게 인식 </div>
+                    </a>
+                    <a href="#">
+                        <strong>재생에너지</strong>
+                        <div>건축물 옥상과 필지의<br>태양광 도입 가능량 제공</div>
+                    </a>
+                    <a href="#">
+                        <strong>기후위기</strong>
+                        <div>기후격차 이슈를<br>공간정보로 대응</div>
+                    </a>
+                    <a href="#">
+                        <strong>환경스코어</strong>
+                        <div>우리동네 환경가치의<br>정량화</div>
+                    </a>
+                    <a href="#">
+                        <strong>도시생태현황지도</strong>
+                        <div>경기도 자연환경<br>관리를 위한 모든 정보</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- e: sc3 -->
+        <section class="section sc4">
+            <div class="image"></div>
+            <div class="sc-container">
+                <h2>Open & Share</h2>
+                <div class="text-group">
+                    <div class="text">
+                        기후플랫폼의 모든 데이터는 공유되고 새로운 기회로 확장됩니다. <br>
+                        공유데이터로 만들어진 결과를 경기도민과 나누세요
+                    </div>
+                    <div class="link">
+                        <a href="#">다운로드 센터</a>
+                        <a href="#">API센터</a>
+                        <a href="#">공개신청</a>
+                    </div>
+                </div>
+
+                <div class="sc4-slide">
+                    <div class="title-item">
+                        <div class="card">
+                            <a href="#">
+                                <div class="thumb" style="background-image: url(./assets/images/main/dummy-thumb1.png);"></div>
+                                <div class="detail">
+                                    <strong>차량 침수지 예측 기반<br>비상 주차공간 입지 분석지도</strong>
+                                    <div>
+                                        폭우 시 저지대 침수와 도로 범람 위험이 큽니다. <br>
+                                        외출을 자제 하고, 안전한 곳으로 대피하세요.
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="slide-list">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <a href="#">
+                                            <div class="thumb" style="background-image: url(./assets/images/main/dummy-thumb1.png);"></div>
+                                            <div class="detail">
+                                                <strong>산사태 예측<br>분석지도 </strong>
+                                                <div>
+                                                    폭우 시 저지대 침수와 도로 범람 위험이 큽니다. <br>
+                                                    외출을 자제 하고, 안전한 곳으로 대피하세요.
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <a href="#">
+                                            <div class="thumb" style="background-image: url(./assets/images/main/dummy-thumb1.png);"></div>
+                                            <div class="detail">
+                                                <strong>산사태 예측<br>분석지도 </strong>
+                                                <div>
+                                                    폭우 시 저지대 침수와 도로 범람 위험이 큽니다. <br>
+                                                    외출을 자제 하고, 안전한 곳으로 대피하세요.
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <a href="#">
+                                            <div class="thumb" style="background-image: url(./assets/images/main/dummy-thumb1.png);"></div>
+                                            <div class="detail">
+                                                <strong>산사태 예측<br>분석지도 </strong>
+                                                <div>
+                                                    폭우 시 저지대 침수와 도로 범람 위험이 큽니다. <br>
+                                                    외출을 자제 하고, 안전한 곳으로 대피하세요.
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="custom-controls">
+                            <div class="custom-pagination"></div>
+                            <button class="play-toggle"></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="section sc5">
+            <div class="sc-container">
+                <div class="hgroup">
+                    <h2>기후환경 정책지원 시스템</h2>
+                    <p>
+                        기후환경 공공정책과 사무를 지원합니다. <br>
+                        혁신적인 데이터로 근거기반의 정책추진이가능합니다.
+                    </p>
+                </div>
+                
+                <div class="link-container">
+                    <div class="lg" role="button" onClick="location.hfre='blur.html'">
+                        <h3>정책지원 시스템</h3>
+                        <p>
+                            경기기후플랫폼에서는<br>
+                            다양한 정책 지원 시스템을 운용합니다.
+                        </p>
+                        <div class="list">
+                            <ul>
+                                <li>환경정책</li>
+                                <li>산림정책</li>
+                                <li>공원녹지정책</li>
+                                <li>재생에너지</li>
+                                <li>기후재난</li>
+                            </ul>
+                            <ul>
+                                <li>법정계획 수립</li>
+                                <li>환경영향평가</li>
+                                <li>환경성검토</li>
+                                <li>개발사업 탄소총량제</li>
+                                <li>경관관리</li>
+                            </ul>
+                        </div>
+                        <i class="arw"></i>
+                    </div>
+                    <div class="sm" role="button" onClick="location.hfre='blur.html'">
+                        <h3>정책지원 활용지원 신청</h3>
+                        <p>
+                            보다 심화적으로<br>
+                            공공정책과 사무를 지원합니다.
+                        </p>
+                        <i class="arw"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- e: sc5 -->
+    </main>
+    
+    
+    <footer id="footer" class="footer">
+        <div class="footer-sitemap">
+            <h3>기후위기를 기회로, 경기기후플랫폼</h3>
+            <div class="footer-sitemap-inner">
+                <ul>
+                    <li><strong>탄소</strong></li>
+                    <li><a href="#">경기도 기후정책</a></li>
+                    <li><a href="#">경기 탄소공간지도</a></li>
+                </ul>
+                <ul>
+                    <li><strong>재생에너지</strong></li>
+                    <li><a href="#">태양관 도입</a></li>
+                    <li><a href="#">에너지 절감</a></li>
+                </ul>
+                <ul>
+                    <li><strong>기후위기</strong></li>
+                    <li><a href="#">기후위기대응</a></li>
+                    <li><a href="#">환경스코어</a></li>
+                </ul>
+                <ul>
+                    <li><strong>기후경영</strong></li>
+                    <li><a href="#">탄소경영</a></li>
+                    <li><a href="#">에너지경영</a></li>
+                    <li><a href="#" class="foot-ico-link">중소기업기후경영</a></li>
+                </ul>
+                <ul>
+                    <li><strong>기후지도</strong></li>
+                    <li><a href="#" class="foot-ico-link">탄소</a></li>
+                    <li><a href="#" class="foot-ico-link">재생에너지</a></li>
+                    <li><a href="#" class="foot-ico-link">기후위기</a></li>
+                    <li><a href="#" class="foot-ico-link">환경스코어</a></li>
+                    <li><a href="#" class="foot-ico-link">도시생태현황지도</a></li>
+                </ul>
+                <ul>
+                    <li><strong>LAB</strong></li>
+                    <li><a href="#" class="ico-link">Open & Share</a></li>
+                    <li><a href="#" class="ico-link">정책분석 지원</a></li>
+                </ul>
+                <ul>
+                    <li><strong>이용안내</strong></li>
+                    <li><a href="#">경기기후플랫폼 소개</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">자주하는질문</a></li>
+                    <li><a href="#">Q&A</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer--container main--footer">
+            <div class="footer--logo">
+                <img src="./assets/images/common/foot-logo-white.png" alt="">
+            </div>
+            <div class="footer--info">
+                <div class="footer--addr">
+                    <dl>
+                        <dt>경기도청</dt>
+                        <dd>(우 16508) 경기도 수원시 영통구 도청로 30 (이의동)</dd>
+                    </dl>
+                    <span>/</span>
+                    <dl>
+                        <dt>북부청사</dt>
+                        <dd>(우 11780) 의정부시 청사로 1 (신곡동)</dd>
+                    </dl>
+                    <span>/</span>
+                    <dl>
+                        <dt class="last-address">경기도 콜센터</dt>
+                        <dd>031-120 (365일 24시간)</dd>
+                    </dl> 
+                </div>
+                <p class="footer--copy">© GYEONGGI PROVINCE All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="btnTop"></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+
+    <script src="./assets/js/vendor/jquery/jquery-3.6.0.min.js"></script>
+    <script src="./assets/js/vendor/jquery/jquery-ui.min.js"></script>
+    
+    <script src="./assets/js/vendor/nav.js"></script>
+    <script src="./assets/js/vendor/jquery-circle-progress-master/dist/circle-progress.js"></script>
+    <script src="https://www.gitauto.com/resources/git/kor/js/slick.min.js"></script>
+    <script src="./assets/js/vendor/swiper/swiper-bundle.min.js"></script>
+
+
+    <script src="./assets/js/vendor/main.js"></script>
+    <script src="./assets/js/vendor/common.js"></script>
+
+</section>
+
+</body></html>

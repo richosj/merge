@@ -1,0 +1,81 @@
+@use '../utils/var';
+@use '../utils/function' as fn;
+
+.tabs{
+    display: flex;
+    border-radius: 1.2rem;
+    background: #d5d6e1;
+    padding: 0.4rem 0.5rem;
+    gap:0.8rem;
+    @include fn.responsive(xl){
+        overflow-x: auto;
+        width: 100%;
+        .tab-item{
+            flex-shrink: 0;
+            min-width: 25%;
+            white-space: nowrap;
+            
+            button{
+                padding-left: 1rem;
+            padding-right: 1rem;
+            }
+        }
+    }
+    @include fn.responsive(md){
+        .tab-item{
+            min-width: 50%;
+        }
+    }
+    .tab-item {
+        position: relative;
+        flex:1;
+        border-radius: 0.8rem;
+        color:#555555;
+        text-align: center;
+        &:after{
+            position: absolute;
+            width: 1px;
+            height: 2rem;
+            left: -0.4rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            content:'';
+            background: #a2b3d4;
+        }
+        &:first-child{
+            &:after{
+                display: none;
+            }
+        }
+        button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            font-size: 1.9rem;
+            padding: 2rem  0.8rem;
+            @include fn.responsive(md){
+                font-size: 1.5rem;
+                padding: 1rem  0.4rem;
+            }
+            .small{
+                margin-left: .6rem;
+                font-size: 1.5rem;
+            }
+        }
+        &.active{
+            background: #2b316a;
+            //border: 1px solid #164194;
+            button{
+                color:#fff;
+                
+            }
+        }
+    }
+}
+
+.toggle-hidden{
+    display: none;
+}

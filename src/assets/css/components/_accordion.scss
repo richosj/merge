@@ -1,0 +1,97 @@
+@use '../utils/var';
+@use '../utils/function' as fn;
+
+.accordion{
+    &--item{
+        margin-bottom: 2rem;
+        border: 1px solid #c6c6c6;
+        border-radius: 1.2rem;
+        @include fn.responsive(md){
+            margin-bottom: 1rem;
+        }
+        &:last-child{
+            margin-bottom: 0;
+        }
+        &.active{
+            .accordion--button{
+                border-radius: 1.2rem 1.2rem 0 0;
+            }
+            .accordion--content{
+                opacity: 1;
+                visibility: inherit;
+                height: auto;
+            }
+            .accordion--ti--arrow{
+                background-color: #f0f0f0;
+                background-image: url('../images/components/accordion-arrow-on.svg');
+            }
+        }
+    }
+    &--button {
+        width: 100%;
+        padding: 2rem;
+        text-align: left;
+        background-color: #fff;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        transition: background-color 0.2s ease;
+        border-radius: 1.2rem;
+        
+        @include fn.responsive(md){
+            padding: 1rem;
+        }
+    }
+    &--ti--flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &--ti--cont{
+
+    }
+    &--ti--arrow{
+        position: relative;
+        width: 3.2rem;
+        height: 3.2rem;
+        margin-left: 2rem;
+        transition:  all 0.3s;
+        background-image: url('../images/components/accordion-arrow.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        @include fn.responsive(md){
+            width: 2rem;
+            height: 2rem;
+            background-size: 12px;
+        }
+        &::after{
+            position: absolute;
+            left: -2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 1.2rem;
+            background: #c6c6c6;
+            content:'';
+        }
+    }
+    &--content {
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+        background-color: #fff;
+        overflow: hidden;
+        border-top: 1px solid #c6c6c6;
+        border-radius:0 0 1.2rem 1.2rem;
+        &--body{
+            padding: 2rem;
+            
+            @include fn.responsive(md){
+                font-size: 1.2rem;
+                padding: 1.5rem;
+            }
+        }
+    }
+}   
+

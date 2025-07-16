@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('./include/meta.html', {
+	"page_main": true
+	})
+</head>
+
+<body>
+	<!-- 전체 -->
+	<section id="wrap">
+		@@include('./include/header_fixed.html', {
+		"page_main": true
+		})
+		<!-- @@include('./include/subheader.html', {
+		"page_main": true
+		}) -->
+
+		<div id="SubContainer" class="SubContainer">
+			<div class="sub--wrap">
+				<div id="first-video" class="first--video">
+					<video src="./assets/video/AdobeStock_1146214579_Video_HD_Preview.mov" muted autoplay playsinline loop></video>
+					<div class="first--video--info">
+						<div class="first--video--inner">
+							<div class="first--video--txt fade-up">
+								<h2>에너지 절감</h2>
+								<h3>
+									노후건물 그린리모델링과 우리 동네 공동주택 단지의<br>에너지 절감가이드를 통한 시뮬레이션을 제공합니다.
+								</h3>
+								<p>
+									노후된 건물의 외관을 개선하는 것이 아닌 기후위기 대응과 지속가능한 환경을 만드는 그린리모델링의<br class="br-none">
+									시뮬레이션을 제공합니다. 사용자가 알기 어려운 건물의 세부사항과 에너지소비정보를 자동입력 분석하여<br class="br-none">
+									쉽고 간편하게 비용산정과 절감효과를 제공합니다.<br class="br-none">
+									또한, 우리동네 단지의 에너지소비량과 그 주변 단지를 비교할 수 있고,<br class="br-none">
+									에너지 소비비용을 절감하기 위한 에너지절감 방안을 확인해 보세요.<br class="br-none">
+
+								</p>
+							</div>
+							<div class="first--video--tab energy" data-simplebar>
+								<ul data-js="tabNav">
+									<li>
+										<button data-id="tabnav1">
+											<strong>건축물 그린리모델링</strong>
+											<span>연먼적 5,000m² 이하 노후건물 리모델링 분석</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav2">
+											<strong>공동주택 에너지절감</strong>
+											<span>경기도 공동주택의 에너지소비현황과 절감대책</span>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab--stiky energy">
+					<div class="sub--wrap--inner">
+						<ul class="" data-js="tabNav">
+							<li>
+								<button type="button" data-id="tabnav1">건축물 그린리모델링</button>
+							</li>
+							<li class="active">
+								<button type="button" data-id="tabnav2">공동주택 에너지절감</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div data-toggle-id="tabnav1" class="toggle-hidden">
+
+					<!-- stat-section -->
+					<div class="stat-section energy">
+						<div class="sub--wrap--inner">
+							<h2 class="section-title energy"><i class="stat-box__icon" aria-hidden="true"></i>에너지 소비<span class="status-dot" aria-hidden="true"></span></h2>
+						</div>
+						<div class="sub--wrap--inner">
+							<div class="stat-box">
+								<div class="stat-grid">
+									<div class="stat-card">
+										<div class="stat-card__inner">
+											<h3 class="stat-card__title">그린리모델링<br class="br-none">서비스대상 건축물</h3>
+										</div>
+										<div class="stat-card__value">
+											<span>약</span>
+											<p class="count" data-target="700000">0</p>
+											<span>동</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<div class="stat-card__inner">
+											<h3 class="stat-card__title">그린리모델링<br class="br-none">활용건 수</h3>
+										</div>
+										<div class="stat-card__value">
+											<span>약</span>
+											<p class="count" data-target="9200000">0</p>
+											<span>건</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<div class="stat-card__inner">
+											<h3 class="stat-card__title">건물 에너지 사용량<br class="br-none">활용건 수</h3>
+										</div>
+										<div class="stat-card__value">
+											<p class="count" data-target="360">0</p>
+											<span>가지</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="info-section">
+						<div class="sub--wrap--inner">
+							<div class="info-section-wrap">
+								<div class="txt-info fade-up">
+									<p class="heading-txt">
+										그린리모델링 시뮬레이션
+									</p>
+									<p class="black-txt">
+										그린리모델링은 기존의 건축물의 리모델링을 통해 건축물의 에너지 소비효율을 높여<br class="br-none"> 
+										건축물 에너지 절약 및 탄소배출량을 감축시키는 방법입니다.
+									</p>
+									<p class="black-txt">
+										우리 플랫폼은 경기도에 소재한 건축물을 대상으로 실제 에너지 사용량을 기반하여<br class="br-none"> 
+										건축물 에너지 시뮬레이션을 수행합니다. 건축물 에너지 시뮬레이션의 결과를 통해<br class="br-none"> 
+										건축물의 에너지 소비량, 탄소배출량, 에너지요금을 계산하고 그린리모델링의 효과를<br class="br-none"> 
+										보여줍니다.
+									</p>
+									<p class="black-txt">
+										평가 과정에서는 건축물의 형상, 수명, 설비와 같은 에너지 소비에 영향을 주는 요인들을<br class="br-none"> 
+										종합적으로 고려했습니다. 특히 시민들이 건축물의 설비 선택, 에너지 사용량 입력을<br class="br-none"> 
+										통해 건축물의 특성을 반영하고자 하였습니다. 이를 통해 보다 정확한 에너지 시뮬레이<br class="br-none">
+										션을 진행하고, 건물에 미치는 영향을 평가합니다.
+									</p>
+									<p class="black-txt">
+										이 정보는 시민들에게 그린리모델링 효과를 제공하며, 다양한 시나리오에 따른 합리적인<br class="br-none">
+										개선을 유도합니다. 
+									</p>
+									<a href="" class="link-btn energy">시뮬레이션 바로가기 <i class="icon"></i></a>
+								</div>
+								<div class="img-info fade-up" style="translate: none; rotate: none; scale: none;">
+									<img src="./assets/images/new_sub/energy-remodeling.jpg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- data-chart-gray -->
+					<div class="data-chart-cicle">
+                        <div class="sub--wrap--inner">
+							<div class="data-chart__txt fade-up">
+                                <h4>건축물 그린리모델링 시뮬레이션 프로세스</h4>
+                                <p class="chart-txt02">
+                                    경기 건축물 그린리모델링 시뮬레이션의 프로세스는 총 6단계로 건축물대장 정보와 부동산원 에너지 사용량 정보를 활용합니다. 미국 에너지부에서 개발한 건축물 에너지 시뮬레이션을 적용하여 건축물 용도에 따른 분석을 통해 약 360가지의 시뮬레이션을 통해 그린리모델링를 통해 에너지 개선방안을 제공합니다.
+                                </p>
+								<div class="energy-process">
+									<div class="energy-process__row">
+										<div class="energy-process__step">
+											<div class="energy-process__step__ti">
+												<h2>1단계</h2>
+											</div>
+											<div class="energy-process__step__con">
+												<h3>그린리모델링 분석 요청</h3>
+												<ul>
+													<li>웹 인터페이스를 통한 분석 요청 시작</li>
+													<li>건물 정보 및 에너지 효율화 옵션 입력</li>
+													<li>입력 데이터 검증 및 API 서버 전송</li>
+												</ul>
+											</div>
+										</div>
+										<div class="energy-process__step">
+											<div class="energy-process__step__ti">
+												<h2>2단계</h2>
+											</div>
+											<div class="energy-process__step__con">
+												<h3>분석 건물 데이터 조회</h3>
+												<ul>
+													<li>건축물 대장 키 기반 건물 기본 정보 검색</li>
+													<li>건물 폴리곤 고유키로 대상 건물 특정</li>
+													<li>건물 구조 및 설비 현황 정보 수집</li>
+												</ul>
+											</div>
+										</div>
+										<div class="energy-process__step">
+											<div class="energy-process__step__ti">
+												<h2>3단계</h2>
+											</div>
+
+											<div class="energy-process__step__con">
+												<h3>그린리모델링 분석 요청</h3>
+												<ul>
+													<li>건물 폴리곤 데이터와 건축물 대장 정보 결합</li>
+													<li>부동산원 에너지 사용량 데이터 연동</li>
+													<li>시뮬레이션 입력 데이터 최종 구성</li>
+												</ul>
+											</div>
+										</div>
+										<div class="energy-process__step">
+											<div class="energy-process__step__ti">
+												<h2>4단계</h2>
+											</div>
+											<div class="energy-process__step__con">
+												<h3>시뮬레이션 요청 데이터 발송</h3>
+												<ul>
+													<li>API 서버에서 시뮬레이션 서버로 데이터 전송</li>
+													<li>4가지 시나리오 설정 정보 전달</li>
+													<li>EnergyPlus 실행 환경 준비</li>
+												</ul>
+											</div>
+										</div>
+										<div class="energy-process__step">
+											<div class="energy-process__step__ti">
+												<h2>5단계</h2>
+											</div>
+											<div class="energy-process__step__con">
+												<h3>4가지 단일 시뮬레이션 통합</h3>
+												<ul>
+													<li>4개 시나리오 동시 병렬 처리 실행</li>
+													<li>각 시나리오별 에너지 소비량 계산</li>
+													<li>기본 시나리오 대비 절감 효과 분석</li>
+												</ul>
+											</div>
+										</div>
+										<div class="energy-process__step">
+											<div class="energy-process__step__ti">
+												<h2>6단계</h2>
+											</div>
+											<div class="energy-process__step__con">
+												<h3>그린리모델링 시나리오 수신</h3>
+												<ul>
+													<li>4가지 시나리오 결과 종합 비교</li>
+													<li>절감 가능량 및 경제성 분석 완료</li>
+													<li>웹 인터페이스를 통한 최종 결과 제공</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+                            </div>
+						</div>
+					</div>
+
+					<div class="data-chart data-chart-cicle">
+                        <div class="sub--wrap--inner">
+							<div class="data-chart__txt fade-up">
+                                <h4>자동화 시뮬레이션 체계 마련</h4>
+                                <p class="chart-txt02">
+                                    미국 에너지부에서 개발한 솔루션을 적용하여 건축물 외벽 설계과 건축물 대장 표제부의 상세정보 및 설비별 에너지 정보 등을 자동화하여 시뮬레이션 결과를 제공합니다. 또한, 건축물 용도에 따른 주거, 사무, 상업으로 그분하여 건축물의 내부 발열, 조명 밀도 등을 고려한 시나리오 별 절감율을 분석하도록 구현하였습니다. 
+                                </p>
+								<img src="./assets/images/new_sub/energy-auto-simul.png" alt="건축물 대장, GIS, 에너지 정보를 활용해 건축물 모델을 만들고, 벽체의 성능, 스케줄링, 건축물 형상을 반영하여 에너지 절감율을 산출하는 흐름도." style="max-width: 100%;">
+							</div>
+						</div>
+					</div>
+					<div class="data-chart-cicle mb80">
+                        <div class="sub--wrap--inner">
+							<div class="scenario-analysis">
+								<div class="scenario-analysis__column">
+									<h2 class="scenario-analysis__title">시나리오별 분석</h2>
+									<div class="scenario-analysis__card">
+										<h3 class="scenario-analysis__subtitle">에너지 성능 지표 산정</h3>
+										<ul class="scenario-analysis__list">
+											<li>에너지 효율 개선 타임별 분류</li>
+											<li>연간 에너지 소비량 산출</li>
+											<li>월별 에너지 요금 계산</li>
+											<li>이산화탄소 배출량 산정</li>
+										</ul>
+									</div>
+								</div>
+								<div class="scenario-analysis__column">
+									<div class="scenario-analysis__card">
+										<h3 class="scenario-analysis__subtitle">기본 시나리오 기준 비교 분석</h3>
+										<ul class="scenario-analysis__list">
+											<li>기본 시나리오 대비 개선 효과 측정</li>
+											<li>각 개선시 시나리오별 상대적 성능평가</li>
+											<li>시나리오간 효율성 비교 데이터</li>
+										</ul>
+									</div>
+								</div>
+								<div class="scenario-analysis__column">
+									<h2 class="scenario-analysis__title">절감효과 정량화</h2>
+									<div class="scenario-analysis__card">
+										<ul class="scenario-analysis__list02">
+											<li>절감 가능 에너지 소비량(%) 계산</li>
+											<li>절감 가능 요금(%) 산출</li>
+											<li>절감 가능 탄소 배출량(%) 계산</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<img src="./assets/images/new_sub/scenario-analysis.png" alt="" style="max-width: 100%;">
+						</div>
+					</div>
+
+				</div>
+
+				<div data-toggle-id="tabnav2">
+
+					<!-- stat-section -->
+					<div class="stat-section energy">
+						<div class="sub--wrap--inner">
+							<h2 class="section-title energy"><i class="stat-box__icon" aria-hidden="true"></i>공동주택 에너지절감<span class="status-dot" aria-hidden="true"></span></h2>
+						</div>
+						<div class="sub--wrap--inner">
+							<div class="stat-box">
+								<div class="stat-grid">
+									<div class="stat-card">
+										<div class="stat-card__inner">
+											<h3 class="stat-card__title">서비스 대상 경기도 공동주택 수</h3>
+											<p class="stat-card__desc">2025년 4월 기준</p>
+										</div>
+										<div class="stat-card__value">
+											<p class="count" data-target="5625">0</p>
+											<span>개소</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<div class="stat-card__inner">
+											<h3 class="stat-card__title">서비스 제공 관리비 이력 데이터</h3>
+											<p class="stat-card__desc">2024~2025년</p>
+										</div>
+										<div class="stat-card__value">
+											<p class="count" data-target="71845">0</p>
+											<span>건</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<div class="stat-card__inner">
+											<h3 class="stat-card__title">서비스 제공 에너지 사용량 데이터</h3>
+											<p class="stat-card__desc">2022~2025년</p>
+										</div>
+										<div class="stat-card__value">
+											<p class="count" data-target="200310">0</p>
+											<span>건</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<div class="stat-card__inner">
+											<h3 class="stat-card__title">서비스 제공 에너지 효율 분석 데이터</h3>
+											<p class="stat-card__desc">2025년 4월 기준</p>
+										</div>
+										<div class="stat-card__value">
+											<p class="count" data-target="5408">0</p>
+											<span>개소</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="info-section">
+						<div class="sub--wrap--inner">
+							<div class="info-section-wrap">
+								<div class="txt-info fade-up">
+									<p class="heading-txt">
+										공동주택 에너지절감 시뮬레이션
+									</p>
+									<h3 class="black-ti">우리 단지의 에너지소비현황을 한눈에</h3>
+									<p class="black-txt">
+										우리 단지 외 주변 단지의 에너지소비현황을 한눈에 확인할 수 있는 정보를 제공합니다.<br class="br-none">
+										단지의 전기요금, 냉난방 효율등급, 에너지사용량 등을 제공합니다.
+									</p>
+									<h3 class="black-ti">우리 아파트의 전기소비 현황을 한눈에</h3>
+									<p class="black-txt">
+										그동안 알기 어려웠던 우리 아파트의 한전 계약전력, 계약방식, 월별 전기 소비현황을<br class="br-none">
+										주변 단지와 비교하여 한 눈에 확인 있도록 서비스를 제공합니다.
+									</p>
+									<h3 class="black-ti">에너지절감 가이드 제공</h3>
+									<p class="black-txt">
+										우리 단지의 계약전력, 피크율, 전기요금 누진관리, 태양광 설치효과, 공용전기 개선 등<br class="br-none">
+										에너지절감을 위한 가이드를 제공합니다.
+									</p>
+									<a href="" class="link-btn energy">시뮬레이션 바로가기 <i class="icon"></i></a>
+								</div>
+								<div class="img-info fade-up">
+									<img src="./assets/images/new_sub/energy-public.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="sub--wrap--inner">
+						<div class="public--grid mb80">
+							<div class="public--grid__item fade-up">
+								<div class="public--grid__item__info">
+									<h3>전기요금 누진관리</h3>
+									<p>
+										대다수의 아파트는 일반주택과 달리 공동 전기에도 누진제가 적용됩니다. 아파트의 평균전기 사용량이 누진 3단계 400 kWh에서 1kWh만 초과되어도 모든 세대의 공동 전기요금이 약 5천원 더 부과되므로, 누진 3단계 관리가 중요합니다. 
+									</p>
+								</div>
+								<div class="public--grid__item__img">
+									<img src="./assets/images/new_sub/energy-public-item01.png" alt=""  style="max-width: 100%;">
+								</div>
+							</div>
+							<div class="public--grid__item fade-up">
+								<div class="public--grid__item__info">
+									<h3>태양광 요금절감 효과</h3>
+									<p>
+										아파트 태양광 발전기의 설비 용량은 물론 전기 생산량이 같아도, 실제 절감되는 전기요금은 단지 별로 달라집니다. 아파트에서 생산한 전기는 일반적으로는 한전과 거래되지 않고, 단지에서 사용한 전기와 상계해서 계산되기 때문입니다. 전기사용량이 높은 단지일수록 태양광 발전기의 공동전기 요금 절감 효과가 높습니다 
+									</p>
+								</div>
+								<div class="public--grid__item__img">
+									<img src="./assets/images/new_sub/energy-public-item02.png" alt=""  style="max-width: 100%;">
+								</div>
+							</div>
+							<div class="public--grid__item fade-up">
+								<div class="public--grid__item__info">
+									<h3>공용전기 소비량 점검</h3>
+									<p>
+										유달리 우리 아파트 단지의 공용 전기요금이 높다면, 한전 계약방식은 적절한지 또는 낭비되는 공용전기 소비량이 없는지 점검이 필요합니다. 
+									</p>
+								</div>
+								<div class="public--grid__item__img">
+									<img src="./assets/images/new_sub/energy-public-item03.png" alt=""  style="max-width: 100%;">
+								</div>
+							</div>
+							<div class="public--grid__item fade-up">
+								<div class="public--grid__item__info">
+									<h3>스마트 전기계량기 설치 아파트 정보</h3>
+									<p class="min">
+										스마트 전기 계량기가 설치된 경기도 내 아파트 단지 정보를 통해, 우리 단지만 누릴 수 있는 특별한 에너지 서비스를 확인할 수 있습니다. 스마트 계량기가 설치된 단지는 선택형 요금제 도입을 통해 앞으로는 누진제가 적용되지 않는 전기요금도 사용할 수 있기를 기대할 수 있습니다. 
+									</p>
+								</div>
+								<div class="public--grid__item__img">
+									<img src="./assets/images/new_sub/energy-public-item04.png" alt=""  style="max-width: 100%;">
+								</div>
+							</div>
+							<div class="public--grid__item fade-up">
+								<div class="public--grid__item__info">
+									<h3>경기 시민발전소 서비스</h3>
+									<p class="min">
+										스마트 전기 계량기가 설치된 아파트이면, 피크시간 등 특정 시점에만 모두 다 함께 전기 절감에 동참하는 시민발전소를 통해 석탄 발전소 가동을 줄이는 서비스에 참여할 수 있습니다.  올해는 시범사업을 통해 참여 단지를 모집할 예정이니 많은 관심 부탁드립니다. 
+									</p>
+								</div>
+								<div class="public--grid__item__img">
+									<img src="./assets/images/new_sub/energy-public-item05.png" alt=""  style="max-width: 100%;">
+								</div>
+							</div>
+							<div class="public--grid__item fade-up">
+								<div class="public--grid__item__info">
+									<h3>기간별 전력소비량 비교</h3>
+									<p class="min">
+										이번 여름이 무척 더웠다면, 우리 단지의 전기사용량이 이웃단지에 비해 얼마나 늘어난 것일까요? 플랫폼을 통해 월별로 경기도의 약 4천개 아파트 단지 데이터를 최근 2개월 내 전력사용량 데이터까지 손쉽게 분석할 수 있습니다. 
+									</p>
+								</div>
+								<div class="public--grid__item__img">
+									<img src="./assets/images/new_sub/energy-public-item06.png" alt=""  style="max-width: 100%;">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		@@include('./include/footer.html', {
+			"page_main": true
+		})
+	</section>
+</body>
+
+</html>

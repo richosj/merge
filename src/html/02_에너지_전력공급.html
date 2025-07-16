@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	@@include('./include/meta.html', {
+	"page_main": true
+	})
+</head>
+
+<body>
+	<!-- 전체 -->
+	<section id="wrap">
+		@@include('./include/header_fixed.html', {
+		"page_main": true
+		})
+		<!-- @@include('./include/subheader.html', {
+		"page_main": true
+		}) -->
+
+		<div id="SubContainer" class="SubContainer">
+			<div class="sub--wrap">
+				<div id="first-video" class="first--video">
+					<video src="./assets/video/AdobeStock_1146214579_Video_HD_Preview.mov" muted autoplay playsinline loop></video>
+					<div class="first--video--info">
+						<div class="first--video--inner">
+							<div class="first--video--txt fade-up">
+								<h2>에너지 현황</h2>
+								<h3>
+									경기도의 에너지 수요와 공급, 재생에너지,<br>에너지복지 현황을 한눈에 파악할 수 있습니다.
+								</h3>
+								<p>
+									경기도의 에너지 수요와 전력 공급을 다양한 시각자료를 통해 직관적으로 이해할 수 있습니다.<br class="br-none">
+                                    전국 17개 시도 중 경기도의 특성과 더불어, 도내 31개 시군별 세부 특징도 확인할 수 있습니다.<br class="br-none">
+                                    부문별, 에너지원별, 시계열 데이터를 통해 보다 구체적인 소비 패턴을 확인할 수 있습니다.<br class="br-none">
+                                    전력의 공급과 수요를 함께 분석함으로써 전력 자급률도 확인할 수 있습니다.<br class="br-none">
+                                    도내 지역별 에너지 바우처 발급현황을 살펴보고, 에너지 사용이 어려운 가구를 위한 정책을 안내 합니다.<br class="br-none">
+                                    사용자는 이 플랫폼을 통해 경기도의 에너지 현황을 종합적으로 이해하고,<br class="br-none">
+                                    다양한 정책 수립 및 사업 추진에 필요한 기초자료로 활용할 수 있습니다.
+								</p>
+							</div>
+							<div class="first--video--tab energy" data-simplebar>
+								<ul data-js="tabNav">
+									<li>
+										<button data-id="tabnav1">
+											<strong>에너지 소비</strong>
+											<span>지역별, 에너지원별, 부문별, 시계열 에너지 소비 현황</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav2">
+											<strong>전력 공급</strong>
+											<span>지역별, 에너지원별, 시계열 전력발전 현황</span>
+										</button>
+									</li>
+                                    <li>
+										<button data-id="tabnav3">
+											<strong>신재생에너지 공급</strong>
+											<span>지역별 신재생에너지 보급 현황</span>
+										</button>
+									</li>
+                                    <li>
+										<button data-id="tabnav4">
+											<strong>에너지 바우처 발급 현황</strong>
+											<span>지역별, 절기별 발급가구와 비중, 발급액 현황</span>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab--stiky energy">
+					<div class="sub--wrap--inner">
+						<ul class="" data-js="tabNav">
+							<li class="active">
+								<button type="button" data-id="tabnav1">에너지 소비</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav2">전력 공급</button>
+							</li>
+                            <li>
+								<button type="button" data-id="tabnav3">신재생에너지 공급</button>
+							</li>
+                            <li>
+								<button type="button" data-id="tabnav4">에너지 바우처 발급 현황</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div data-toggle-id="tabnav1">
+
+					<!-- stat-section -->
+					<div class="stat-section energy">
+						<div class="sub--wrap--inner">
+							<h2 class="section-title energy"><i class="stat-box__icon" aria-hidden="true"></i>에너지 소비<span class="status-dot" aria-hidden="true"></span></h2>
+						</div>
+						<div class="sub--wrap--inner">
+							<div class="stat-box">
+								<!-- <div class="stat-box__header">
+									<i class="stat-box__icon" aria-hidden="true"></i>
+									<strong class="stat-box__title">에너지 소비 현황</strong>
+									<span class="stat-box__subtitle">에너지 소비 현황 정보</span>
+								</div> -->
+								<div class="stat-grid">
+									<div class="stat-card">
+										<h3 class="stat-card__title">경기도 최종 에너지 소비량(2022년)</h3>
+										<p class="stat-card__desc">전국 소비량의 13.7%</p>
+										<div class="stat-card__value">
+											<p class="count" data-target="1000000000">0</p>
+											<span>ktoe</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<h3 class="stat-card__title">1인당 에너지 소비량 (2022년)</h3>
+										<p class="stat-card__desc">17개 시도 중 10번째로 높음</p>
+										<div class="stat-card__value">
+											<p class="count" data-target="2.35">0</p>
+											<span>toe/인</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<h3 class="stat-card__title">1인당 에너지 소비 증가율 (2012~2022 연평균)</h3>
+										<p class="stat-card__desc">전국 증가율: 0.98%</p>
+										<div class="stat-card__value">
+											<p class="count" data-target="1000000000">0.73</p>
+											<span>%</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<h3 class="stat-card__title">GRDP당 에너지 소비량 (2022년)</h3>
+										<p class="stat-card__desc">17개 시도 중 13번째로 높음</p>
+										<div class="stat-card__value">
+											<p class="count" data-target="1000000000">0.062</p>
+											<span>toe/백만원</span>
+										</div>
+									</div>
+
+									<div class="stat-card">
+										<h3 class="stat-card__title">GRDP당 에너지 소비 증가율 (2012~2022 연평균)</h3>
+										<p class="stat-card__desc">하천, 저수지, 습지 등 </p>
+										<div class="stat-card__value">
+											<p class="count" data-target="-2.49">0</p>
+											<span>%</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- data-chart-gray -->
+					<div class="data-chart data-chart-gray">
+						<div class="sub--wrap--inner">
+							<div class="data-chart__txt fade-up">
+								<h3>전력수급</h3>
+								<p class="chart-txt01">
+									아래 생키 다이어그램은 일반적인 국가 에너지시스템과는 달리, 공간으로는 ‘경기도’와 ‘경기도 외’ 지역으로, 부문으로는 ‘전력 전환 부문’과 ‘전력 소비
+									부문’으로 나누어 표현하였습니다.<br>
+									이 시각화는 다음과 같은 질문에 대한 인사이트를 제공합니다<br>
+									1. 경기도는 어떤 에너지원에 의존하여 전력을 생산하고 있는가?<br>
+									2. 경기도의 발전량은 국가 전체 발전량 중 얼마나 기여하는가?<br>
+									3. 국내 전체 발전량 중 경기도가 소비하는 전력은 얼마나 되는가?<br>
+									4. 경기도에서 소비되는 전력은 주로 어떤 부문에 사용되고 있는가?<br>
+									5. 경기도와 경기도 외 지역 간 전력 수급 및 소비 구조는 어떻게 다른가?<br>
+									이와 같은 구조는 복잡한 에너지 흐름을 지역 간 전력의 공급·수요의 관계 중심으로 단순화하여, 국가 내에서 경기도의 전력수급 현황을 한 눈에 살펴볼 수 있도록
+									하였습니다.
+								</p>
+                            </div>
+                            <div class="chatr-block lg fade-up">
+								<div class="chart-util flex-util">
+									<dl class="dl-felx">
+                                        <dt>기간 선택</dt>
+                                        <dd>
+                                            <select name="" id="" class="form-control md">
+                                                <option value="">2024</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+									<div class="page-intro-links blank">
+										<button type="button" onclick="ModalHandler.open('modal-energy-report')">생키그래프란</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div data-toggle-id="tabnav2" class="toggle-hidden">
+					2222
+				</div>
+				<div data-toggle-id="tabnav3" class="toggle-hidden">
+					3333
+				</div>
+				<div data-toggle-id="tabnav4" class="toggle-hidden">
+					4444
+				</div>
+				<div data-toggle-id="tabnav5" class="toggle-hidden">
+					5555
+				</div>
+				<div data-toggle-id="tabnav6" class="toggle-hidden">
+					6666
+				</div>
+			</div>
+		</div>
+		@@include('./include/modal.html',{
+			'page__name' : '전력수급'
+		})
+		@@include('./include/footer.html', {
+			"page_main": true
+		})
+	</section>
+</body>
+
+</html>

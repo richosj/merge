@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./include/meta.html', {
+        "page_main": true
+    })
+</head>
+<body>
+    <!-- 전체 -->
+    <section id="wrap">
+    <div class="skip">
+        <a href="#header">주메뉴 바로가기</a>
+        <a href="#mainContainer">본문 바로가기</a>
+        <a href="#">하단 정보 바로가기</a>
+    </div>
+    @@include('./include/header.html', {
+        "page_main": true
+    })
+    @@include('./include/subheader.html', {
+        "page_main": true
+    })
+    
+    <div id="SubContainer" calss="SubContainer">
+        <div class="sub--wrap">
+            <div class="sub--wrap--inner">
+                <div class="sub--ti">
+                    <h3>태양광도입시뮬레이션</h3>
+                    <div class="sub--ti--util">
+                        <button class="share"><span class="sr-only">공유</span></button>
+                        <button class="print"><span class="sr-only">인쇄</span></button>
+                    </div>
+                </div>
+            </div>
+          
+
+            <!-- start-->
+            
+            <div class="sub--wrap--inner mb80">
+                <div class="sub--Info--wrap">
+                    <div class="page-intro">
+                        <div class="page-intro-header">
+                            <strong>태양광 발전 시뮬레이션</strong>
+                            <div class="page-intro-links">
+                                <a href="#">태양광 발전 시뮬레이션</a>
+                            </div>
+                        </div>
+                        <div class="page-intro-content">
+                            태양광 발전 시뮬레이션은 경기도 전역에 위치한 건물과 필지를 대상으로 태양광 설비 설치 시 발전량과 편익분석을 제공하는 서비스 입니다.
+                        </div>
+                    </div>
+
+                    <div class="notice-container">
+                        <div class="notice-title">건물 태양광 설비 시뮬레이션</div>
+                        <div class="notice-content">
+                            한국건설기술연구원에서 분석한 경기도 전체의 건물 지붕의 음영정보와 기상청 일사량 데이터 등 고정밀 데이터를 이용하여 도가 제작한 건물모델을 대상으로 태양광 설비시설 설치와 발전량 예측 시뮬레이션을 제공합니다.
+                        </div>
+                    </div>
+                    <div class="notice-container">
+                        <div class="notice-title">필지 태양광 발전 시뮬레이션</div>
+                        <div class="notice-content">
+                            경기도에서 분석한 태양광 적지를 대상으로 태양광 설치 분석 시뮬레이션 필지별로 제공합니다.
+                        </div>
+                    </div>
+                    <div class="notice-container">
+                        <div class="notice-title">태양광 설비 맞춤형 정보 제공</div>
+                        <div class="notice-content">
+                            태양광 일사량 정보를 태양광 패널크기로 분석하여 발전량 예측치의 정확도를 높였으며, 태양광 설치 유형에 따라 자가소비 또는 발전사업에 맞는 사업성 분석결과를 제공합니다. 또한, 지속적으로 전력 단가를 갱신하여 편익분석의 정확성을 높였습니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- end-->
+        </div>
+    </div>
+    
+    @@include('./include/footer.html', {
+        "page_main": true
+    })
+    </section>
+</body></html>
