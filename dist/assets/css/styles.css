@@ -5895,6 +5895,41 @@ html, body {
 @media (max-width: 768px) {
   .busi-contents-wrap .busi-content .busi-thumb {
     height: 270px;
+    display: none;
+  }
+  .main-inner {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    transition: background 0.4s;
+  }
+  .main-inner:has(.busi01.slick-active) {
+    background-image: url(../images/main/s2-img-01.png);
+  }
+  .main-inner:has(.busi02.slick-active) {
+    background-image: url(../images/main/s2-img-02.png);
+  }
+  .main-inner:has(.busi03.slick-active) {
+    background-image: url(../images/main/s2-img-03.png);
+  }
+  .main-inner:has(.busi04.slick-active) {
+    background-image: url(../images/main/s2-img-04.png);
+  }
+  .busi-g {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .busi-info .details {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 3px;
+  }
+  .sc2 .details .link-container a:hover strong, .sc2 .details .link-container a:focus strong {
+    color: #fff !important;
+  }
+  .sc2 .details .link-container a div {
+    color: #fff !important;
   }
 }
 @media (max-width: 1025px) {
@@ -6293,9 +6328,7 @@ html, body {
 }
 @media (max-width: 768px) {
   .sc4 .text-group .link {
-    display: grid;
-    gap: 0;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 30px;
     padding-top: 40px;
   }
 }
@@ -8705,6 +8738,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.max-w100 {
+  max-width: 100%;
+}
+
 @media (max-width: 768px) {
   .br-none {
     display: none;
@@ -9034,6 +9071,7 @@ html {
   }
 }
 .tab--stiky ul li button, .tab--stiky ul li a {
+  white-space: nowrap;
   position: relative;
   display: block;
   width: 100%;
@@ -10048,6 +10086,10 @@ html {
   .chart-flex {
     gap: 25px;
   }
+}
+.chart-flex.not-row {
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .chart-area {
@@ -11102,6 +11144,7 @@ html {
   cursor: pointer;
   transition: color 0.2s, background 0.2s;
   height: 100%;
+  white-space: nowrap;
 }
 @media (max-width: 768px) {
   .tab--style ul[data-js=tabNav] > li button {
