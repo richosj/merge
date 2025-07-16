@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>경기기후 플랫폼</title>
+  <script src="@@htmlRoot/common/libjs/jquery.min.js"></script>
+  <script src="@@htmlRoot/common/libjs/jquery-ui.min.js"></script>
+  <!-- <script src="@@htmlRoot/common/js/datepicker.js"></script>
+  <script src="@@htmlRoot/common/js/common.js"></script> -->
+
+  <style>
+    /* .table-col-cate, */
+    /* .table-col-extra, */
+    /* .table-col-code,
+    .table-col-createDate,
+    .table-col-modifyDate{display: none;} */
+
+    .table-col-careteDate{border:1px solid red; color: red !important;}
+
+    
+    .table-col-url a{transition: all .25s;}
+    .urlopen .table-col-url a{color:#04cd73;}
+    .urlopen .table-col-url a::after{content: '';width: 5px;height: 5px;background: #04cd73;display: inline-block;border-radius: 50%;margin-left: 5px;vertical-align: middle;}
+
+    .windowCtrl{position:fixed;right: 10px;bottom: 10px;z-index: 1000;}
+    .windowCtrl button{border:0;background: #fff;height:24px;border:1px solid #cecece;border-radius: 12px;padding-left: 10px;padding-right: 10px;color: #111;transition: all .25s;cursor: pointer;}
+    .windowCtrl button:hover{background: #3c3c3c;color:#fff;border-color:#3c3c3c}
+    .new-tag{display: inline-block;width: 42px;height: 18px;vertical-align: text-bottom;background: url(./common/images/list/new_tag.png);}
+    .update-tag{display: inline-block;width: 56px;height: 18px;vertical-align: text-bottom;background: url(./common/images/list/update_tag.png);}
+  </style>
+
+  <script>
+    jQuery(function($){
+      document.body.style.zoom = "80%";
+      $('.fdev-lay-body').css('height', 'calc(100% - 40px)');
+
+  // var datepicker = $("#datepicker");
+  if(!$.datepicker) return false;
+  var datePicker;
+  
+  var dateInit = function(){
+    $.datepicker.setDefaults({
+      dateFormat: 'yy-mm-dd',
+      closeText: '닫기',
+      currentText: '오늘',
+      prevText: '이전 달',
+      nextText: '다음 달',
+      monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+      monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+      dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+      dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+      dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+      showMonthAfterYear: true,
+      changeYear: false,
+      yearSuffix: '년',
+    });
+  }
+
+  var dateRange = function(){
+    var dateRangSet = $('.cs-datepicker-set');
+    dateRangSet.each(function(){
+      var row = $(this);
+      var from = row.find('.js__date-from');
+      var to = row.find('.js__date-to');
+
+      // from.datepicker("setDate",new Date());
+      // to.datepicker("setDate","+ 1w");
+
+      from.datepicker({
+      }).on( "change", function() {
+        to.datepicker( "option", "minDate", getDateRang( this ) );
+      });
+
+      to.datepicker({
+      }).on( "change", function() {
+        from.datepicker( "option", "maxDate", getDateRang( this ) );
+      });
+
+    });
+  }
+
+  function getDateRang( element ) {
+    var date;
+    try {
+      date = $.datepicker.parseDate( "yy-mm-dd", element.value );
+    } catch( error ) {
+      date = null;
+    }
+
+    return date;
+  }
+
+  
+  var init = function(){
+    //datepicker 한글설정
+    dateInit();
+
+    $('.cs-input-date').attr('autocomplete', 'off');
+
+    var dateInputs = $('.cs-input-date');
+
+    dateInputs.each(function(){
+      var input = $(this);
+      var opt;
+      var today = new Date();
+      opt = $(this).data();
+      
+      datepickerOpt = {
+        changeMonth: opt.optChangemonth == true ? true : false,
+        changeYear: opt.optChangeyear == true ? true : false,
+      }
+
+      function calcYear(y){
+        if(y.indexOf('-') > -1){
+          return today.getFullYear() - Number(y.split('-')[1]);
+        }else if(y.indexOf('+') > -1){
+          return today.getFullYear() + Number(y.split('+')[1]);
+        }else if(y =='today'){
+          return today.getFullYear();
+        }
+
+      }
+
+      if(opt['optYearpoint'] && opt['optYearrange']){
+        datepickerOpt.yearRange = calcYear(opt['optYearrange'].split(':')[0]) + ':' + calcYear(opt['optYearrange'].split(':')[1])
+      }else if(opt['optYearrange']){
+        datepickerOpt.yearRange = opt.optYearrange;
+      }
+
+      if(opt['optYearmonth']){
+        datepickerOpt.changeMonth = true;
+        datepickerOpt.changeYear = true;
+        datepickerOpt.showButtonPanel = true;
+        datepickerOpt.closeText = '선택';
+        datepickerOpt.dateFormat = "yy-mm";
+        datepickerOpt.showAnim = "";
+
+
+        datepickerOpt.onClose = function (dateText, inst) {
+          var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+          var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+          $(this).datepicker( "option", "defaultDate", new Date(year, month, 1) );
+          $(this).datepicker('setDate', new Date(year, month, 1));
+
+          $('.ui-datepicker').removeClass('noselectDay');
+        }
+    
+        datepickerOpt.beforeShow = function () {
+          $('.ui-datepicker').addClass('noselectDay');
+            var selectDate = input.val().split("-");
+            var year = Number(selectDate[0]);
+            var month = Number(selectDate[1]) - 1;
+            $(this).datepicker( "option", "defaultDate", new Date(year, month, 1) );
+        }
+      }
+
+      input.datepicker(datepickerOpt);
+    });
+
+      // $('.cs-input-date').datepicker({
+      // 	changeMonth: false,
+      // 	changeYear: false,
+      // });
+
+    dateRange();
+  }
+  init();
+
+  // $(document).on('DOMSubtreeModified',function(){
+    // init();
+  // });
+
+  
+
+  // $('.modal-datepicker_close, .modal-datepicker_wrap').click(function(){
+  // 		$('.modal-datepicker').hide();
+  // });
+  
+  // $('.datepicker').click(function(e){
+  // 		e.stopPropagation();
+  // });
+
+  //date
+  getDate = function(date){
+    if(!date) date = new Date();
+    var y = date.getFullYear();
+        m = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1;
+        d = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+
+        return y + '-' + m + '-' + d;
+  }
+});
+
+jQuery(function(){
+  var layjQ_BottomNav = function(){
+    $(window).scroll(function(){
+      if($('.lay-body').height() - $(window).height() < $(window).scrollTop()){
+        $('.lay-quick-nav').addClass('scrollEnd');
+      }else{
+        $('.lay-quick-nav').removeClass('scrollEnd');
+      }
+    });
+  }
+
+  // layjQ_BottomNav();
+
+  // gnb open
+  var layjQ_gnb = function(){
+    var btnOpen = $('.lay-gnb-open');
+    var btnClose = $('.lay-side-cont-close');
+    var gnb = $('.lay-side-cont');
+    var gbnBg = $('.lay-side-cont-bg');
+
+    btnOpen.on('click', function(){
+      gnb.css('display','block');
+      setTimeout(function(){
+        gnb.css('right', 0);
+      },10);
+
+      gbnBg.css({
+        'opacity': 0,
+        'display': 'block'
+      });
+      setTimeout(function(){
+        gbnBg.css('opacity', 1);
+      },10);
+    });
+
+    btnClose.on('click', function(){
+      gnb.css('right', '-100%');
+      setTimeout(function(){
+        gnb.css('display','none');
+      },260);
+
+      
+      gbnBg.css('opacity', 0);
+      setTimeout(function(){
+        gbnBg.css({
+          'display': 'none'
+        });
+      },260);
+    });
+  }
+  layjQ_gnb();
+
+  // 라디오 대응
+  // 라디오 선택시 엘리먼트 토글
+  var layjQ_selector = function(){
+    $('.cs-checkbox-selector').each(function(){
+      var ipt = $(this).find('input.selector__ipt');
+      ipt.on('change', function(){
+        var _name = $(this).attr('name');
+        $('[name='+_name+']').closest('.cs-checkbox-selector').removeClass('active');
+
+        if($(this).is(':checked') == true){
+          $(this).closest('.cs-checkbox-selector').addClass('active');
+        }
+      });
+    });
+  }
+  layjQ_selector();
+
+  function dataIdSelector(elm, oper){
+    if(!oper) oper = '=';
+    return $('[data-id'+ oper + elm +']');
+  }
+});
+
+
+
+var layFc = {};
+
+
+/**
+ * 새창열기
+ * @param {URL} src 링크 URL
+ * @param {text} wname 팝업 이름
+ * @param {object} opt 옵션들 객체
+ * 
+ * width: 가로사이즈,
+ * height: 높이
+ * left: 왼쪽 간격
+ * top: 높이 간격
+ * position: "center" 브라우저 가운데로 맞추는 옵션
+ */
+layFc.windowOpen = function(src, wname, opt){
+  //새창에 들어갈 옵션들
+  var targetOpt = {
+    width: opt.width,
+    height: opt.height,
+    top: opt.top ? opt.top : 0,
+    left: opt.left ? opt.left : 0,
+    scrollbars: 1,
+  }
+
+  // 가운데정렬
+  if(opt.position == 'center') {
+    targetOpt.left = window.screen.width/2 - targetOpt.width/2;
+    targetOpt.top = window.screen.height/2 - targetOpt.height/2;;
+  }
+
+  // 옵션들 텍스트로 변경
+  var optArray = [];
+  for(key in targetOpt){
+    var temp;
+    temp =  key + '=' + targetOpt[key];
+    optArray.push(temp);
+  }
+
+  window.open(src, wname, optArray.join(','));
+}
+
+
+
+function getParameter(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+      results = regex.exec(location.search);
+
+  return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
+// mini Alert 
+layFc.miniAlert = function(text,type){
+  if(!type) type = 'success'
+  if($('body').find('mini-alert-wrap').length < 0){
+    $('body').append($('.mini-alert-wrap'));
+  }
+
+  if(!type) type = 'success';
+
+  var area = $('.mini-alert-wrap');
+  if(area.length < 1){
+    area = $('<div class="mini-alert-wrap">');
+    $('body').append(area);
+  }
+  var item = $('<div class="mini-alert">');
+  var items = $('.mini-alert', area);
+
+  item.html(text);
+  item.addClass(type);
+
+  area.append(item);
+  
+  item.css({
+    marginLeft: item.outerWidth() / 2 * -1,
+    top: '-40px'
+  });
+
+  if(items.length > 0){
+    items.each(function(idx, elm){
+      $(this).css('top', (items.length-idx+1) * -40);
+    });
+  }
+
+  setTimeout(function(){
+    item.fadeOut(400,function(){
+      item.remove();
+    });
+  },1500);
+}
+
+// layFc.tabToggle = function(opt){
+// 	var tabName = opt.name;
+// 	var tabId = opt.id;
+// 	$('[data-toggle-name='+ tabName +']').hide();
+// 	$('[data-toggle-id='+ tabId +']').show();
+// }
+
+// layFc.contToggle = function(opt){
+// 	var tabName = opt.name;
+// 	var tabId = opt.id;
+// 	$('[data-toggle-name='+ tabName +']').removeClass('contToggleActive');
+// 	$('[data-toggle-id='+ tabId +']').addClass('contToggleActive');
+// }
+  </script>
+  <style>
+    html,body{font-size:13px;margin: 0;padding: 0;overflow-x:hidden;}
+    .cs-table {
+      border-radius: 7px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+    }
+
+    .cs-table table {
+      border-collapse:collapse;
+      width: calc(100% + 2px);
+      position: relative;
+      left: -1px;
+      margin-top: -1px;
+      margin-bottom: -1px;
+      table-layout: fixed;
+    }
+
+    .cs-table th {
+      background: #f3f8fb;
+      text-align: left;
+    }
+
+    .cs-table th, .cs-table td {
+      border: 1px solid #eaedf3;
+      padding: 7px 13px;
+      height: 45px;
+      box-sizing: border-box;
+    }
+
+    .cs-table tr{transition:all .25s;}
+    .cs-table tr:hover{box-shadow:0 3px 3px  #00000040;}
+
+    .cs-table th {
+      border-color: #dfe5eb;
+    }
+
+    .cs-table td{transition: all .25s;}
+
+    .cs-table strike{opacity: .3;}
+
+    .cs-table a{text-decoration: none;}
+
+    .fdev-lay-header{height:30px;background:#000;color: #fff;padding:5px;display: flex;justify-content: space-between;align-items: center;}
+    .fdev-lay-header h1{margin: 0;padding: 0;font-size: 15px;}
+    .fdev-lay-header a{color: #fff;}
+
+    .fdev-lay-body{padding:30px;}
+
+    /* 퍼블공통 개별 설정 */
+    .cs-table--common .icon-frame{display: none;}
+    .cs-table--common .table-col-code{display: none;}
+    .cs-table--common .table-col-cate{display: none;}
+
+    .row-del{background: #eaeaea;}
+    .row-del td{text-decoration: line-through;color:rgb(193, 193, 193)}
+    .row-del td a{text-decoration:inherit;color:inherit;}
+
+    /* 페이지 */
+    .cs-table--page .table-col-url > div{display: flex;gap: 10px;}
+    .cs-table--page .table-col-url > div .icon-frame{flex: 0 0 20px;}
+
+    .icon-frame{text-decoration:none;display: inline-block;vertical-align: middle;width: 20px;height: 20px;text-align: center;border:1px solid #cecece;border-radius: 5px;font-size: 11px;line-height: 20px;box-sizing: border-box;margin-top:-2px;}
+
+    .fdev-lay-container{
+      /* height:calc(100vh); */
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
+    .fdev-lay-body{height: calc(100vh - 40px);overflow-y: auto;box-sizing: border-box;}
+    .fdev-lay-rnb{
+      flex:0 0 300px;box-sizing: border-box;
+      padding:20px;position: relative;
+      font-size: 12px;
+      margin-right: -300px;transition: all .25s;
+      display: flex;
+      flex-direction: column;
+      background:#cecece;gap:10px;
+      background:linear-gradient(121deg, rgba(66,94,68,1) 5%, rgba(3,39,65,1) 59%, rgba(20,99,92,1) 100%);
+    }
+
+    .fdev-lay-rnb section{border-radius: 5px;background:#fff;box-shadow: 0 3px 3px rgba(0,0,0,.2);padding: 10px;}
+
+    .fdev-lay-rnb__btn{position: absolute;left: -70px;}
+
+    .fdev-lay-rnb.active{
+      margin-right: 0;
+    }
+
+    .pub-check td{background:#ececec;opacity:.3;transition:all .3s;}
+
+    .mini-alert-wrap{
+      position: fixed;
+      height: 0;
+      z-index:99999;bottom: 0;
+      width: 100%;left: 0;
+      text-align: center;
+    }
+
+    .mini-alert{
+      height:30px;line-height: 30px;padding:0 10px;border-radius:15px;
+      top:0px;
+      transition: top .25s;
+      position: absolute;
+      left:50%;
+      display: inline-block;
+    }
+
+    .mini-alert.success{
+      background: #4283db;
+      color: #fff;
+    }
+
+    .mini-alert.fail{
+      background:#ff690f;
+      color: #fff;
+    }
+
+    .ui-datepicker {
+  display: none;
+  border: 1px solid #636363;
+  background: #fff;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 20px 2px 15px 2px;
+  width: 250px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.1);
+}
+
+.ui-datepicker .ui-datepicker-title {
+  font-size: 13px;
+  color: #202020;
+  margin-left: 12px;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  font-size: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.ui-datepicker .ui-datepicker-prev::after,
+.ui-datepicker .ui-datepicker-next::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  border: 1px solid #434343;
+  border-left: 0;
+  border-top: 0;
+  left: 7px;
+  top: 6px;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+  right: 45px;
+}
+
+.ui-datepicker .ui-datepicker-prev::after {
+  transform: rotate(135deg);
+}
+
+.ui-datepicker .ui-datepicker-next {
+  right: 15px;
+}
+
+.ui-datepicker .ui-datepicker-next::after {
+  transform: rotate(-45deg);
+  left: 5px;
+}
+
+.ui-datepicker .ui-datepicker-calendar {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.ui-datepicker .ui-datepicker-calendar th {
+  color: #7d86a9;
+  font-weight: normal;
+}
+
+.ui-datepicker .ui-datepicker-calendar th, .ui-datepicker .ui-datepicker-calendar td {
+  font-size: 12px;
+  text-align: center;
+}
+
+.ui-datepicker .ui-datepicker-calendar th, .ui-datepicker .ui-datepicker-calendar td, .ui-datepicker .ui-datepicker-calendar a {
+  font-weight: 300;
+}
+
+.ui-datepicker .ui-datepicker-calendar td, .ui-datepicker .ui-datepicker-calendar a {
+  color: #7d86a9;
+  text-decoration: none;
+}
+
+.ui-datepicker .ui-datepicker-calendar a {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  line-height: 25px;
+  color: inherit;
+}
+
+.ui-datepicker .ui-datepicker-calendar .ui-state-active {
+  background: #1676ff;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.ui-datepicker .ui-datepicker-calendar .ui-state-disabled {
+  color: #e2e2e2;
+}
+  </style>
+</head>
+<!-- 
+  /*******************************************
+  * json 데이터 형색
+  * [
+  * {"cate": "", "code": "", "title" : "메인", "url": "00-00-메인.html", "dateNew": "2023-01-31", "dateModify": "", "extra": 
+  * 	[
+  * 		{'date' : '2023-01-01', 'text' : "ㅇㅇㅇㅇㅇㅇㅇ'},
+  * 		{'date' : '2023-01-01', 'text' : "ㅇㅇㅇㅇㅇㅇㅇ'},
+  * 		{'text' : 'ㅇㅇㅇㅇㅇㅇㅇ'}
+  * 	]
+  * },
+  * ****************************************/ 
+-->
+
+  <!-- <span class=\"working\">작업예정</span> -->
+  <div class="fdev-lay-header">
+    <h1>경기기후 플랫폼 퍼블리싱 목록</h1>
+    <div>
+      <a href="./guide/_guide.html" target="_blank">가이드:서비스</a>
+      <a href="./guide/_guide.html" target="_blank">가이드보기:플랫폼</a>
+    </div>
+  </div>
+
+  <div class="fdev-lay-container">
+    <!-- <div class="fdev-lay-rnb">
+      <div class="fdev-lay-rnb__btn">
+        <button>열기</button>
+      </div>
+      확인용
+
+      <section>ㅇㅇ</section>
+    </div> -->
+    
+
+    <div class="fdev-lay-body">
+
+
+
+      <h2>페이지</h2>
+        <div style="margin-bottom:10px;font-size: 11px;">
+        <button type="button" onclick="dataSortReset()">정렬초기화</button>
+        <button type="button" onclick="dataShow('예정')">작업예정</button>
+        <button type="button" onclick="dataShow('작업보류')">작업보류</button>
+        <button type="button" onclick="checkClear()">checkbox Reset</button>
+        <label><input type="checkbox" data-id="clickCheck">url 클릭시 확인체크</label>
+        <section style="display: flex;gap:30px;margin-top: 10px;">
+          <div>
+            <form id="textfilter">
+              화면명 검색
+              <input type="text" data-id="textfileter">
+              <button>검색</button>
+            </form>
+            <script>
+              jQuery(function(){
+                $('#textfilter').submit(function(){
+                  dataShowLike($('[data-id=textfileter]').val());
+                  return false;
+                });
+              });
+            </script>
+          </div>
+          <div>
+            date
+            <input type="text" class="cs-input-date" jq-id="searchDay">
+
+            <!-- 
+            <div class="cs-datepicker-set">
+              <input type="text" class="js__datepicker js__date-from cs-input-date" data-id="searchDays" placeholder="시작날짜" title="시작날짜">
+              <span> ~ </span>
+              <input type="text" class="js__datepicker js__date-to cs-input-date" data-id="searchDaye" placeholder="종료날짜" title="종료날짜">
+            </div> 
+            -->
+
+            <button onclick="dataShow( $('[jq-id=searchDay]').val() )">적용</button>
+            <!-- <label style="font-size:12px;"><input type="checkbox"> 날짜고정</label> -->
+            <script>
+              jQuery(function(){
+                const today = new Date();
+                const year = today.getFullYear();
+                const month = today.getMonth() + 1;
+                const date = today.getDate();
+
+                todayText = `${year}-${month >= 10 ? month : '0' + month}-${date >= 10 ? date : '0' + date}`;
+
+                $('[jq-id=searchDay]').val(todayText);
+              
+
+                $.datepicker.setDefaults({
+                  dateFormat: 'yy-mm-dd',
+                });
+
+                // $('[jq-id=searchDay]').on('change',function(){
+                // 	dataShow( $(this).val() );
+                // });
+              });
+            </script>
+          </div>
+        </section>
+        <section data-id="viewcol" style="margin-top:10px;">
+          보기
+          <label><input type="checkbox" name="table-col-code">화면코드</label>
+          <label><input type="checkbox" name="table-col-title">화면명</label>
+          <label><input type="checkbox" name="table-col-cate">구분</label>
+          <label><input type="checkbox" name="table-col-url">URL</label>
+          <label><input type="checkbox" name="table-col-createDate">완료일</label>
+          <label><input type="checkbox" name="table-col-modifyDate">수정일</label>
+          <label><input type="checkbox" name="table-col-extra">비고</label>
+        </section>
+      </div>
+        <script>
+          jQuery(function(){
+            var viewctrl = $('[data-id=viewcol]');
+
+            var columnList = [];
+              $('.cs-table--page thead th').each(function (){
+                columnList.push($(this).attr('class'));
+              });
+
+            // localStorage 저장
+            $('[data-id=viewcol] input').on('change', function(){
+              var options = viewctrl.find('input').serializeArray(true);
+              localStorage.setItem('viewSetting', JSON.stringify(options));
+
+              columnList.forEach((col)=>{
+                $(`.${col}`).hide();
+              });
+              
+              options.forEach((elm)=>{
+                $(`.${elm.name}`).show();
+              });
+            });
+
+            // 변경사항적용
+
+            // viewsetting init
+            viewSettingInit = function(){
+              var dbopt = JSON.parse(localStorage.getItem('viewSetting'));
+              if(!dbopt){
+                localStorage.setItem('viewSetting', '[{"name":"table-col-code","value":"on"},{"name":"table-col-title","value":"on"},{"name":"table-col-cate","value":"on"},{"name":"table-col-url","value":"on"},{"name":"table-col-createDate","value":"on"},{"name":"table-col-modifyDate","value":"on"},{"name":"table-col-extra","value":"on"}]');
+                dbopt = JSON.parse(localStorage.getItem('viewSetting'));
+              }
+
+              columnList.forEach((col)=>{
+                $(`.${col}`).hide();
+              });
+
+              dbopt.forEach(elm => {
+                $(`.${elm.name}`).show();
+                viewctrl.find(`[name=${elm.name}]`).prop('checked', 'true');
+              });
+            }
+            
+            
+          });
+        </script>
+      
+      <div class="windowCtrl">
+        <button type="button" data-id="popupchangemobile">MO</button>
+        <button type="button" data-id="popupchangepc">PC</button>
+      </div>
+
+      <style>
+        .cs-table--page a.active{color: red !important;}
+      </style>
+        <script>
+          // 반응형 테스트를 위한것
+          jQuery(function(){
+            var popup;
+            popupopen = function(e,url, link){
+              e.preventDefault();
+              popup = window.open(url, 'preview', `height=${screen.height},width=400,left=${screen.width - 400},top=0`, '');
+              $('.cs-table--page a').removeClass('active');
+              $(link).addClass('active');
+            }
+
+            var popToPcBTN = $('[data-id=popupchangepc]');
+            var popToMobileBTN = $('[data-id=popupchangemobile]');
+
+            popToPcBTN.on('click', function(){
+              popup.resizeTo(1300, screen.height);
+              popup.moveTo();
+            });
+            popToMobileBTN.on('click', function(){
+              popup.resizeTo(370, screen.height);
+              popup.moveTo(screen.width - 400,0);
+            });
+          });
+        </script>
+
+      <div class="cs-table cs-table--page">
+        <table>
+          <colgroup>
+            <col style="width: 160px;" class="table-col-code">
+            <col class="table-col-title">
+            <col style="width: 90px;" class="table-col-cate">
+            <col class="table-col-url">
+            <col style="width: 100px;" class="table-col-createDate">
+            <col style="width: 100px;" class="table-col-modifyDate">
+            <col style="width: 250px" class="table-col-extra">
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="table-col-code">화면코드</th>
+              <th class="table-col-title">화면명</th>
+              <th class="table-col-cate">구분</th>
+              <th class="table-col-url">URL</th>
+              <th class="table-col-createDate">완료일 </th>
+              <th class="table-col-modifyDate">수정일 </th>
+              <th class="table-col-extra">비고</th>
+            </tr>
+          </thead>
+          <tbody class="tbodys">
+            <tr class="00">
+  <td class="table-col-code" style="text-align:center;">00</td>
+  <td class="table-col-title">메인</td>
+  <td class="table-col-cate" style="text-align:center;">메인</td>
+  <td class="table-col-url">
+    <div style="display:inline-block;"></div>
+    <button onclick="textCopy('00_메인.html')">c</button>
+    <!-- <button type="button" onclick="window.open('00_메인.html', '_newwindwaa')">nw</button> -->
+    <!--
+    <a href="00_메인.html" onclick="
+    var input = $(this).parent().find('input[type=checkbox]');
+    var checkValue = input.is(':checked');
+
+    if(siteList.clickCheck()){
+      localStorage.setItem('urlopen@@idx', 'true');
+      $(this).closest('tr').addClass('urlopen');
+    }
+    ">00_메인.html</a>
+    -->
+    <a href="00_메인.html" target="_blank" class="liveView">00_메인.html</a>
+  </td>
+  <td style="text-align:center" class="table-col-createDate">2025-03-07</td>
+  <td style="text-align:center;" class="table-col-modifyDate"></td>
+  <td style="font-size: 11px;" class="table-col-extra"></td>
+</tr><tr class="03">
+  <td class="table-col-code" style="text-align:center;">03</td>
+  <td class="table-col-title">03_기후위기_02_환경스코어</td>
+  <td class="table-col-cate" style="text-align:center;">기후위기</td>
+  <td class="table-col-url">
+    <div style="display:inline-block;"></div>
+    <button onclick="textCopy('03_기후위기_02_환경스코어.html')">c</button>
+    <!-- <button type="button" onclick="window.open('03_기후위기_02_환경스코어.html', '_newwindwaa')">nw</button> -->
+    <!--
+    <a href="03_기후위기_02_환경스코어.html" onclick="
+    var input = $(this).parent().find('input[type=checkbox]');
+    var checkValue = input.is(':checked');
+
+    if(siteList.clickCheck()){
+      localStorage.setItem('urlopen@@idx', 'true');
+      $(this).closest('tr').addClass('urlopen');
+    }
+    ">03_기후위기_02_환경스코어.html</a>
+    -->
+    <a href="03_기후위기_02_환경스코어.html" target="_blank" class="liveView">03_기후위기_02_환경스코어.html</a>
+  </td>
+  <td style="text-align:center" class="table-col-createDate">2025-03-11</td>
+  <td style="text-align:center;" class="table-col-modifyDate"></td>
+  <td style="font-size: 11px;" class="table-col-extra"></td>
+</tr><tr class="07">
+  <td class="table-col-code" style="text-align:center;">07</td>
+  <td class="table-col-title">07_안내_03_공지사항_01_리스트</td>
+  <td class="table-col-cate" style="text-align:center;">안내</td>
+  <td class="table-col-url">
+    <div style="display:inline-block;"></div>
+    <button onclick="textCopy('07_안내_03_공지사항_01_리스트.html')">c</button>
+    <!-- <button type="button" onclick="window.open('07_안내_03_공지사항_01_리스트.html', '_newwindwaa')">nw</button> -->
+    <!--
+    <a href="07_안내_03_공지사항_01_리스트.html" onclick="
+    var input = $(this).parent().find('input[type=checkbox]');
+    var checkValue = input.is(':checked');
+
+    if(siteList.clickCheck()){
+      localStorage.setItem('urlopen@@idx', 'true');
+      $(this).closest('tr').addClass('urlopen');
+    }
+    ">07_안내_03_공지사항_01_리스트.html</a>
+    -->
+    <a href="07_안내_03_공지사항_01_리스트.html" target="_blank" class="liveView">07_안내_03_공지사항_01_리스트.html</a>
+  </td>
+  <td style="text-align:center" class="table-col-createDate">2025-03-11</td>
+  <td style="text-align:center;" class="table-col-modifyDate"></td>
+  <td style="font-size: 11px;" class="table-col-extra"></td>
+</tr><tr class="03">
+  <td class="table-col-code" style="text-align:center;">03</td>
+  <td class="table-col-title">07_안내_03_공지사항_02_상세</td>
+  <td class="table-col-cate" style="text-align:center;">안내</td>
+  <td class="table-col-url">
+    <div style="display:inline-block;"></div>
+    <button onclick="textCopy('07_안내_03_공지사항_02_상세.html')">c</button>
+    <!-- <button type="button" onclick="window.open('07_안내_03_공지사항_02_상세.html', '_newwindwaa')">nw</button> -->
+    <!--
+    <a href="07_안내_03_공지사항_02_상세.html" onclick="
+    var input = $(this).parent().find('input[type=checkbox]');
+    var checkValue = input.is(':checked');
+
+    if(siteList.clickCheck()){
+      localStorage.setItem('urlopen@@idx', 'true');
+      $(this).closest('tr').addClass('urlopen');
+    }
+    ">07_안내_03_공지사항_02_상세.html</a>
+    -->
+    <a href="07_안내_03_공지사항_02_상세.html" target="_blank" class="liveView">07_안내_03_공지사항_02_상세.html</a>
+  </td>
+  <td style="text-align:center" class="table-col-createDate">2025-03-11</td>
+  <td style="text-align:center;" class="table-col-modifyDate"></td>
+  <td style="font-size: 11px;" class="table-col-extra"></td>
+</tr><tr class="03">
+  <td class="table-col-code" style="text-align:center;">03</td>
+  <td class="table-col-title">07_안내_04_자주묻는 질문</td>
+  <td class="table-col-cate" style="text-align:center;">안내</td>
+  <td class="table-col-url">
+    <div style="display:inline-block;"></div>
+    <button onclick="textCopy('07_안내_04_자주묻는질문.html')">c</button>
+    <!-- <button type="button" onclick="window.open('07_안내_04_자주묻는질문.html', '_newwindwaa')">nw</button> -->
+    <!--
+    <a href="07_안내_04_자주묻는질문.html" onclick="
+    var input = $(this).parent().find('input[type=checkbox]');
+    var checkValue = input.is(':checked');
+
+    if(siteList.clickCheck()){
+      localStorage.setItem('urlopen@@idx', 'true');
+      $(this).closest('tr').addClass('urlopen');
+    }
+    ">07_안내_04_자주묻는질문.html</a>
+    -->
+    <a href="07_안내_04_자주묻는질문.html" target="_blank" class="liveView">07_안내_04_자주묻는질문.html</a>
+  </td>
+  <td style="text-align:center" class="table-col-createDate">2025-03-11</td>
+  <td style="text-align:center;" class="table-col-modifyDate"></td>
+  <td style="font-size: 11px;" class="table-col-extra"></td>
+</tr><tr class="03">
+  <td class="table-col-code" style="text-align:center;">03</td>
+  <td class="table-col-title">07_안내_05_Q&A_01_리스트</td>
+  <td class="table-col-cate" style="text-align:center;">안내</td>
+  <td class="table-col-url">
+    <div style="display:inline-block;"></div>
+    <button onclick="textCopy('07_안내_05_Q&A_01_리스트.html')">c</button>
+    <!-- <button type="button" onclick="window.open('07_안내_05_Q&A_01_리스트.html', '_newwindwaa')">nw</button> -->
+    <!--
+    <a href="07_안내_05_Q&A_01_리스트.html" onclick="
+    var input = $(this).parent().find('input[type=checkbox]');
+    var checkValue = input.is(':checked');
+
+    if(siteList.clickCheck()){
+      localStorage.setItem('urlopen@@idx', 'true');
+      $(this).closest('tr').addClass('urlopen');
+    }
+    ">07_안내_05_Q&A_01_리스트.html</a>
+    -->
+    <a href="07_안내_05_Q&A_01_리스트.html" target="_blank" class="liveView">07_안내_05_Q&A_01_리스트.html</a>
+  </td>
+  <td style="text-align:center" class="table-col-createDate">2025-03-11</td>
+  <td style="text-align:center;" class="table-col-modifyDate"></td>
+  <td style="font-size: 11px;" class="table-col-extra"></td>
+</tr><tr class="03">
+  <td class="table-col-code" style="text-align:center;">03</td>
+  <td class="table-col-title">07_안내_05_Q&A_02_상세</td>
+  <td class="table-col-cate" style="text-align:center;">안내</td>
+  <td class="table-col-url">
+    <div style="display:inline-block;"></div>
+    <button onclick="textCopy('07_안내_05_Q&A_02_상세.html')">c</button>
+    <!-- <button type="button" onclick="window.open('07_안내_05_Q&A_02_상세.html', '_newwindwaa')">nw</button> -->
+    <!--
+    <a href="07_안내_05_Q&A_02_상세.html" onclick="
+    var input = $(this).parent().find('input[type=checkbox]');
+    var checkValue = input.is(':checked');
+
+    if(siteList.clickCheck()){
+      localStorage.setItem('urlopen@@idx', 'true');
+      $(this).closest('tr').addClass('urlopen');
+    }
+    ">07_안내_05_Q&A_02_상세.html</a>
+    -->
+    <a href="07_안내_05_Q&A_02_상세.html" target="_blank" class="liveView">07_안내_05_Q&A_02_상세.html</a>
+  </td>
+  <td style="text-align:center" class="table-col-createDate">2025-03-11</td>
+  <td style="text-align:center;" class="table-col-modifyDate"></td>
+  <td style="font-size: 11px;" class="table-col-extra"></td>
+</tr><tr class="03">
+  <td class="table-col-code" style="text-align:center;">03</td>
+  <td class="table-col-title">07_안내_05_Q&A_02_글쓰기</td>
+  <td class="table-col-cate" style="text-align:center;">안내</td>
+  <td class="table-col-url">
+    <div style="display:inline-block;"></div>
+    <button onclick="textCopy('07_안내_05_Q&A_03_글쓰기.html')">c</button>
+    <!-- <button type="button" onclick="window.open('07_안내_05_Q&A_03_글쓰기.html', '_newwindwaa')">nw</button> -->
+    <!--
+    <a href="07_안내_05_Q&A_03_글쓰기.html" onclick="
+    var input = $(this).parent().find('input[type=checkbox]');
+    var checkValue = input.is(':checked');
+
+    if(siteList.clickCheck()){
+      localStorage.setItem('urlopen@@idx', 'true');
+      $(this).closest('tr').addClass('urlopen');
+    }
+    ">07_안내_05_Q&A_03_글쓰기.html</a>
+    -->
+    <a href="07_안내_05_Q&A_03_글쓰기.html" target="_blank" class="liveView">07_안내_05_Q&A_03_글쓰기.html</a>
+  </td>
+  <td style="text-align:center" class="table-col-createDate">2025-03-11</td>
+  <td style="text-align:center;" class="table-col-modifyDate"></td>
+  <td style="font-size: 11px;" class="table-col-extra"></td>
+</tr><tr class="99">
+  <td class="table-col-code" style="text-align:center;">99</td>
+  <td class="table-col-title">99_공통_기능_시스템장애</td>
+  <td class="table-col-cate" style="text-align:center;">공통</td>
+  <td class="table-col-url">
+    <div style="display:inline-block;"></div>
+    <button onclick="textCopy('99_공통_기능_시스템장애.html')">c</button>
+    <!-- <button type="button" onclick="window.open('99_공통_기능_시스템장애.html', '_newwindwaa')">nw</button> -->
+    <!--
+    <a href="99_공통_기능_시스템장애.html" onclick="
+    var input = $(this).parent().find('input[type=checkbox]');
+    var checkValue = input.is(':checked');
+
+    if(siteList.clickCheck()){
+      localStorage.setItem('urlopen@@idx', 'true');
+      $(this).closest('tr').addClass('urlopen');
+    }
+    ">99_공통_기능_시스템장애.html</a>
+    -->
+    <a href="99_공통_기능_시스템장애.html" target="_blank" class="liveView">99_공통_기능_시스템장애.html</a>
+  </td>
+  <td style="text-align:center" class="table-col-createDate">2025-03-11</td>
+  <td style="text-align:center;" class="table-col-modifyDate"></td>
+  <td style="font-size: 11px;" class="table-col-extra"></td>
+</tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- <div class="cs-table cs-table--page">
+        <table>
+          <colgroup>
+            <col style="width: 160px;" class="table-col-code">
+            <col class="table-col-title">
+            <col style="width: 90px;" class="table-col-cate">
+            <col class="table-col-url">
+            <col style="width: 100px;" class="table-col-createDate">
+            <col style="width: 100px;" class="table-col-modifyDate">
+            <col style="width: 250px" class="table-col-extra">
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="table-col-code">화면코드</th>
+              <th class="table-col-title">화면명</th>
+              <th class="table-col-cate">구분</th>
+              <th class="table-col-url">URL</th>
+              <th class="table-col-createDate">생성일</th>
+              <th class="table-col-modifyDate">수정일 <button type="button" onclick="dataSort()">정렬</button></th>
+              <th class="table-col-extra">비고</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+          </tbody>
+        </table>
+      </div> -->
+
+      <!-- <h2 style="margin-top: 30px;">history</h2>
+      <div>
+        <b></b>, X(닫기) 누를 경우, type="button" 생생해서 form submit 되지 않도록 함
+      </div> -->
+    </div>
+  </div>
+
+  <script>
+    jQuery(function(){
+      
+      siteList = {
+        clickCheck : function(){
+          if(localStorage.getItem('optclick') == 'false'){
+            return false;
+          }else{
+            return true;
+          }
+        },
+      }
+      /**************************
+       * 우측 task
+      **************************/
+      $('.fdev-lay-rnb__btn').on('click', function(){
+        $('.fdev-lay-rnb').toggleClass('active');
+      });
+      
+      var dataListTable = $('.cs-table--page');
+      dataTable = $('.cs-table--page table > tbody > tr');
+
+      /**************************
+       * init
+      **************************/
+      dataTable.each(function(){
+        var tr = $(this);
+        tr.find('td').each(function(){
+          if($(this).hasClass('table-col-cate') && $(this).text() == 'x'){
+            tr.addClass('row-del');
+          }
+        });
+      });
+
+      $(window).on('keyup', function(e){
+        if(e.keyCode === 191){
+          $('[data-id=textfileter]').select();
+        }
+      });
+
+      // url 클릭 체크
+      var btnClickCheck = $('[data-id=clickCheck]');
+      if(localStorage.getItem('optclick') == 'false'){
+        btnClickCheck.prop('checked', false);
+      } else {
+        btnClickCheck.prop('checked', true);
+      }
+
+      btnClickCheck.on('click', function(){
+        var value = $(this).is(':checked');
+        if(value){
+          localStorage.setItem('optclick', true);	
+        }else{
+          localStorage.setItem('optclick', false);	
+        }
+      });
+
+      /**************************
+       * 정렬기능
+      **************************/
+      function init(){
+        this.tableOg = $('.cs-table--page table > tbody > tr');
+        this.table = $('.cs-table--page table > tbody > tr');
+      }
+
+      data = '';
+
+      function dataSortFc(t){
+        data = new init();
+        var cell = $(t).closest('th');
+        var tableOg = data.tableOg;
+        var table = data.table;
+
+        table.sort(function(a,b){
+          valueA = Number( $(a).find('td').eq(cell.index()).text().replace(/-/gi, "") );
+          valueB = Number( $(b).find('td').eq(cell.index()).text().replace(/-/gi, "") );
+          if(!valueA) return 1;
+          if(valueA < valueB) return 1;
+          if(valueA === valueB) return 0;
+          if(valueA > valueB) return -1;
+        });
+        $('.cs-table--page table > tbody').html(table);
+      }
+
+      function tableReset(){
+        dataTable.each(function(){
+          $(this).data('show','');
+          $(this).show();
+        });	
+      }
+
+
+      dataSortReset = function(){
+        if(data) $('.cs-table--page table > tbody').html(data.tableOg);
+        tableReset();
+      }
+
+      dataSort = function(t){
+        dataSortFc(t);
+      }
+
+      dataShow = function(_txt, column){
+        tableReset();
+        dataTable.each(function(idx, data){
+          var tr = $(this);
+
+          $(this).find('td').each(function(){
+            if($(this).text() == _txt){
+              tr.data('show','Y');
+            }
+          });
+
+        });
+
+        dataTable.each(function(idx, data){
+          if($(this).data('show') != 'Y') $(this).hide();
+        });
+      }
+
+      dataShowLike = function(_txt, column){
+        tableReset();
+        dataTable.each(function(idx, data){
+          var tr = $(this);
+
+          $(this).find('td.table-col-title').each(function(){
+            var html = $(this).html();
+            // 기존에 적요 된거 삭제
+            html = html.replace(/<\/?b[^>]*>/g, '');
+            // /<b[^>]*class="test"[^>]*>(.*?)<\/b>/g
+            if(html.indexOf(_txt) >= 0){
+              $(this).html(html.replace(new RegExp(_txt, "g"), `<b style="color: red">${_txt}</b>`));
+              tr.data('show','Y');
+            }
+          });
+
+        });
+
+        dataTable.each(function(idx, data){
+          if($(this).data('show') != 'Y') $(this).hide();
+        });
+      }
+
+      function trLoopFc(fc){
+        $('.cs-table--page tbody tr').each(function(idx, tr){
+          fc($(this).data('idx'), tr);
+        });
+      }
+
+      checkClear = function(){
+        // localStorage.clear();
+        trLoopFc(function(idx, tr){
+          tr = $(tr);
+          localStorage.setItem(`check${idx}`, false);
+          tr.find('[name^=check]').prop('checked', false);
+          tr.removeClass('pub-check');
+          
+          localStorage.setItem(`urlopen${idx}`, false);
+          tr.removeClass('urlopen');
+        });
+      }
+      
+      // 확인용 체크박스 체크 여부 확인
+      createConfirmChecobx = function(){
+        trLoopFc(function(idx, tr){
+          var tr = $(tr);
+          var name = 'check'+ idx;
+          var input = $('<input type="checkbox" name="'+ name +'">');
+          tr.find('.table-col-url div').prepend(input);
+
+          if(localStorage.getItem(name) == 'true'){
+            input.prop('checked', true);
+            tr.addClass('pub-check');
+          }else{
+            tr.removeClass('pub-check');
+          }
+
+          input.on('change', function(){
+            var checkValue = $(this).is(':checked');
+            localStorage.setItem($(this).attr('name'), checkValue);
+            checkValue ? tr.addClass('pub-check') : tr.removeClass('pub-check');
+          });
+        });
+      }
+
+      // 사이트 링크 열기 확인
+      urlOpenCheck = function(){
+        // urlopen
+        trLoopFc(function(idx, tr){
+          var value = localStorage.getItem(`urlopen${idx}`);
+          if(value == 'true'){
+            $(tr).addClass('urlopen');
+          }
+        });
+      }
+
+      pageinit = function(){
+        // 확인용 체크박스 생성
+        createConfirmChecobx();
+        viewSettingInit();
+
+        // 비고 내용 작성
+        dataTable.each(function(idx,elm){
+          var row = $(this).closest('tr');
+          row.data('idx', idx);
+
+          var cell = $(this).find('.table-col-extra');
+          var text = cell.text();
+          
+          if(text.match(/\[.*?\]/g)){
+            text = text.replaceAll('\'', '"');
+            extra = JSON.parse(text);
+            var extraTemp =  [];
+            for(var [extraKey, extraValue] of Object.entries(extra)){
+              extraTemp.push(`${extraValue.date ? extraValue.date+':' : ''} ${extraValue.text}`);
+            }
+            cell.html( extraTemp.join('<div style="margin: 3px 0;border-top: 1px dotted #cecece;height: 1px;"></div>') );
+          }
+        });
+
+        // url 열기 확인
+        urlOpenCheck();
+      }
+
+      /**************************
+       * 코드복사
+      **************************/
+      textCopy = function(text){
+        if(!text) return true;
+
+        $('<input>',{
+          type : 'text',
+          id: 'copyInput'
+        }).attr('style','position:absolute;border:0;background:none;width:1px;height:1px;').prependTo('body');
+
+        var copyInput = $('#copyInput');
+
+        copyInput.val(text);
+        copyInput.select();
+        document.execCommand('copy');
+        copyInput.remove();
+        
+        layFc.miniAlert('<span><b>'+ text + '</b> <span style="color:yellow">copy complete</span></span>',null);
+      }
+      
+      dataListTable.find('.table-col-code').on('click', function(){
+        var text = $(this).text();
+        textCopy(text);
+      });
+
+      function getParameter(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
+      if(getParameter('date')){
+        dataShowLike(getParameter('date'));
+      }
+
+
+      /**************************
+       * cate x 인것 class 추가
+      **************************/
+    });
+  </script>
+
+  <script>
+    // 화면목록 생성
+    // json data로 목록 생성
+    jQuery(function(){
+      dataTable = $('.cs-table--page table > tbody > tr');
+      pageinit();
+      return false;
+      var template = `<tr class="@@code" data-idx=@@idx>
+              <td class="table-col-code" style="text-align:center;">@@code</td>
+              <td class="table-col-title">
+                @@idx-null
+                </td>
+              <td class="table-col-cate" style="text-align:center;">@@cate</td>
+              <td class="table-col-url">
+                <div style="display:inline-block;"></div>
+                <button onclick="textCopy('@@url')">c</button>
+                <button onclick="textCopy('https://www.kofiu.go.kr' + ('@@url').replace('.html','.do'))">sc</button>
+                <button type="button" onclick="window.open('@@url', '_newwindwaa')">B</button>
+                
+                <!--
+                <a href="@@url" onclick="
+                var input = $(this).parent().find('input[type=checkbox]');
+                var checkValue = input.is(':checked');
+
+                if(siteList.clickCheck()){
+                  localStorage.setItem('urlopen@@idx', 'true');
+                  $(this).closest('tr').addClass('urlopen');
+                }
+                ">@@url</a>
+                -->
+
+                <a href="#none" onclick="
+                popupopen(event,'@@url',this);
+                //window.open('@@url', 'preview', 'height=${screen.height},width=370,left=${screen.width - 400},top=0', '');
+                var input = $(this).parent().find('input[type=checkbox]');
+                var checkValue = input.is(':checked');
+
+                if(siteList.clickCheck()){
+                  localStorage.setItem('urlopen@@idx', 'true');
+                  // input.prop('checked','true');
+                  $(this).closest('tr').addClass('urlopen');
+                }
+
+                ">@@url</a>
+              </td>
+              <td style="text-align:center" class="table-col-createDate">@@dateNew</td>
+              <td style="text-align:center;" class="table-col-modifyDate">@@dateModify</td>
+              <td style="font-size: 11px;" class="table-col-extra">@@extra</td>
+            </tr>`;
+      var rows = [];
+      $.ajax({
+        url: './fdevjs/dataSiteList.json',
+        method: 'GET',
+        dataType: 'json'
+      }).done(function(data){
+        $(data).each((idx, elm)=>{
+          var temp = template;
+          for(var [dk, dv] of Object.entries(elm)){
+
+            /**************
+             * extra 객체로 작성됬을경우,
+             * {
+             * 	"date": "2023-01-01",
+             * 	"text": "어쩌고 저쩌고"
+             * }
+             * ************/
+            if(dk === 'extra' && typeof dv === 'object'){
+              var extra = [];
+              for(var [extraKey, extraValue] of Object.entries(dv)){
+                extra.push(`${extraValue.date ? extraValue.date+':' : ''} ${extraValue.text}`);
+              }
+              dv = extra.join('<div style="margin: 3px 0;border-top: 1px dotted #cecece;height: 1px;"></div>');
+            }
+
+            temp = temp.replaceAll(`@@${dk}`, dv);
+          }
+          temp = temp.replaceAll('@@idx', idx);
+          rows.push(temp);
+        });
+
+        //테이블삽입
+        // console.log(rows.join());
+        // $('.cs-table--page tbody').html(rows.join());
+        
+      });
+    });
+
+    
+
+    
+
+  </script>
+
+</body>
+</html>

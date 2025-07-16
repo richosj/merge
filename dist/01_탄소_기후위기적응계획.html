@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<title>경기기후플랫폼</title>
+<meta name="title" content="경기기후플랫폼" /> 
+<meta name="author" content="경기기후플랫폼" />
+<meta name="keywords" content="경기기후플랫폼" />
+<meta name="description" content="경기기후플랫폼" />
+<meta property="og:type" content="website">
+<meta property="og:title" content="경기기후플랫폼">
+<meta property="og:site_name" content="경기기후플랫폼">
+<meta property="og:description" content="경기기후플랫폼">
+
+<link rel="icon" type="image/x-icon" href="./assets/images/ico/favicon.png">
+<link rel="apple-touch-icon-precomposed" type="/image/x-icon" href="./assets/images/ico/favicon.png">
+<link rel="shortcut icon" type="image/x-icon" href="./assets/images/ico/favicon.png">
+
+
+<link rel="stylesheet" href="./assets/js/vendor/jquery/jquery-ui.css">
+<link rel="stylesheet" href="./assets/fonts/pretendard.css">
+<link rel="stylesheet" href="./assets/css/slick.css">
+<link rel="stylesheet" href="./assets/js/vendor/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+<link rel="stylesheet" href="./assets/css/reset.css">
+<link rel="stylesheet" href="./assets/css/styles.css">
+<link rel="stylesheet" href="./assets/js/vendor/aos/aos.css">
+
+
+</head>
+
+<body>
+    <!-- <div id="loader-overlay" class="loader-overlay">
+        <div class="spinner"></div>
+    </div> -->
+	<!-- 전체 -->
+	<section id="wrap">
+		<div id="header" class="main-header header">
+    <div class="header-container">
+        <div class="header-top sub-header-top">
+            <div class="header-inner">
+                <a href="#" class="header-bi"><span class=" sr-only">로고</span></a>
+                <div class="head--util">
+                    <a href="" class="head--eng">
+                        <i class="icon en-ico"></i>
+                        <span>language</span>
+                    </a>
+                    <button type="button" class="ham-btn mobile-button" id="btnMobile" title="메뉴 열림">
+                        <span class="line line1"></span>
+                        <span class="line line2"></span>
+                        <span class="line line3"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="gnb--wrap">
+            <nav id="gnb" class="total-menu">
+                <ul class="gnb--inner">
+                    <li class="gnb--dep01">
+                        <a href="">탄소</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">탄소중립기본계획</a></li>
+                                <li><a href="#">이행 및 적응 평가</a></li>
+                                <li><a href="#">탄소 공간정보</a></li>
+                                <li><a href="#">탄소총량관리</a></li>
+                                <li><a href="#">경기도 기후정책 소개</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnb--dep01">
+                        <a href="">에너지</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">에너지 현황</a></li>
+                                <li><a href="#">태양광 도입</a></li>
+                                <li><a href="#">에너지 절감</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnb--dep01">
+                        <a href="">기후리스크</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">기후위기 적응</a></li>
+                                <li><a href="#">그린인프라</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnb--dep01">
+                        <a href="">기후경영</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">중소기업 탄소경영</a></li>
+                                <li><a href="#">중소기업 에너지경영</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnb--dep01">
+                        <a href="">기후위기 대응지도</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">탄소공간지도</a></li>
+                                <li><a href="#">태양광 지도</a></li>
+                                <li><a href="#">기후위기 적응지도</a></li>
+                                <li><a href="#">그린인프라 지도</a></li>
+                                <li><a href="#">도시생태현황지도</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnb--dep01">
+                        <a href="">정책분석지원</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">정책분석지원</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnb--dep01">
+                        <a href="">Open & Share</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">OpenLab</a></li>
+                                <li><a href="#">API & Download</a></li>
+                                <li><a href="#">정보공유신청</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnb--dep01">
+                        <a href="">안내</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">경기기후플랫폼 소개</a></li>
+                                <li><a href="#">사이트맵</a></li>
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">자주하는질문</a></li>
+                                <li><a href="#">Q&A</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="gnbBg"><div class="gnbBg-inner"><img src="./assets/images/common/gnb-logo.png" alt=""></div></div>
+</div>
+
+<aside id="nav" class="nav">
+    <ul class="nav-gnb">
+        <li class="lv1-li">
+            <a href="#"><span>탄소</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">탄소중립기본계획</a></li>
+                    <li><a href="#">이행 및 적응 평가</a></li>
+                    <li><a href="#">탄소 공간정보</a></li>
+                    <li><a href="#">탄소총량관리</a></li>
+                    <li><a href="#">경기도 기후정책 소개</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="lv1-li">
+            <a href="#"><span>에너지</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">에너지 현황</a></li>
+                    <li><a href="#">태양광 도입</a></li>
+                    <li><a href="#">에너지 절감</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="lv1-li">
+            <a href="#"><span>기후리스크</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">기후위기 적응</a></li>
+                    <li><a href="#">그린인프라</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="lv1-li">
+            <a href="#"><span>기후경영</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">중소기업 탄소경영</a></li>
+                    <li><a href="#">중소기업 에너지경영</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="lv1-li">
+            <a href="#"><span>기후위기 대응지도</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">탄소공간지도</a></li>
+                    <li><a href="#">태양광 지도</a></li>
+                    <li><a href="#">기후위기 적응지도</a></li>
+                    <li><a href="#">그린인프라 지도</a></li>
+                    <li><a href="#">도시생태현황지도</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="lv1-li">
+            <a href="#"><span>정책분석지원</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">정책분석지원</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="lv1-li">
+            <a href="#"><span>Open & Share</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">OpenLab</a></li>
+                    <li><a href="#">API & Download</a></li>
+                    <li><a href="#">정보공유신청</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="lv1-li">
+            <a href="#"><span>안내</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">경기기후플랫폼 소개</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">자주하는질문</a></li>
+                    <li><a href="#">Q&A</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    
+</aside>
+		
+
+		<div id="SubContainer" class="SubContainer">
+			<div class="sub--wrap">
+				<div id="first-video" class="first--video">
+					<video src="./assets/video/AdobeStock_1322617312_Video_HD_Preview.mov" muted autoplay playsinline loop></video>
+					<div class="first--video--info">
+						<div class="first--video--inner">
+							<div class="first--video--txt fade-up">
+								<h2>탄소공간지도</h2>
+								<h3>
+									탄소 흡수원과 배출원을 분석한 지도로,<br>지역별 탄소 균형과 변화를 한눈에 파악할 수 있습니다.
+								</h3>
+								<p>
+									탄소 흡수원과 배출원을 상세히 분석하여 지역별 정보를 직관적으로 시각화합니다.<br>
+									사용자는 지도에서 특정 지역의 탄소 균형을 확인하고, 시간에 따른 변화 추이를 파악할 수 있습니다.<br>
+									이 데이터는 정책 결정자, 연구자, 일반 시민 모두에게 유용한 정보를 제공하며,<br>
+									지속 가능한 미래를 위한 효과적인 탄소 관리 전략 수립에 기여할 것입니다.
+								</p>
+							</div>
+							<div class="first--video--tab carbon" data-simplebar>
+								<ul data-js="tabNav">
+									<li>
+										<button data-id="tabnav1">
+											<strong>탄소중립 기본계획</strong>
+											<span>TEXT</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav2">
+											<strong>탄소중립기본계획 이행평가</strong>
+											<span>TEXT</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav3">
+											<strong>기후위기 적응계획</strong>
+											<span>TEXT</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav4">
+											<strong>기후위기적응계획 이행평가</strong>
+											<span>TEXT</span>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab--stiky carbon">
+					<div class="sub--wrap--inner">
+						<ul class="" data-js="tabNav">
+							<li>
+								<button type="button" data-id="tabnav1">탄소중립 기본계획</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav2">탄소중립기본계획 이행평가</button>
+							</li>
+							<li  class="active">
+								<button type="button" data-id="tabnav3">기후위기 적응계획</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav4">기후위기적응계획 이행평가</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div data-toggle-id="tabnav1" class="toggle-hidden">
+					11111
+				</div>
+
+				<div data-toggle-id="tabnav2" class="toggle-hidden">
+					2222
+				</div>
+				<div data-toggle-id="tabnav3">
+                    <!-- tab--style -->
+					<div class="tab--style">
+						<div class="sub--wrap--inner">
+							<ul class="carbon" data-js="tabNav">
+								<li class="active">
+									<button type="button" data-id="tabnav1-1">경기도</button>
+								</li>
+								<li>
+									<button type="button" data-id="tabnav1-2">기초지자체</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+                    <div data-toggle-id="tabnav1-1">
+                        <div class="data-chart">
+                            <div class="sub--wrap--inner">
+                                <article class="climate-adaptation-slide full">
+                                    <header class="slide-header">
+                                        <span class="badge--vision">비전</span>
+                                        <div class="slide-title-wrap">
+                                            <p class="slide-subtitle">도민과 함께하는 기후변화 대응</p>
+                                            <h2 class="slide-title">지속가능 기후탄력적 적응</h2>
+                                        </div>
+                                    </header>
+
+                                    <footer class="slide-footer">
+                                        <span class="badge--strategy">전략</span>
+                                        <p class="footer-note">7대 부문 16개 전략 44개 세부 사업</p>
+                                    </footer>
+
+                                    <section class="strategic-goals">
+                                        <ol class="goals-list">
+                                        <li class="goal-item">
+                                            <span class="goal-number">전략목표 01</span>
+                                            <p class="goal-text">기후변화 취약계층의 피해 최소화</p>
+                                        </li>
+                                        <li class="goal-item">
+                                            <span class="goal-number">전략목표 02</span>
+                                            <p class="goal-text">기후변화 모니터링 및 도민 접근성 향상</p>
+                                        </li>
+                                        <li class="goal-item">
+                                            <span class="goal-number">전략목표 03</span>
+                                            <p class="goal-text">적응기반 구축 및 도민참여 활성화</p>
+                                        </li>
+                                        </ol>
+                                    </section>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="sub--wrap--inner">
+                            <div class="dataSwiper carbon">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="swiper-data">
+                                            <div class="data-heading">
+                                                <div>
+                                                    <span class="data-num carbon">추진전략 01</span>
+                                                    <strong class="data-title">물관리 부문</strong>
+                                                </div>
+                                                <button onclick="ModalHandler.open('modal-carbon-plan')">상세보기 <i class="icon ico-blank"></i></button>
+                                            </div>
+                                            <div class="data-con">
+                                                <div class="data-con-txt">
+                                                    <ul class="data-li">
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-data">
+                                            <div class="data-heading">
+                                                <div>
+                                                    <span class="data-num carbon">추진전략 02</span>
+                                                    <strong class="data-title">물관리 부문</strong>
+                                                </div>
+                                                <button onclick="ModalHandler.open('modal-carbon-plan')">상세보기 <i class="icon ico-blank"></i></button>
+                                            </div>
+                                            <div class="data-con">
+                                                <div class="data-con-txt">
+                                                    <ul class="data-li">
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-data">
+                                            <div class="data-heading">
+                                                <div>
+                                                    <span class="data-num carbon">추진전략 03</span>
+                                                    <strong class="data-title">물관리 부문</strong>
+                                                </div>
+                                                <button onclick="ModalHandler.open('modal-carbon-plan')">상세보기 <i class="icon ico-blank"></i></button>
+                                            </div>
+                                            <div class="data-con">
+                                                <div class="data-con-txt">
+                                                    <ul class="data-li">
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-data">
+                                            <div class="data-heading">
+                                                <div>
+                                                    <span class="data-num carbon">추진전략 04</span>
+                                                    <strong class="data-title">물관리 부문</strong>
+                                                </div>
+                                                <button onclick="ModalHandler.open('modal-carbon-plan')">상세보기 <i class="icon ico-blank"></i></button>
+                                            </div>
+                                            <div class="data-con">
+                                                <div class="data-con-txt">
+                                                    <ul class="data-li">
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub--wrap--inner">
+                            <div class="report-down-wrap mb80">
+                                <p>보고서 다운로드를 통해 더 자세한 정보 확인해보세요.</p>
+                                <button>탄소중립 기본계획 보고서 다운로드 <i><img src="../assets/images/new_sub/ico-data16@16.png" alt=""></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-toggle-id="tabnav1-2" class="toggle-hidden">
+                        <div class="data-chart">
+                            <div class="sub--wrap--inner">
+                                <div class="climate-adaptation-slide-flex">
+                                    <div class="chart-map">
+										<div class="chart-map-breadcrumb">
+											<div class="place">
+												<strong>경기도</strong>
+											</div>
+										</div>
+										<div class="chart-map-area bdn">
+										</div>
+									</div>
+                                    <article class="climate-adaptation-slide">
+                                        <header class="slide-header">
+                                            <span class="badge--vision">비전</span>
+                                            <div class="slide-title-wrap">
+                                                <p class="slide-subtitle">도민과 함께하는 기후변화 대응</p>
+                                                <h2 class="slide-title">지속가능 기후탄력적 적응</h2>
+                                            </div>
+                                        </header>
+
+                                        <footer class="slide-footer">
+                                            <span class="badge--strategy">전략</span>
+                                            <p class="footer-note">7대 부문 16개 전략 44개 세부 사업</p>
+                                        </footer>
+
+                                        <section class="strategic-goals">
+                                            <ol class="goals-list">
+                                            <li class="goal-item">
+                                                <span class="goal-number">전략목표 01</span>
+                                                <p class="goal-text">기후변화 취약계층의 피해 최소화</p>
+                                            </li>
+                                            <li class="goal-item">
+                                                <span class="goal-number">전략목표 02</span>
+                                                <p class="goal-text">기후변화 모니터링 및 도민 접근성 향상</p>
+                                            </li>
+                                            <li class="goal-item">
+                                                <span class="goal-number">전략목표 03</span>
+                                                <p class="goal-text">적응기반 구축 및 도민참여 활성화</p>
+                                            </li>
+                                            </ol>
+                                        </section>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub--wrap--inner">
+                            <div class="swiper dataSwiper carbon">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="swiper-data">
+                                            <div class="data-heading">
+                                                <div>
+                                                    <span class="data-num carbon">추진전략 01</span>
+                                                    <strong class="data-title">물관리 부문</strong>
+                                                </div>
+                                                <button onclick="ModalHandler.open('modal-carbon-plan')">상세보기 <i class="icon ico-blank"></i></button>
+                                            </div>
+                                            <div class="data-con">
+                                                <div class="data-con-txt">
+                                                    <ul class="data-li">
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-data">
+                                            <div class="data-heading">
+                                                <div>
+                                                    <span class="data-num carbon">추진전략 02</span>
+                                                    <strong class="data-title">물관리 부문</strong>
+                                                </div>
+                                                <button onclick="ModalHandler.open('modal-carbon-plan')">상세보기 <i class="icon ico-blank"></i></button>
+                                            </div>
+                                            <div class="data-con">
+                                                <div class="data-con-txt">
+                                                    <ul class="data-li">
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-data">
+                                            <div class="data-heading">
+                                                <div>
+                                                    <span class="data-num carbon">추진전략 03</span>
+                                                    <strong class="data-title">물관리 부문</strong>
+                                                </div>
+                                                <button onclick="ModalHandler.open('modal-carbon-plan')">상세보기 <i class="icon ico-blank"></i></button>
+                                            </div>
+                                            <div class="data-con">
+                                                <div class="data-con-txt">
+                                                    <ul class="data-li">
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="swiper-data">
+                                            <div class="data-heading">
+                                                <div>
+                                                    <span class="data-num carbon">추진전략 04</span>
+                                                    <strong class="data-title">물관리 부문</strong>
+                                                </div>
+                                                <button onclick="ModalHandler.open('modal-carbon-plan')">상세보기 <i class="icon ico-blank"></i></button>
+                                            </div>
+                                            <div class="data-con">
+                                                <div class="data-con-txt">
+                                                    <ul class="data-li">
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                        <li>안정적인 수질 및 수자원 확보</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-util">
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-util-right">
+                                        <div class="swiper-counter carbon"><span class="current">1</span> / <span class="total">6</span></div>
+                                        <div class="swiper-arrow">
+                                            <div class="swiper-button-prev"></div>
+                                            <div class="swiper-button-next"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub--wrap--inner">
+                            <div class="report-down-wrap mb80">
+                                <p>보고서 다운로드를 통해 더 자세한 정보 확인해보세요.</p>
+                                <button>탄소중립 기본계획 보고서 다운로드 <i><img src="../assets/images/new_sub/ico-data16@16.png" alt=""></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+				</div>
+				<div data-toggle-id="tabnav4" class="toggle-hidden">
+					4444
+				</div>
+			</div>
+		</div>
+        
+
+
+
+
+
+
+
+
+    <!-- //기상특보 -->
+    <div id="modal-energy-report" class="modal modal-wrap modal-wrap-dimmed full">
+        <div class="modal--inner">
+            <div class="modal--head">
+                <div class="modal--head--inner">
+                    <h3>전력수급</h3>
+                </div>
+                <div class="modal--head--util">
+                    <button type="button" class="modal--close close-btn btn-black"></button>
+                </div>
+            </div>
+            
+            <div class="modal--content">
+                <div class="notice-container">
+                    <div class="notice-title">  생키 다이어그램을 가장 왼쪽부터 차례대로 설명하면, 아래와 같습니다.</div>
+                </div>
+                
+                <div class="alert-container">
+                    <div class="alert-panel alert-round mb20">
+                        <strong class="alert-title">경기도 발전량</strong>
+                        <div class="alert-content">
+                            가장 왼쪽은 경기도 발전량의 연료별 구성, 즉 어떤 에너지원으로 발전했는지를 보여줍니다.<br>
+                            LNG 발전이 전체의 대부분을 차지하며, 79,051 GWh로 92.2%에 해당합니다.<br>
+                            신재생 발전은 4,456 GWh, 약 5.2%를 차지하며,<br>
+                            석탄 발전은 1,728 GWh로 약 2.0% 수준입니다.<br>
+                            이 외에 유류, 양수, 기타 발전이 소량 포함되어 있으며,<br>
+                            이를 모두 합친 경기도 전체 발전량은 85,780 GWh입니다.
+                        </div>
+                    </div>
+                    <div class="alert-panel alert-round mb20">
+                        <strong class="alert-title">전국 발전량</strong>
+                        <div class="alert-content">
+                            경기도 발전량은 85,780 GWh로, 국내 전체 발전량(594,400 GWh)의 약 14.4%를 차지합니다.
+                        </div>
+                    </div>
+                    <div class="alert-panel alert-round mb20">
+                        <strong class="alert-title">송배전 손실</strong>
+                        <div class="alert-content">
+                            전국 발전량 중 46,468 GWh는 전력을 송전, 배전하는 과정에서 손실됩니다.이를 제외한 547,933 GWh가 실제로 소비 가능한 양이 됩니다.
+                (본 그림에서는 데이터 구조상 에너지 흐름이 간략화 되어 송배전 손실이 실제보다 과대 추정되어 시각화되었을 수 있습니다)
+                        </div>
+                    </div>
+                    <div class="alert-panel alert-round mb20">
+                        <strong class="alert-title">전력 소비지로의 분배</strong>
+                        <div class="alert-content">
+                            경기도의 전력 소비량은 140,531 GWh로, 국내 전체 전력 소비량(547,933 GWh)의 약 25.6%에 해당합니다.
+                        </div>
+                    </div>
+                    <div class="alert-panel alert-round mb20">
+                        <strong class="alert-title">경기도 최종 소비 부문별 분류</strong>
+                        <div class="alert-content">
+                            이 중 가장 많은 비중을 차지하는 부문은 산업부문으로 전체의 약 52.7%에 해당하는 74,060 GWh입니다. 다음으로는 상업 및 공공부문이 44,011 GWh로 31.3%, 가정 부문이 21,128 GWh로 15.0%를 차지합니다.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- //기상특보 -->
+    <div id="modal-carbon-plan" class="modal modal-wrap modal-wrap-dimmed full">
+        <div class="modal--inner">
+            <div class="modal--head">
+                <div class="modal--head--inner">
+                    <h3>Title</h3>
+                </div>
+                <div class="modal--head--util">
+                    <button type="button" class="modal--close close-btn btn-black"></button>
+                </div>
+            </div>
+            
+            <div class="modal--content">
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>내용</th>
+                                <th>번호</th>
+                                <th>내용</th>
+                                <th>번호</th>
+                                <th>내용</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                                <td>내용</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+		<!-- <footer id="footer" class="footer">
+    <div class="footer--family">
+        <div class="footer--family--container">
+            <select class="form-control" name="name" title="관련사이트 바로가기">
+                <option value="1" title="관련사이트 열림">관련기관 사이트</option>
+                <option value="2" title="">사이트1</option>
+            </select>
+        </div>
+    </div>
+    <div class="footer--container main--footer">
+        <div class="footer--logo">
+            <img src="./assets/images/common/foot-logo-white.png" alt="">
+        </div>
+        <div class="footer--info">
+            <div class="footer--addr">
+                <dl>
+                    <dt>경기도청</dt>
+                    <dd>(우 16508) 경기도 수원시 영통구 도청로 30 (이의동)</dd>
+                </dl>
+                <span>/</span>
+                <dl>
+                    <dt>북부청사</dt>
+                    <dd>(우 11780) 의정부시 청사로 1 (신곡동)</dd>
+                </dl>
+                <span>/</span>
+                <dl>
+                    <dt class="last-address">경기도 콜센터</dt>
+                    <dd>031-120 (365일 24시간)</dd>
+                </dl> 
+            </div>
+            <p class="footer--copy">© GYEONGGI PROVINCE All Rights Reserved.</p>
+        </div>
+    </div>
+</footer> -->
+
+<footer id="footer" class="footer">
+    <div class="footer--container main--footer">
+        <div class="footer--logo">
+            <img src="./assets/images/common/foot-logo-white.png" alt="">
+        </div>
+        <div class="footer--info">
+            <div class="footer--addr">
+                <dl>
+                    <dt>경기도청</dt>
+                    <dd>(우 16508) 경기도 수원시 영통구 도청로 30 (이의동)</dd>
+                </dl>
+                <span>/</span>
+                <dl>
+                    <dt>북부청사</dt>
+                    <dd>(우 11780) 의정부시 청사로 1 (신곡동)</dd>
+                </dl>
+                <span>/</span>
+                <dl>
+                    <dt class="last-address">경기도 콜센터</dt>
+                    <dd>031-120 (365일 24시간)</dd>
+                </dl> 
+            </div>
+            <p class="footer--copy">© GYEONGGI PROVINCE All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+<div class="overlay"></div>
+<button id="btnTop"></button>
+
+<script src="./assets/js/vendor/jquery/jquery-3.6.0.min.js"></script>
+<script src="./assets/js/vendor/jquery/jquery-ui.min.js"></script>
+<script src="./assets/js/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="./assets/js/vendor/nav.js"></script>
+<script src="./assets/js/vendor/jquery.gsap.min.js"></script>
+<script src="./assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="./assets/js/vendor/jquery-circle-progress-master/dist/circle-progress.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+
+<script src="./assets/js/vendor/common.js"></script>
+
+
+
+
+	</section>
+</body>
+
+</html>

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">
+<meta name="HandheldFriendly" content="true">
+<meta name="format-detection" content="telephone=no">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<title>경기기후플랫폼</title>
+<meta name="title" content="경기기후플랫폼" /> 
+<meta name="author" content="경기기후플랫폼" />
+<meta name="keywords" content="경기기후플랫폼" />
+<meta name="description" content="경기기후플랫폼" />
+<meta property="og:type" content="website">
+<meta property="og:title" content="경기기후플랫폼">
+<meta property="og:site_name" content="경기기후플랫폼">
+<meta property="og:description" content="경기기후플랫폼">
+
+<link rel="icon" type="image/x-icon" href="./assets/images/ico/favicon.png">
+<link rel="apple-touch-icon-precomposed" type="/image/x-icon" href="./assets/images/ico/favicon.png">
+<link rel="shortcut icon" type="image/x-icon" href="./assets/images/ico/favicon.png">
+
+
+<link rel="stylesheet" href="./assets/js/vendor/jquery/jquery-ui.css">
+<link rel="stylesheet" href="./assets/fonts/pretendard.css">
+<link rel="stylesheet" href="./assets/css/slick.css">
+<link rel="stylesheet" href="./assets/js/vendor/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+<link rel="stylesheet" href="./assets/css/reset.css">
+<link rel="stylesheet" href="./assets/css/styles.css">
+<link rel="stylesheet" href="./assets/js/vendor/aos/aos.css">
+
+
+</head>
+
+<body>
+	<!-- 전체 -->
+	<section id="wrap">
+		<div id="header" class="main-header header">
+    <div class="header-container">
+        <div class="header-top sub-header-top">
+            <div class="header-inner">
+                <a href="#" class="header-bi"><span class=" sr-only">로고</span></a>
+                <div class="head--util">
+                    <a href="" class="head--eng">
+                        <i class="icon en-ico"></i>
+                        <span>language</span>
+                    </a>
+                    <button type="button" class="ham-btn mobile-button" id="btnMobile" title="메뉴 열림">
+                        <span class="line line1"></span>
+                        <span class="line line2"></span>
+                        <span class="line line3"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="gnb--wrap">
+            <nav id="gnb" class="total-menu">
+                <ul class="gnb--inner">
+                    <li class="gnb--dep01">
+                        <a href="">탄소</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">탄소중립기본계획</a></li>
+                                <li><a href="#">이행 및 적응 평가</a></li>
+                                <li><a href="#">탄소 공간정보</a></li>
+                                <li><a href="#">탄소총량관리</a></li>
+                                <li><a href="#">경기도 기후정책 소개</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnb--dep01">
+                        <a href="">에너지</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">에너지 현황</a></li>
+                                <li><a href="#">태양광 도입</a></li>
+                                <li><a href="#">에너지 절감</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnb--dep01">
+                        <a href="">기후리스크</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">기후위기 적응</a></li>
+                                <li><a href="#">그린인프라</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnb--dep01">
+                        <a href="">기후경영</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">중소기업 탄소경영</a></li>
+                                <li><a href="#">중소기업 에너지경영</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnb--dep01">
+                        <a href="">기후위기 대응지도</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">탄소공간지도</a></li>
+                                <li><a href="#">태양광 지도</a></li>
+                                <li><a href="#">기후위기 적응지도</a></li>
+                                <li><a href="#">그린인프라 지도</a></li>
+                                <li><a href="#">도시생태현황지도</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnb--dep01">
+                        <a href="">정책분석지원</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">정책분석지원</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnb--dep01">
+                        <a href="">Open & Share</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">OpenLab</a></li>
+                                <li><a href="#">API & Download</a></li>
+                                <li><a href="#">정보공유신청</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="gnb--dep01">
+                        <a href="">안내</a>
+                        <div class="gnb--dep02">
+                            <ul>
+                                <li><a href="#">경기기후플랫폼 소개</a></li>
+                                <li><a href="#">사이트맵</a></li>
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">자주하는질문</a></li>
+                                <li><a href="#">Q&A</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="gnbBg"><div class="gnbBg-inner"><img src="./assets/images/common/gnb-logo.png" alt=""></div></div>
+</div>
+
+<aside id="nav" class="nav">
+    <ul class="nav-gnb">
+        <li class="lv1-li">
+            <a href="#"><span>탄소</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">탄소중립기본계획</a></li>
+                    <li><a href="#">이행 및 적응 평가</a></li>
+                    <li><a href="#">탄소 공간정보</a></li>
+                    <li><a href="#">탄소총량관리</a></li>
+                    <li><a href="#">경기도 기후정책 소개</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="lv1-li">
+            <a href="#"><span>에너지</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">에너지 현황</a></li>
+                    <li><a href="#">태양광 도입</a></li>
+                    <li><a href="#">에너지 절감</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="lv1-li">
+            <a href="#"><span>기후리스크</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">기후위기 적응</a></li>
+                    <li><a href="#">그린인프라</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="lv1-li">
+            <a href="#"><span>기후경영</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">중소기업 탄소경영</a></li>
+                    <li><a href="#">중소기업 에너지경영</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="lv1-li">
+            <a href="#"><span>기후위기 대응지도</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">탄소공간지도</a></li>
+                    <li><a href="#">태양광 지도</a></li>
+                    <li><a href="#">기후위기 적응지도</a></li>
+                    <li><a href="#">그린인프라 지도</a></li>
+                    <li><a href="#">도시생태현황지도</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="lv1-li">
+            <a href="#"><span>정책분석지원</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">정책분석지원</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="lv1-li">
+            <a href="#"><span>Open & Share</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">OpenLab</a></li>
+                    <li><a href="#">API & Download</a></li>
+                    <li><a href="#">정보공유신청</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="lv1-li">
+            <a href="#"><span>안내</span></a>
+            <div class="depth">
+                <ul>
+                    <li><a href="#">경기기후플랫폼 소개</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">자주하는질문</a></li>
+                    <li><a href="#">Q&A</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    
+</aside>
+		
+
+		<div id="SubContainer" class="SubContainer">
+			<div class="sub--wrap">
+				<div id="first-video" class="first--video">
+					<video src="./assets/video/AdobeStock_1418318936_Video_HD_Preview.mov" muted autoplay playsinline loop></video>
+					<div class="first--video--info">
+						<div class="first--video--inner">
+							<div class="first--video--txt fade-up">
+								<h2>기후위기 적응 </h2>
+								<h3>
+									시작된 기후위기, 경기도의 특성을 반영한 기후위기 적응 솔루션
+								</h3>
+								<p>
+									시작된 기후위기, 경기도의 특성을 반영한 기후위기 적응 솔루션
+								</p>
+							</div>
+							<div class="first--video--tab risk" data-simplebar>
+								<ul data-js="tabNav">
+									<li>
+										<button data-id="tabnav1">
+											<strong>경기도 기후위기</strong>
+											<span>text</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav2">
+											<strong>폭염</strong>
+											<span>text</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav3">
+											<strong>극한호우</strong>
+											<span>text</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav4">
+											<strong>산사태</strong>
+											<span>text</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav5">
+											<strong>취약인구</strong>
+											<span>text</span>
+										</button>
+									</li>
+									<li>
+										<button data-id="tabnav6">
+											<strong>우리동네 기상정보</strong>
+											<span>text</span>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab--stiky risk">
+					<div class="sub--wrap--inner">
+						<ul class="" data-js="tabNav">
+							<li>
+								<button type="button" data-id="tabnav1">경기도 기후위기</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav2">폭염</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav3">극한호우</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav4">산사태</button>
+							</li>
+							<li>
+								<button type="button" data-id="tabnav5">취약인구</button>
+							</li>
+							<li  class="active">
+								<button type="button" data-id="tabnav6">우리동네 기상정보</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div data-toggle-id="tabnav1" class="toggle-hidden">
+					1111
+				</div>				
+				<div data-toggle-id="tabnav2" class="toggle-hidden">
+					2222
+				</div>
+				<div data-toggle-id="tabnav3" class="toggle-hidden">
+					3333
+				</div>
+				<div data-toggle-id="tabnav4" class="toggle-hidden">
+					4444
+				</div>
+				<div data-toggle-id="tabnav5" class="toggle-hidden">
+					5555 
+				</div>
+				<div data-toggle-id="tabnav6">
+					<div class="data-chart data-chart-gray">
+						<div class="sub--wrap--inner">
+							<div>
+								<div class="data-chart__txt fade-up mb50" style="translate: none; rotate: none; scale: none;">
+									<h3>우리동네 기상정보</h3>
+									<p class="chart-txt01">
+										실시간 우리동네 정확한 기상정보와 기상특보를 제공합니다.
+									</p>
+									
+								</div>
+								<div class="data--box--flex half fade-up">
+									<div class="data--box--flex--left data--box pn">
+										<div class="map-info-txt">
+											<p>기상청 500m 고해상도 기상정보를 활용하여 정밀한 기상정보를 제공합니다.</p>
+										</div>
+									</div>
+									<div class="data--box--flex--right weather-box">
+										<div class="data--box boarder">
+											<div class="data--box--head mb20">
+												<h4>안양시 동안구</h4>
+												<div class="data--box--util--txt">
+													<span class="data">2025.03.19 (수) 14:28 현재</span>
+												</div>
+											</div>
+											<div class="weather-cast-wrap">
+												<div class="weather-cast-row01 mb32">
+													<div class="weather-cast-today">
+														<div>
+															<i class=""><img src="./assets/images/ico/ico-sun.png" alt=""></i>
+															<b>7.1<sub>˚</sub></b>
+														</div>
+														<dl>
+															<dt>구름많음</dt>
+															<dd>어제보다 2.3<sub>˚</sub> <i class="icon ico-arrow-up"></i> <i class="icon ico-arrow-down"></i></dd>
+														</dl>
+													</div>
+													<div class="weather-cast-flex-3">
+														<dl>
+															<dt>체감</dt>
+															<dd>2.3<sub>˚</sub></dd>
+														</dl>
+														<dl>
+															<dt>습도</dt>
+															<dd>31%</dd>
+														</dl>
+														<dl>
+															<dt>서풍</dt>
+															<dd>3.8m/s</dd>
+														</dl>
+													</div>
+												</div>
+												<div class="weather-cast-row02">
+													<ul class="weather-cast-week">
+														<li>
+															<dl class="data">
+																<dt>오늘</dt>
+																<dd>3.19</dd>
+															</dl>
+															<div class="apm">
+																<div class="am">
+																	<dl>
+																		<dt>오전</dt>
+																		<dd>10%</dd>
+																	</dl>
+																	<img src="./assets/images/ico/ico-sun-small.png" alt="">
+																</div>
+																<div class="pm">
+																	<img src="./assets/images/ico/ico-sun-small.png" alt="">
+																	<dl>
+																		<dt>오후</dt>
+																		<dd>0%</dd>
+																	</dl>
+																</div>
+															</div>
+															<div class="temp">
+																<span class="low">2˚</span>
+																<span calss="slash">/</span>
+																<span class="high">15˚</span>
+															</div>
+														</li>
+														<li>
+															<dl class="data">
+																<dt>내일</dt>
+																<dd>3.20</dd>
+															</dl>
+															<div class="apm">
+																<div class="am">
+																	<dl>
+																		<dt>오전</dt>
+																		<dd>10%</dd>
+																	</dl>
+																	<img src="./assets/images/ico/ico-sun-small.png" alt="">
+																</div>
+																<div class="pm">
+																	<img src="./assets/images/ico/ico-sun-small.png" alt="">
+																	<dl>
+																		<dt>오후</dt>
+																		<dd>0%</dd>
+																	</dl>
+																</div>
+															</div>
+															<div class="temp">
+																<span class="low">2˚</span>
+																<span calss="slash">/</span>
+																<span class="high">15˚</span>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="flex flex-1">
+											<div class="data--box auto-height">
+												<div class="data--box--head mb20 flex-keep">
+													<h4>발령정보</h4>
+													<div class="data--box--util--txt">
+														<button><i class="icon ico-add-more" onclick="ModalHandler.open('modal-Announce-Info')"></i></button>
+													</div>
+												</div>
+												<div class="weather-info-news weather-news-item">
+													<i class="icon ico-news-info"></i>
+													<p>초미세먼지 경보 발령</p>
+												</div>
+											</div>
+											<div class="data--box auto-height">
+												<div class="data--box--head mb20 flex-keep">
+													<h4>기상특보</h4>
+													<div class="data--box--util--txt">
+														<button type="button" onclick="ModalHandler.open('modal-weather-report')"><i class="icon ico-add-more"></i></button>
+													</div>
+												</div>
+												<div class="weather-cast-news weather-news-item">
+													<i class="icon ico-news"></i>
+													<p>발표된 특보가 없습니다.</p>
+												</div>
+											</div>
+										</div> 
+										<div class="data--box auto-height">
+											<div class="data--box--head mb20">
+												<h4>통합대기환경지수 <span class="head--ti--small">나쁨(120)</span></h4>
+											</div>
+											<div class="environmental-index">
+												<dl>
+													<dt>초미세먼지(PM2.5)</dt>
+													<dd>
+														<i class="idx-lv02"><span class="sr-only">보통 색상</span></i>
+														보통 30
+													</dd>
+												</dl>
+												<dl>
+													<dt>미세먼지 (PM10)</dt>
+													<dd>
+														<i class="idx-lv01"><span class="sr-only">좋음 색상</span></i>
+														좋음 10
+													</dd>
+												</dl>
+												<dl>
+													<dt>오존 (o3)</dt>
+													<dd>
+														<i class="idx-lv03"><span class="sr-only ">나쁨 색상</span></i>
+														나쁨 30
+													</dd>
+												</dl>
+												<dl>
+													<dt>이산화질소 (NO2)</dt>
+													<dd>
+														<i class="idx-lv04"><span class="sr-only">매우나쁨 색상</span></i>
+														매우나쁨 0.2
+													</dd>
+												</dl>
+												<dl>
+													<dt>일산화탄소 (CO)</dt>
+													<dd>
+														<i class="idx-lv01"><span class="sr-only">좋음 색상</span></i>
+														좋음 30
+													</dd>
+												</dl>
+												<dl>
+													<dt>아황산가스 (SO2)</dt>
+													<dd>
+														<i class="idx-lv02"><span class="sr-only">보통 색상</span></i>
+														보통 30
+													</dd>
+												</dl>
+											</div>
+										</div> 
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+
+
+    <!-- //기상특보 -->
+    <div id="modal-weather-report" class="modal modal-wrap modal-wrap-dimmed full">
+        <div class="modal--inner">
+            <div class="modal--head">
+                <div class="modal--head--inner">
+                    <h3>기상특보</h3>
+                </div>
+                <div class="modal--head--util">
+                    <button type="button" class="modal--close close-btn btn-black"></button>
+                </div>
+            </div>
+            
+            <div class="modal--content p0">
+                <div class="btn-tab-wrap02 flex-end">
+                    <button type="button" class="single_toggle">강풍</button>
+                    <button type="button" class="single_toggle">풍량</button>
+                    <button type="button" class="single_toggle">호우</button>
+                    <button type="button" class="single_toggle">대설</button>
+                    <button type="button" class="single_toggle">건조</button>
+                    <button type="button" class="single_toggle">폭풍해일</button>
+                    <button type="button" class="single_toggle">한파</button>
+                    <button type="button" class="single_toggle">태풍</button>
+                    <button type="button" class="single_toggle">황사</button>
+                    <button type="button" class="single_toggle">폭염</button>
+                </div>
+
+                <div class="modal-report-flex">
+                    <div class="modal-report-item ">
+                        <h3>건조주의보 발효 중</h3>
+                        <div class="modal-report-time-flex caution">
+                            <dl>
+                                <dt>발표시각</dt>
+                                <dd>2월 24일 (월) 16:00</dd>
+                            </dl>
+                            <dl>
+                                <dt>발효시각</dt>
+                                <dd>2월 24일 (월) 16:00 이후</dd>
+                            </dl>
+                        </div>
+                        <div class="modal-report-city">
+                            수원시, 용인시, 오산시, 오산시, 평택시, 화성시, 시흥시, 여주시
+                        </div>
+                    </div>
+                    <div class="modal-report-item ">
+                        <h3>건조경보 발효 중</h3>
+                        <div class="modal-report-time-flex warning">
+                            <dl>
+                                <dt>발표시각</dt>
+                                <dd>2월 24일 (월) 16:00</dd>
+                            </dl>
+                            <dl>
+                                <dt>발효시각</dt>
+                                <dd>2월 24일 (월) 16:00 이후</dd>
+                            </dl>
+                        </div>
+                        <div class="modal-report-city">
+                            수원시, 용인시, 오산시, 오산시, 평택시, 화성시, 시흥시, 여주시
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+    <!-- //기상특보 -->
+    <div id="modal-Announce-Info" class="modal modal-wrap modal-wrap-dimmed full">
+        <div class="modal--inner">
+            <div class="modal--head">
+                <div class="modal--head--inner">
+                    <h3>발령정보</h3>
+                </div>
+                <div class="modal--head--util">
+                    <button type="button" class="modal--close close-btn btn-black"></button>
+                </div>
+            </div>
+            
+            <div class="modal--content p0">
+                <div class="btn-tab-wrap02 flex-end">
+                    <button type="button" class="single_toggle">초미세먼지(PM2.5)</button>
+                    <button type="button" class="single_toggle">미세먼지(PM10)</button>
+                    <button type="button" class="single_toggle">오존 (O3)</button>
+                </div>
+
+                <div class="criteria-box active">
+                    <div class="parent_toggle criteria-box-basics">
+                        <span>발령기준</span> <button type="button" class="criteria-box-btn"></button>        
+                    </div>
+                    <div class="criteria-box-active">
+                        <h3>미세먼지경보 발령기준</h3>
+                        <dl>
+                            <dt>· 발령기준 </dt>
+                            <dd>
+                                <div class="table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>경보등급</th>
+                                                <th>주의보<span style="background: #ffff00;"></span></th>
+                                                <th>경보<span style="background: #ff0000;"></span></th>
+                                                <th>중대경보<span style="background: #800080;"></span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>경보농도(ppm)</td>
+                                                <td>0.12ppm 이상</td>
+                                                <td>0.3ppm 이상</td>
+                                                <td>0.5ppm 이상</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>· 해제기준 </dt>
+                            <dd>
+                                <div class="table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>경보등급</th>
+                                                <th>주의보<span style="background: #ffff00;"></span></th>
+                                                <th>경보<span style="background: #ff0000;"></span></th>
+                                                <th>중대경보<span style="background: #800080;"></span></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <tr>
+                                                    <td>경보농도(ppm)</td>
+                                                    <td>0.12ppm 이상</td>
+                                                    <td>0.3ppm 이상</td>
+                                                    <td>0.5ppm 이상</td>
+                                                </tr>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+		
+		<!-- <footer id="footer" class="footer">
+    <div class="footer--family">
+        <div class="footer--family--container">
+            <select class="form-control" name="name" title="관련사이트 바로가기">
+                <option value="1" title="관련사이트 열림">관련기관 사이트</option>
+                <option value="2" title="">사이트1</option>
+            </select>
+        </div>
+    </div>
+    <div class="footer--container main--footer">
+        <div class="footer--logo">
+            <img src="./assets/images/common/foot-logo-white.png" alt="">
+        </div>
+        <div class="footer--info">
+            <div class="footer--addr">
+                <dl>
+                    <dt>경기도청</dt>
+                    <dd>(우 16508) 경기도 수원시 영통구 도청로 30 (이의동)</dd>
+                </dl>
+                <span>/</span>
+                <dl>
+                    <dt>북부청사</dt>
+                    <dd>(우 11780) 의정부시 청사로 1 (신곡동)</dd>
+                </dl>
+                <span>/</span>
+                <dl>
+                    <dt class="last-address">경기도 콜센터</dt>
+                    <dd>031-120 (365일 24시간)</dd>
+                </dl> 
+            </div>
+            <p class="footer--copy">© GYEONGGI PROVINCE All Rights Reserved.</p>
+        </div>
+    </div>
+</footer> -->
+
+<footer id="footer" class="footer">
+    <div class="footer--container main--footer">
+        <div class="footer--logo">
+            <img src="./assets/images/common/foot-logo-white.png" alt="">
+        </div>
+        <div class="footer--info">
+            <div class="footer--addr">
+                <dl>
+                    <dt>경기도청</dt>
+                    <dd>(우 16508) 경기도 수원시 영통구 도청로 30 (이의동)</dd>
+                </dl>
+                <span>/</span>
+                <dl>
+                    <dt>북부청사</dt>
+                    <dd>(우 11780) 의정부시 청사로 1 (신곡동)</dd>
+                </dl>
+                <span>/</span>
+                <dl>
+                    <dt class="last-address">경기도 콜센터</dt>
+                    <dd>031-120 (365일 24시간)</dd>
+                </dl> 
+            </div>
+            <p class="footer--copy">© GYEONGGI PROVINCE All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+<div class="overlay"></div>
+<button id="btnTop"></button>
+
+<script src="./assets/js/vendor/jquery/jquery-3.6.0.min.js"></script>
+<script src="./assets/js/vendor/jquery/jquery-ui.min.js"></script>
+<script src="./assets/js/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="./assets/js/vendor/nav.js"></script>
+<script src="./assets/js/vendor/jquery.gsap.min.js"></script>
+<script src="./assets/js/vendor/ScrollTrigger.min.js"></script>
+<script src="./assets/js/vendor/jquery-circle-progress-master/dist/circle-progress.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+
+<script src="./assets/js/vendor/common.js"></script>
+
+
+
+
+	</section>
+</body>
+
+</html>
